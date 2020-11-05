@@ -2,10 +2,10 @@
     <div class="navbar-me">
             <div class="navbar-el-div">
                 <router-link to="/home" class="navbar-el">Home</router-link>
-                <a href="#" class="navbar-el">Introduciton</a>
-                <a href="#" class="navbar-el">Projects</a>
-                <a href="#" class="navbar-el">Portals</a>
-                <a href="#" class="navbar-el">Impressum</a>
+                <router-link to="/intro" class="navbar-el">Introduciton</router-link>
+                <router-link to="/projects" class="navbar-el">Projects</router-link>
+                <router-link to="/" class="navbar-el">Portals</router-link>
+                <router-link to="/impressum" class="navbar-el">Impressum</router-link>
             </div>
         </div>
 </template>
