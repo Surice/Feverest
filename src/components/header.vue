@@ -1,17 +1,13 @@
 <template>
     <div class="navbar-me">
-        <div class="links">
-            <router-link to="/home" data-target="#">Home</router-link>
-            <router-link to="/intro" data-target="#">Introduction</router-link>
-            <router-link to="/projects" data-target="#">Projects</router-link>
-            <router-link to="/impressum" data-target="#">Impressum</router-link>
+            <div class="navbar-el-div">
+                <a href="#" class="navbar-el">Home</a>
+                <a href="#" class="navbar-el">Introduciton</a>
+                <a href="#" class="navbar-el">Projects</a>
+                <a href="#" class="navbar-el">Portals</a>
+                <a href="#" class="navbar-el">Impressum</a>
+            </div>
         </div>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -20,26 +16,32 @@ export default {
 }
 </script>
 <style>
-    .links{
-        display: block;
-        background-color: rgb(117, 57, 57);
-        padding: 10px;
-        font-size: 1.6em;
-        font-weight: bold;
-    }
-    .links a{
-        font-size: 1.6em;
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        background-color: rgba(255, 255, 255, 0.4);
-        height: 100%;
-        border-radius: 3px;
-        margin: 2%;
-        padding: 10px;
-    }
-    .links a:hover{
-        color: rgb(24, 73, 206);
-        text-decoration: none;
-    }
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-me{
+    height: 12vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(118, 87, 255);
+}
+
+.navbar-el-div{
+    width: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-el{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+}
 </style>
