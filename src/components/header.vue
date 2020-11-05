@@ -1,17 +1,19 @@
 <template>
     <div class="navbar-me">
-        <div class="links">
-            <router-link to="/home" data-target="#">Home</router-link>
-            <router-link to="/intro" data-target="#">Introduction</router-link>
-            <router-link to="/projects" data-target="#">Projects</router-link>
-            <router-link to="/impressum" data-target="#">Impressum</router-link>
+            <div class="navbar-el-div">
+                <router-link to="/home" class="navbar-el">Home</router-link>
+                <router-link to="/intro" class="navbar-el">Introduciton</router-link>
+                <div class="dropdown">
+                    <router-link to="/projects" class="navbar-el">Projects</router-link>
+                    <div class="dropdown-content">
+                        <router-link to="">Free Steam Games</router-link>
+                        <router-link to="">ACC Assistant</router-link>
+                    </div>
+                </div>
+                <router-link to="/portals" class="navbar-el">Portals</router-link>
+                <router-link to="/impressum" class="navbar-el">Impressum</router-link>
+            </div>
         </div>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -20,26 +22,66 @@ export default {
 }
 </script>
 <style>
-    .links{
-        display: block;
-        background-color: rgb(117, 57, 57);
-        padding: 10px;
-        font-size: 1.6em;
-        font-weight: bold;
-    }
-    .links a{
-        font-size: 1.6em;
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        background-color: rgba(255, 255, 255, 0.4);
-        height: 100%;
-        border-radius: 3px;
-        margin: 2%;
-        padding: 10px;
-    }
-    .links a:hover{
-        color: rgb(24, 73, 206);
-        text-decoration: none;
-    }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar-me{
+    height: 12vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    background: linear-gradient(rgb(78, 39, 255), rgb(118, 87, 255));
+}
+.navbar-el-div{
+    width: 60%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar-el{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(245, 245, 245);
+    padding: 5px;
+}
+.navbar-el:hover{
+    color: rgb(136, 203, 219);
+    text-decoration: none;
+}
+
+.dropdown{
+    display: inline-block;
+}
+.dropdown a:hover ~ .dropdown-content{
+    display: flex;
+}
+.dropdown-content{
+    position: fixed;
+    display: none;
+    flex-flow: column;
+    height: auto;
+    background-color: rgba(189, 189, 189, 0.2);
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px gray;
+}
+.dropdown-content a{
+    margin: 1.2vh;
+    color: rgb(57, 43, 117) !important;
+    font-weight: bolder;
+}
+.dropdown-content a:hover{
+    color: rgb(78, 39, 255) !important;
+    text-decoration: none;
+}
+.dropdown-content:hover{
+    display: flex;
+}
+.router-link-active:not(:hover){
+    color: rgb(50, 211, 163);
+}
 </style>
