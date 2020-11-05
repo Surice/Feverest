@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Home from '@/views/home.vue'
 import Intro from '@/views/intro.vue'
 import Proj from '@/views/projects.vue'
+import Portal from '@/views/portals.vue'
 import Impressum from '@/views/impressum.vue'
 
 Vue.use(VueRouter)
@@ -29,6 +30,11 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: Proj
+  },
+  {
+    path: '/portals',
+    name: 'Portals',
+    component: Portal
   },
   {
     path: '/impressum',
