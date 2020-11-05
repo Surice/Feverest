@@ -1,7 +1,7 @@
 <template>
     <div class="navbar-me">
             <div class="navbar-el-div">
-                <a href="#" class="navbar-el">Home</a>
+                <router-link to="/home" class="navbar-el">Home</router-link>
                 <a href="#" class="navbar-el">Introduciton</a>
                 <a href="#" class="navbar-el">Projects</a>
                 <a href="#" class="navbar-el">Portals</a>
