@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-import Home from '@/views/Home.vue'
+import Home from '@/views/home.vue'
 import Intro from '@/views/intro.vue'
 import Proj from '@/views/projects.vue'
 import Portal from '@/views/portals.vue'
