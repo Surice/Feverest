@@ -2,11 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-import Home from '@/views/home.vue'
-import Intro from '@/views/intro.vue'
-import Proj from '@/views/projects.vue'
-import Portal from '@/views/portals.vue'
-import Impressum from '@/views/impressum.vue'
+import Home from '@/views/main/home.vue'
+import Intro from '@/views/main/intro.vue'
+import Proj from '@/views/main/projects.vue'
+import Portal from '@/views/main/portals.vue'
+import Impressum from '@/views/main/impressum.vue'
+
+import FreeGames from '@/views/projects/freeGames.vue'
+import McAssistant from '@/views/projects/mcAssistant.vue'
+import acchelper from '@/views/projects/accHelper.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +44,21 @@ const routes = [
     path: '/impressum',
     name: 'Impressum',
     component: Impressum
+  },
+  {
+    path: '/free_Games',
+    name: 'Free-Games',
+    component: FreeGames
+  },
+  {
+    path: '/mc_Assistant',
+    name: 'MC-Assistant',
+    component: McAssistant
+  },
+  {
+    path: '/acc_helper',
+    name: 'ACC-Helper',
+    component: acchelper
   }
 ]
 
