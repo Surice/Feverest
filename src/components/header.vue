@@ -1,5 +1,6 @@
 <template>
     <div class="navbar-me">
+            <h2 class="nav-txt">Feverest</h2>
             <div class="navbar-el-div">
                 <router-link to="/home" class="navbar-el">Home</router-link>
                 <router-link to="/intro" class="navbar-el">Introduciton</router-link>
@@ -31,8 +32,16 @@ export default {
     height: 12vh;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     background: linear-gradient(rgb(78, 39, 255), rgb(118, 87, 255));
+}
+.nav-txt{
+    margin: 0;
+    margin-left: 3vw;
+    margin-right: 8vw;
+    font-weight: 800;
+    color: whitesmoke;
 }
 .navbar-el-div{
     width: 60%;
