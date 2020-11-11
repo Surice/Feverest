@@ -5,7 +5,7 @@
                 <router-link to="/home" class="navbar-el">Home</router-link>
                 <router-link to="/intro" class="navbar-el">Introduciton</router-link>
                 <div class="dropdown">
-                    <router-link to="/projects" class="navbar-el">Projects</router-link>
+                    <router-link to="/projects" class="navbar-el">Projects <i class="fas fa-angle-down"></i></router-link>
                     <div class="dropdown-content">
                         <router-link to="">Free Steam Games</router-link>
                         <router-link to="">ACC Assistant</router-link>
@@ -73,16 +73,17 @@ export default {
 .dropdown-content{
     position: fixed;
     display: none;
-    flex-flow: column;
+    flex-flow: row;
     height: auto;
-    width: 20%;
-    /* background-color: rgba(189, 189, 189, 0.8); */
+    width: 100%;
+    align-items: flex-start;
     background-color: white;
     /* margin-top: 10px; */
     padding: 5px;
     border-radius: 3px;
     box-shadow: 2px 2px 3px gray;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
 }
 .dropdown-content a{
     margin: 1.2vh;
