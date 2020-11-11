@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <navbar></navbar>
-      <h1>Home!</h1>
+      <div class="banner-welcomen">
+        <p>Welcomen!</p>
+      </div>
+      <div class="banner-phrases">
+        <p>Go, get it!</p>
+      </div>
     </div>
 
 </template>
@@ -26,12 +31,33 @@ export default {
     background-size: cover;
     background-position: center bottom;
   }
-
   .headline{
     display: flex;
     flex-flow: row;
     justify-content: center;
     margin-top: 5vh;
     text-decoration: underline;
+  }
+  .banner-welcomen{
+  width: 26vw;
+  position: fixed;
+  right: 24vw;
+  top: 40vh;
+  }
+  .banner-welcomen p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 64px;
+  }
+  .banner-phrases{
+    width: 26vw;
+    position: fixed;
+    right: 14vw;
+    top: 50vh;
+  }
+  .banner-phrases p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
   }
 </style>

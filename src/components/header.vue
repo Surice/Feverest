@@ -42,9 +42,9 @@ export default {
     align-items: center;
     /* background: linear-gradient(rgb(78, 39, 255), rgb(118, 87, 255)); */
 
-    /* background: linear-gradient(rgb(56, 173, 105), rgb(41, 133, 79)); */
+    background: linear-gradient(rgb(56, 173, 105), rgb(41, 133, 79));
     /* background: linear-gradient(rgb(121, 91, 250), rgb(113, 87, 230)); */
-    background: linear-gradient(rgb(70, 144, 255), rgb(84, 124, 204));
+    /* background: linear-gradient(rgb(70, 144, 255), rgb(84, 124, 204)); */
 
 }
 .nav-txt{
