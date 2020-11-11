@@ -21,7 +21,7 @@ export default {
   .home{
     height: 100vh;
     width: 100vw;
-    background-image: url('@/assets/background.jpg');
+    background-image: url('../../assets/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
