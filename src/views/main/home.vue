@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <navbar></navbar>
+    
       <div class="banner-welcomen">
         <p>Welcomen!</p>
       </div>
       <div class="banner-phrases">
         <p>Go, get it!</p>
       </div>
-    </div>
-
+  </div>
 </template>
 
 <script>
@@ -39,7 +39,6 @@ export default {
     text-decoration: underline;
   }
   .banner-welcomen{
-  width: 26vw;
   position: fixed;
   right: 24vw;
   top: 40vh;
@@ -50,7 +49,6 @@ export default {
     font-size: 64px;
   }
   .banner-phrases{
-    width: 26vw;
     position: fixed;
     right: 14vw;
     top: 50vh;
