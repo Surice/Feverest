@@ -2,7 +2,7 @@
     <div class="content">
         <navbar></navbar>
         
-        
+        <h1>ACC Assistant</h1>
     </div>
 </template>
 <script>
