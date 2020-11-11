@@ -21,7 +21,7 @@ export default {
   .home{
     height: 100vh;
     width: 100vw;
-    background-image: url('https://cdn.pixabay.com/photo/2018/03/08/09/10/dawn-3208158_1280.jpg');
+    background-image: url('@/assets/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
