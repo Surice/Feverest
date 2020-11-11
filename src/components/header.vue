@@ -9,6 +9,7 @@
                     <div class="dropdown-content">
                         <router-link to="">Free Steam Games</router-link>
                         <router-link to="">ACC Assistant</router-link>
+                        <router-link to="">MC Assistant</router-link>
                     </div>
                 </div>
                 <router-link to="/portals" class="navbar-el">Portals</router-link>
@@ -29,7 +30,7 @@ export default {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .navbar-me{
-    height: 12vh;
+    height: 9vh;
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
@@ -59,7 +60,9 @@ export default {
 }
 .navbar-el:hover{
     color: rgb(136, 203, 219);
-    text-decoration: none;
+    text-decoration: none;  
+    border-top: solid;
+    border-color: rgb(136, 203, 219);
 }
 .dropdown{
     display: inline-block;
@@ -72,10 +75,14 @@ export default {
     display: none;
     flex-flow: column;
     height: auto;
-    background-color: rgba(189, 189, 189, 0.2);
+    width: 20%;
+    /* background-color: rgba(189, 189, 189, 0.8); */
+    background-color: white;
+    /* margin-top: 10px; */
     padding: 5px;
     border-radius: 3px;
     box-shadow: 2px 2px 3px gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .dropdown-content a{
     margin: 1.2vh;
