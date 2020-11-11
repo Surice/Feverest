@@ -1,19 +1,9 @@
 <template>
   <div class="home">
     <navbar></navbar>
-    <img class="logo" alt="Vue logo" src="../../assets/logo.png">   
-    <div class="headline">
       <h1>Home!</h1>
     </div>
 
-    <div>
-      <b-dropdown id="dropdown-offset" offset="25" text="Offset Dropdown" class="m-2">
-        <b-dropdown-item href="#">Action</b-dropdown-item>
-        <b-dropdown-item href="#">Another action</b-dropdown-item>
-        <b-dropdown-item href="#">Something else here</b-dropdown-item>
-      </b-dropdown>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -31,15 +21,10 @@ export default {
   .home{
     height: 100vh;
     width: 100vw;
-    background-image: url('https://cdn.pixabay.com/photo/2016/04/18/16/22/gradient-1336854_960_720.jpg');
+    background-image: url('https://cdn.pixabay.com/photo/2018/03/08/09/10/dawn-3208158_1280.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
-  }
-
-  .logo{
-    position: absolute;
-    margin: 2em;
   }
 
   .headline{
