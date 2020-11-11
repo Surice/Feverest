@@ -76,7 +76,6 @@ export default {
     flex-flow: row;
     height: auto;
     width: 100%;
-    align-items: flex-start;
     background-color: white;
     /* margin-top: 10px; */
     padding: 5px;
