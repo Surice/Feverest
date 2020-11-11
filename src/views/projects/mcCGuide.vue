@@ -9,7 +9,7 @@
 import navbar from '@/components/header.vue'
 
 export default {
-    name: 'MC_Assistant',
+    name: 'MC-Crafting-Guide',
     components: {
         navbar
     }

@@ -20,7 +20,12 @@
 
 <script>
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  mounted() {
+        let fontAwesome = document.createElement('script')
+      fontAwesome.setAttribute('src', 'https://kit.fontawesome.com/732a3ed8e9.js')
+      document.head.appendChild(fontAwesome)
+  }
 }
 </script>
 <style>
