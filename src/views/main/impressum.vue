@@ -1,6 +1,7 @@
 <template>
     <div class="wholeContent">
         <navbar></navbar>
+        <div class="placeholder"></div>
         <div class="impressum">
             <h1>Impressum</h1>
 
@@ -159,7 +160,11 @@ export default {
 }
 </script>
 <style>
+    .placeholder{
+        height: 4vh;
+    }
     .impressum{
         margin: 8px;
+        text-align: center;
     }
 </style>
