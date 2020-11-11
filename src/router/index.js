@@ -9,7 +9,7 @@ import Portal from '@/views/main/portals.vue'
 import Impressum from '@/views/main/impressum.vue'
 
 import FreeGames from '@/views/projects/freeGames.vue'
-import McAssistant from '@/views/projects/mcAssistant.vue'
+import McCGuide from '@/views/projects/mcCGuide.vue'
 import acchelper from '@/views/projects/accHelper.vue'
 
 Vue.use(VueRouter)
@@ -51,9 +51,9 @@ const routes = [
     component: FreeGames
   },
   {
-    path: '/mc_Assistant',
-    name: 'MC-Assistant',
-    component: McAssistant
+    path: '/mc_c_guide',
+    name: 'MC-Crafting-Guide',
+    component: McCGuide
   },
   {
     path: '/acc_helper',

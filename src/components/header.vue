@@ -7,9 +7,9 @@
                 <div class="dropdown">
                     <router-link to="/projects" class="navbar-el">Projects</router-link>
                     <div class="dropdown-content">
-                        <router-link to="">Free Steam Games</router-link>
-                        <router-link to="">ACC Assistant</router-link>
-                        <router-link to="">MC Assistant</router-link>
+                        <router-link to="/free_Games">Free Steam Games</router-link>
+                        <router-link to="acc_helper">ACC Assistant</router-link>
+                        <router-link to="mc_c_guide">MC Crafting Guide</router-link>
                     </div>
                 </div>
                 <router-link to="/portals" class="navbar-el">Portals</router-link>
