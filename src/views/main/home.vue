@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
+  <div class="home" id="all">
     <navbar></navbar>
     
-      <div class="banner-welcomen">
-        <p>Welcomen!</p>
-      </div>
-      <div class="banner-phrases">
-        <p>Go, get it!</p>
-      </div>
+    <div class="banner-welcomen">
+      <p>Welcomen!</p>
+    </div>
+    <div class="banner-phrases">
+      <p>{{ text }}</p>
+    </div>
   </div>
 </template>
 
@@ -17,6 +17,11 @@ import navbar from '@/components/header.vue'
 
 export default {
   name: 'Home',
+  data: function(){
+    return{
+      text: "Take it, or leave it!"
+    }
+  },
   components: {
     navbar
   }
@@ -26,17 +31,11 @@ export default {
   .home{
     height: 100vh;
     width: 100vw;
+    background-color: rgb(162, 177, 121);
     background-image: url('../../assets/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
-  }
-  .headline{
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    margin-top: 5vh;
-    text-decoration: underline;
   }
   .banner-welcomen{
   position: fixed;

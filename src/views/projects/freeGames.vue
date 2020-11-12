@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="content-freeG">
         <navbar></navbar>
         
         <code id="lastScan" class="lastScan">Last Scan: {{ date }}</code>
@@ -11,6 +11,12 @@
                     <th class="tableE"><strong>Name</strong></th>
                     <th class="tableE"><strong>Link</strong></th>
                 </tr>
+                <tr v-for="content in contents" :key="content.name">
+                    <th class="tableE">{{ content.name }}</th>
+                    <th class="tableE">
+                        <a target="_blank" class="link" :href="content.url">{{ content.url }}</a>
+                    </th>
+                </tr>
             </table>
         </div>
     </div>
@@ -18,44 +24,32 @@
 <script>
     import navbar from '@/components/header.vue'
 
-    const reqUrl = "";
-    var temp = {"03/03/2003": [["game #1","google.com"],["game #2","amazon.com/ssd"],["game #3","sebastian-web.de"]]};
-    buildTable(temp);
-
-    var xml = new XMLHttpRequest();
-    xml.open("GET", reqUrl);
-//    xml.send();
-    xml.onreadystatechange = function(){
-        if(xml.readyState == 4 && xml.status == 200){
-            var content = JSON.parse(xml.responseText);
-
-            buildTable(content);
-        }
-    }
-
-    function buildTable(items){
-        for (var e in items){
-//            document.getElementById('lastScan').innerHTML += e.toString();
-            items = items[e];
-        }
-        return
-        items.forEach(e=>{
-            document.getElementById('table-me').innerHTML +=
-            `
-                <tr class="table-body">
-                    <th class="tableE">${e[0]}</th>
-                    <th class="tableE">
-                        <a target="_blank" class="link" href="${e[1]}")>${e[1]}</a>
-                    </th>
-                </tr>
-            `;
-        });
-    }
-
     export default {
         name: 'Free_Games',
+        data: function() {
+            return{
+                date: "--none--",
+                reqUrl: "https://...",
+                contents: [],
+            }
+        },
         components: {
             navbar
+        },
+        beforeMount(){
+            this.buildTable({"03/03/2003": [["game #1","google.com"],["real free game","https://store.steampowered.com/app/729660"],["game #3","sebastian-web.de"]]});
+        },
+        methods: {
+            buildTable: function (items){
+                for (var e in items){
+                    this.info = e;
+                    items = items[e];
+                }
+                
+                items.forEach(e=>{
+                    this.contents.push({name: e[0], url: e[1]});
+                });
+             }
         }
     }
 </script>

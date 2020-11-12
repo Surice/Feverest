@@ -1,11 +1,12 @@
 <template>
     <div class="wholeContent">
         <navbar></navbar>
-        <div class="placeholder"></div>
+        <br>
         <div class="impressum">
             <h1>Impressum</h1>
 
             <p>Angaben gemäß § 5 TMG</p>
+            <h3>Verantwortlicher</h3>
             <p>
                 Sebastian Ulrich<br/>
                 Beethovenstraße, 99<br/>
@@ -160,9 +161,6 @@ export default {
 }
 </script>
 <style>
-    .placeholder{
-        height: 4vh;
-    }
     .impressum{
         margin: 8px;
         text-align: center;
