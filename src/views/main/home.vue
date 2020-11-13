@@ -6,7 +6,7 @@
       <p>Welcomen!</p>
     </div>
     <div class="banner-phrases">
-      <p>{{ text }}</p>
+      <p ref="typedText"></p>
     </div>
   </div>
 </template>
@@ -15,19 +15,41 @@
 // @ is an alias to /src
 import navbar from '@/components/header.vue'
 
+import Typed from 'typed.js';
+
 export default {
   name: 'Home',
   data: function(){
     return{
-      text: "Take it, or leave it!"
+      texts: [
+        "Take it, or leave it!",
+        "Go, get it!",
+        "Go for win",
+        "from gamer, for gamer"
+      ]
     }
+  },
+  mounted(){
+    this.typedJs();
   },
   components: {
     navbar
+  },
+  methods: {
+    typedJs: function() {
+      var options = {
+        strings: this.texts,
+        typeSpeed: 20,
+        loop: true,
+        cursorChar: '',
+      };
+
+      var typed = new Typed(this.$refs.typedText, options);
+    }
   }
 }
 </script>
-<style>
+<style scoped>
   .home{
     height: 100vh;
     width: 100vw;
@@ -49,7 +71,7 @@ export default {
   }
   .banner-phrases{
     position: fixed;
-    right: 14vw;
+    left: 65vw;
     top: 50vh;
   }
   .banner-phrases p{
