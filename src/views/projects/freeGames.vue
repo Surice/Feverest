@@ -30,7 +30,7 @@
         data: function() {
             return{
                 date: "--none--",
-                reqUrl: "https://...",
+                reqUrl: "http://localhost:8085/api/gameStores/getFreeGames",
                 contents: [],
             }
         },
@@ -39,7 +39,7 @@
         },
         mounted(){
             axios
-                .get("http://localhost:8085/api/gameStores/getFreeGames")
+                .get(this.reqUrl)
                 .then(response => {
                     console.log(response.data);
                     for (var e in response.data){
@@ -52,7 +52,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .siteContent{
         display: flex;
         flex-flow: column;

@@ -2,11 +2,11 @@
   <div class="intro">
     <navbar></navbar>
     <br>
-    <h1 class="headline-intro">Introduction</h1>
+    <h1 class="headline">Introduction</h1>
     <br>
-    <div class="content-intro">
-      <div class="row-me row-1">
-        <div class="container-me container-1">
+    <div class="content">
+      <div class="row-me">
+        <div class="container-me">
           <h3>Was es hier gibt</h3>
           <p>
             Auf dieser Seite findest du hauptsächlich Guides, Helper, Assistants, whatever
@@ -18,15 +18,15 @@
             </p>
         </div>
       </div>
-      <div class="row-me row-2">
-        <div class="container-me container-2">
+      <div class="row-me">
+        <div class="container-me">
           <h3>Über Uns</h3>
           <p>
             Wir sind Timon und Sebastian. Zwei junge Hobbyentwickler aus dem schönen Norden von Deutschland.
             ** hier fehlen mir bissl die Ideen **
           </p>
         </div>
-        <div class="container-me container-3">
+        <div class="container-me">
           <h3>Unsere Idee</h3>
           <p>
             Irgendwie bauen wir doch alle nur sinnlose Skripte die dann mehr oder weniger funktionieren,
@@ -52,17 +52,16 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .intro{
     min-height: 100vh;
-    background-color: rgb(162, 177, 121);
     /* background-image: url('https://cdn.pixabay.com/photo/2017/10/05/09/05/railway-2818748_960_720.jpg'); */
   }
-  .headline-intro{
+  .headline{
     text-align: center;
     text-shadow: 2px 2px 3px rgb(219, 219, 219);
   }
-  .content-intro{
+  .content{
     display: flex;
     flex-flow: row;
     justify-content: center;

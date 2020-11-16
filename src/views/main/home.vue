@@ -37,11 +37,16 @@ export default {
   },
   methods: {
     typedJs: function() {
-      var options = {
+      const options = {
         strings: this.texts,
-        typeSpeed: 20,
+        typeSpeed: 70,
+        backSpeed: 30,
+        startDelay: 400,
+        backDelay: 2000,
         loop: true,
-        cursorChar: '',
+        showCursor: false,
+        shuffel: true,
+        smartBackspace: false
       };
 
       var typed = new Typed(this.$refs.typedText, options);
@@ -71,7 +76,7 @@ export default {
   }
   .banner-phrases{
     position: fixed;
-    left: 65vw;
+    left: 60vw;
     top: 50vh;
   }
   .banner-phrases p{
