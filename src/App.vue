@@ -10,6 +10,5 @@
   margin: 0;
 }
 body{
-  background-color: rgb(162, 177, 121) !important;
-}
+  background-color: rgb(245, 245, 245) !important;}
 </style>

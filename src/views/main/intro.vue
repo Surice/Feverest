@@ -71,7 +71,7 @@ export default {
     max-width: 40vw;
     margin: 2.2vw;
     padding: 1em;
-    background-color: rgba(245, 245, 245, 0.8);
+    background-color: rgb(230, 230, 230);
     border: none;
     border-radius: 4px;
     box-shadow: 2px 3px rgba(78, 78, 78, 0.4);

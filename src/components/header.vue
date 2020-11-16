@@ -12,7 +12,13 @@
                         <router-link to="mc_c_guide">MC Crafting Guide</router-link>
                     </div>
                 </div>
-                <router-link to="/portals" class="navbar-el">Portals</router-link>
+                <div class="dropdown">
+                    <router-link to="/portals" class="navbar-el navbar-el-router">Portals <i class="fas fa-chevron-down"></i></router-link>
+                    <div class="dropdown-content">
+                        <router-link to="#">User-Portal</router-link>
+                        <router-link to="#">DEV-Portal</router-link>
+                    </div>
+                </div>    
                 <router-link to="/impressum" class="navbar-el">Impressum</router-link>
             </div>
         </div>
@@ -42,7 +48,12 @@ export default {
     align-items: center;
     /* background: linear-gradient(rgb(78, 39, 255), rgb(118, 87, 255)); */
 
-    background: linear-gradient(rgb(56, 173, 105), rgb(41, 133, 79));
+    background: linear-gradient(rgb(48, 176, 240), rgb(48, 176, 255));
+
+    background: linear-gradient(rgb(237, 223, 159), rgb(237, 223, 169));
+
+
+    /* background: linear-gradient(rgb(56, 173, 105), rgb(41, 133, 79)); */
     /* background: linear-gradient(rgb(121, 91, 250), rgb(113, 87, 230)); */
     /* background: linear-gradient(rgb(70, 144, 255), rgb(84, 124, 204)); */
 
