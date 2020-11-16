@@ -11,7 +11,7 @@
                     <th class="tableE"><strong>Name</strong></th>
                     <th class="tableE"><strong>Link</strong></th>
                 </tr>
-                <tr v-for="content in contents" :key="content.name">
+                <tr class="table-body" v-for="content in contents" :key="content.name">
                     <th class="tableE">{{ content.name }}</th>
                     <th class="tableE">
                         <a target="_blank" class="link" :href="content.url">{{ content.url }}</a>

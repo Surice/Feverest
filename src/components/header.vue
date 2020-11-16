@@ -1,21 +1,21 @@
 <template>
     <div class="navbar-me">
-            <h2 class="nav-txt">Feverest</h2>
-            <div class="navbar-el-div">
-                <router-link to="/home" class="navbar-el">Home</router-link>
-                <router-link to="/intro" class="navbar-el">Introduciton</router-link>
-                <div class="dropdown">
-                    <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
-                    <div class="dropdown-content">
-                        <router-link to="/free_Games">Free Steam Games</router-link>
-                        <router-link to="acc_helper">ACC Assistant</router-link>
-                        <router-link to="mc_c_guide">MC Crafting Guide</router-link>
-                    </div>
+        <h2 class="nav-txt">Feverest</h2>
+        <div class="navbar-el-div">
+            <router-link to="/home" class="navbar-el">Home</router-link>
+            <router-link to="/intro" class="navbar-el">Introduciton</router-link>
+            <div class="dropdown">
+                <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
+                <div class="dropdown-content">
+                    <router-link to="/free_Games">Free Steam Games</router-link>
+                    <router-link to="acc_helper">ACC Assistant</router-link>
+                    <router-link to="mc_c_guide">MC Crafting Guide</router-link>
                 </div>
-                <router-link to="/portals" class="navbar-el">Portals</router-link>
-                <router-link to="/impressum" class="navbar-el">Impressum</router-link>
             </div>
+            <router-link to="/portals" class="navbar-el">Portals</router-link>
+            <router-link to="/impressum" class="navbar-el">Impressum</router-link>
         </div>
+    </div>
 </template>
 
 <script>

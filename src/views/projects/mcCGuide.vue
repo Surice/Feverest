@@ -5,7 +5,7 @@
         <h1 class="headline">Minecraft crafting Guide</h1>
         <br>
         <div class="content">
-            <div class="col">
+            <div class="col-me">
                 <div class="input-area field">
                     <div class="input-part">
                         <h3>Input</h3>
@@ -31,7 +31,7 @@
                 </div>
             
             </div>
-            <div class="col">
+            <div class="col-me">
                 <div class="output-required field">
                     <h3>Required Resources:</h3>
                     <ul id="result">
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-me">
                 <div class="output-craftingSteps field">
                     <h3>Crafting Steps:</h3>
                     <div id="cra-step" class="cra-step">
@@ -232,11 +232,12 @@ export default {
         min-height: 100%;
     }
 
-    .col{
+    .col-me{
         display: flex;
         flex-flow: column;
         justify-content: flex-start;
         min-height: 80vh;
+        min-width: 30vw;
     }
 
     .field{
