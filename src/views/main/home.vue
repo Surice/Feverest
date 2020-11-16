@@ -66,22 +66,22 @@ export default {
   }
   .banner-welcomen{
   position: fixed;
-  right: 24vw;
+  right: 26vw;
   top: 40vh;
   }
   .banner-welcomen p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bolder;
+    font-weight: 500;
     font-size: 64px;
   }
   .banner-phrases{
     position: fixed;
-    left: 60vw;
+    left: 55vw;
     top: 50vh;
   }
   .banner-phrases p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bolder;
+    font-weight: 500;
     font-size: 48px;
   }
 </style>
