@@ -1,8 +1,8 @@
 <template>
   <div class="home" id="all">
     <navbar></navbar>
-      <div class="background-img">
-      </div>
+      <img src='../../assets/computer.jpg' class="background-img">
+
       <div class="banner-welcomen">
         <p>Welcomen!</p>
       </div>
@@ -70,9 +70,7 @@ export default {
     margin-left: 2vw;
     height: 35vh;
     width: 45vw;
-    background-image: url('../../assets/computer.jpg');
-    background-position: center;
-    background-size: cover;
+    object-fit: cover;
     border-radius: 5px;
   }
   .banner-welcomen{
