@@ -22,7 +22,8 @@
     </div>
 </template>
 <script>
-    import navbar from '@/components/header.vue'
+    import navbar from '@/components/header.vue';
+    import axios from 'axios';
 
     export default {
         name: 'Free_Games',
@@ -36,20 +37,18 @@
         components: {
             navbar
         },
-        beforeMount(){
-            this.buildTable({"03/03/2003": [["game #1","google.com"],["real free game","https://store.steampowered.com/app/729660"],["game #3","sebastian-web.de"]]});
+        mounted(){
+            axios
+                .get("http://localhost:8085/api/gameStores/getFreeGames")
+                .then(response => {
+                    console.log(response.data);
+                    for (var e in response.data){
+                        this.date = e;
+                        this.contents = response.data[e];
+                    }
+                });
         },
         methods: {
-            buildTable: function (items){
-                for (var e in items){
-                    this.info = e;
-                    items = items[e];
-                }
-                
-                items.forEach(e=>{
-                    this.contents.push({name: e[0], url: e[1]});
-                });
-             }
         }
     }
 </script>
