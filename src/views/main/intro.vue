@@ -53,6 +53,9 @@ export default {
 }
 </script>
 <style scoped>
+  @import url('https://fonts.googleapis.com/css?family=Battambang');
+
+
   .intro{
     min-height: 100vh;
     /* background-image: url('https://cdn.pixabay.com/photo/2017/10/05/09/05/railway-2818748_960_720.jpg'); */
@@ -75,5 +78,14 @@ export default {
     border: none;
     border-radius: 4px;
     box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
+  }
+  .container-me h3{
+    font-family: cursive;
+    font-weight: bold;
+  }
+  .container-me p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(12, 12, 12);
+    font-size: 1.2rem;
   }
 </style>

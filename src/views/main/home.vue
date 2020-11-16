@@ -76,7 +76,7 @@ export default {
   }
   .banner-phrases{
     position: fixed;
-    left: 55vw;
+    left: 60vw;
     top: 50vh;
   }
   .banner-phrases p{
