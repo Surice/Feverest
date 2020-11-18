@@ -1,14 +1,16 @@
 <template>
-  <div class="home" id="all">
+  <div class="home" id="home">
     <navbar></navbar>
-      <img src='../../assets/computer.jpg' class="background-img">
+      <img src='../../assets/tastatur.jpg' class="banner-img">
 
-      <div class="banner-welcomen">
-        <p>Welcomen!</p>
+      <div class="banner-welcome">
+        <p>Welcome!</p>
       </div>
       <div class="banner-phrases">
         <p ref="typedText"></p> 
       </div>
+
+      <img src='../../assets/computer.jpg' class="main-img">
   </div>
 </template>
 
@@ -59,26 +61,29 @@ export default {
   .home{
     height: 35vh;
     width: 100vw;
-    background-image: url('../../assets/tastatur.jpg');
-    /* background-image: url('https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_960_720.jpg'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center ;
+  }
+  
+  .banner-img{
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+    object-position: 20% 50%;
   }  
-  .background-img{
-    margin-top: 35vh;
-    margin-left: 2vw;
+  .main-img{
+    margin-top: 8vh;
+    margin-left: 5vw;
     height: 35vh;
     width: 45vw;
     object-fit: cover;
     border-radius: 5px;
   }
-  .banner-welcomen{
+
+  .banner-welcome{
   position: fixed;
   right: 26vw;
-  top: 40vh;
+  top: 50vh;
   }
-  .banner-welcomen p{
+  .banner-welcome p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     font-size: 64px;
@@ -87,7 +92,7 @@ export default {
   .banner-phrases{
     position: fixed;
     left: 60vw;
-    top: 50vh;
+    top: 60vh;
     color: white;
   }
   .banner-phrases p{

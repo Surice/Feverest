@@ -60,10 +60,6 @@ export default {
     min-height: 100vh;
     /* background-image: url('https://cdn.pixabay.com/photo/2017/10/05/09/05/railway-2818748_960_720.jpg'); */
   }
-  .headline{
-    text-align: center;
-    text-shadow: 2px 2px 3px rgb(219, 219, 219);
-  }
   .content{
     display: flex;
     flex-flow: row;

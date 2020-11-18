@@ -1,5 +1,5 @@
 <template>
-    <div class="wholeContent">
+    <div class="content">
         <navbar></navbar>
         <br>
         <div class="impressum">
@@ -161,6 +161,9 @@ export default {
 }
 </script>
 <style scoped>
+    .content{
+        background: white;
+    }
     .impressum{
         margin: 8px;
         text-align: center;

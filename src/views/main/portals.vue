@@ -1,6 +1,10 @@
 <template>
-    <navbar></navbar>
-    
+    <div class="content">
+        <navbar></navbar>
+        <br>
+        <h1 class="headline">Projects</h1>
+        <br>
+    </div>
 </template>
 <script>
 import navbar from '@/components/header.vue'

@@ -1,20 +1,36 @@
 <template>
-    <div>
+    <div class="projects">
         <navbar></navbar>
-        <!-- <div class="projects"> -->
-            <div class="project1">
-                <div class="small-box">.img</div>
-                <div class="big-box">Free Steam Games</div>
-            </div>
-            <div class="project">
-                <div class="small-box">.img</div>
-                <div class="big-box">Assetto Corsa Competizione Assistant</div>
-            </div>
-            <div class="project">
-                <div class="small-box">.img</div>
-                <div class="big-box">Mincraft Assistant</div>
-            </div>
-        <!-- </div> -->
+        <br>
+        <h1 class="headline">Projects</h1>
+        <br>
+        <div class="project">
+            <img class="small-box">
+            <router-link to="/free_Games" class="big-box" tag="button">
+                <h4>Free Games</h4>
+                <p>
+                    
+                </p>
+            </router-link>
+        </div>
+        <div class="project">
+            <img src="./../../assets/acc-assistant-logo.jpg" class="small-box">
+            <router-link to="/acc_helper" class="big-box" tag="button">
+                <h4>Assetto Corsa Competizione Assistant</h4>
+                <p>
+
+                </p>
+            </router-link>
+        </div>
+        <div class="project">
+            <img src="./../../assets/mc_screen_crafting.png" class="small-box">
+            <router-link to="/mc_c_guide" class="big-box" tag="button">
+                <h4>Mincraft Crafting Assistant</h4>
+                <p>
+                    
+                </p>
+            </router-link>
+        </div>
     </div>
 </template>
 <script>
@@ -28,29 +44,21 @@ export default {
 }
 </script>
 <style scoped>
-/* .projects{
-    display: flex; 
-    flex-flow: column;
-    justify-content: center;
-
-} */
 .small-box{
     background-color: royalblue;
     width: 16vw;
     height: 20vh;
+    object-fit: cover;
+    border: none;
+    border-radius: 3px;
 }
 .big-box{
     background-color: slateblue;
     width: 40vw;
     height: 20vh;
-}
-.project1{
-    width: 68vw;
-    margin-top: 15vh;
-    margin-left: 32vh;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
+    border: none;
+    border-radius: 4px;
+    text-align: start;
 }
 .project{
     width: 68vw;
