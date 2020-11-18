@@ -2,7 +2,7 @@
     <div class="content">
         <navbar></navbar>
         <br>
-        <h1 class="headline">Projects</h1>
+        <h1 class="headline">Portals</h1>
         <br>
     </div>
 </template>
