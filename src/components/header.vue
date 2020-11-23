@@ -1,27 +1,39 @@
 <template>
     <div class="navbar-me">
-            <h2 class="nav-txt">Feverest</h2>
-            <div class="navbar-el-div">
-                <router-link to="/home" class="navbar-el">Home</router-link>
-                <router-link to="/intro" class="navbar-el">Introduciton</router-link>
-                <div class="dropdown">
-                    <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
-                    <div class="dropdown-content">
-                        <router-link to="/free_Games">Free Games</router-link>
-                        <router-link to="/acc_helper">ACC Assistant</router-link>
-                        <router-link to="/mc_c_guide">MC Crafting Guide</router-link>
-                    </div>
+        <h2 class="nav-txt">Feverest</h2>
+        
+        <div class="navbar-el-div">
+            <router-link to="/home" class="navbar-el">Home</router-link>
+            <router-link to="/intro" class="navbar-el">Introduciton</router-link>
+            <div class="dropdown">
+                <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
+                <div class="dropdown-content">
+                    <router-link to="/free_Games">Free Games</router-link>
+                    <router-link to="/acc_helper">ACC Assistant</router-link>
+                    <router-link to="/mc_c_guide">MC Crafting Guide</router-link>
                 </div>
-                <div class="dropdown">
-                    <router-link to="/portals" class="navbar-el navbar-el-router">Portals <i class="fas fa-chevron-down"></i></router-link>
-                    <div class="dropdown-content">
-                        <router-link to="#">User-Portal</router-link>
-                        <router-link to="#">DEV-Portal</router-link>
-                    </div>
-                </div>    
-                <router-link to="/impressum" class="navbar-el">Impressum</router-link>
+            </div>
+            <div class="dropdown">
+                <router-link to="/portals" class="navbar-el navbar-el-router">Portals <i class="fas fa-chevron-down"></i></router-link>
+                <div class="dropdown-content">
+                    <router-link to="#">User-Portal</router-link>
+                    <router-link to="#">DEV-Portal</router-link>
+                </div>
+            </div>    
+            <router-link to="/impressum" class="navbar-el">Impressum</router-link>
+        </div>
+
+        <div class="navbar-el-dropdown">
+            <p class="navbar-el dropdown-me">Menu <i class="fas fa-chevron-down"></i></p>
+            <div class="dropdown-me-content">
+                <router-link to="/home">Home</router-link>
+                <router-link to="/intro">Introduciton</router-link>
+                <router-link to="/projects">Projects</router-link>
+                <router-link to="/portals">Portals</router-link>
+                <router-link to="/impressum">Impressum</router-link>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -35,6 +47,30 @@ export default {
 }
 </script>
 <style scoped>
+@media only screen and (min-width: 821px){
+    .navbar-el-div{
+        display: flex;
+    }
+    .navbar-el-dropdown{
+        display: none;
+    }
+    .navbar-me{
+        justify-content: flex-start;
+    }
+}
+@media only screen and (max-width: 820px){
+    .navbar-el-div{
+        display: none;
+    }
+    .navbar-el-dropdown{
+        display: flex;
+    }
+    .navbar-me{
+        justify-content: space-between;
+    }
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -44,7 +80,6 @@ export default {
     height: 4.66em;
     display: flex;
     flex-flow: row;
-    justify-content: flex-start;
     align-items: center;
     background: linear-gradient(rgb(78, 39, 255), rgb(118, 87, 255));
     /* background: linear-gradient(rgb(48, 176, 240), rgb(50, 152, 216)); */
@@ -62,7 +97,6 @@ export default {
 }
 .navbar-el-div{
     width: 60%;
-    display: flex;
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
@@ -120,5 +154,32 @@ export default {
 }
 .router-link-active:not(:hover){
     color: rgb(50, 211, 163);
+}
+
+.navbar-el-dropdown{
+    display: flex;
+    margin-right: 12px;
+    justify-content: flex-end;
+}
+.dropdown-me-content{
+    position: fixed;
+    display: none;
+    transform: translateY(6vh);
+    flex-flow: column;
+    height: auto;
+    width: 40vw;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    border: none;
+}
+.dropdown-me:hover ~ .dropdown-me-content{
+    display: flex;
+}
+.dropdown-me-content:hover{
+    display: flex;
 }
 </style>
