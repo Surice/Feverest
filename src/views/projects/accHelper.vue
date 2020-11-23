@@ -1,12 +1,15 @@
 <template>
     <div class="content">
         <navbar></navbar>
+        <br>
+        <h1 class="headline">ACC Assistant</h1>
+        <br>
         <div class="all">
             <div class= "TimeLapsTable">
-                <div class="TimeLapsTableHead">
-                    <u><h1>Required Information:</h1></u>
-                </div>
                 <div class="TimeLapsTableDiv">
+                    <div class="TimeLapsTableHead">
+                        <u><h1>Required Information:</h1></u>
+                    </div>
                     <div>
                         <lable class="headInput"><b>Racedistance:</b></lable>
                         <br>            
@@ -21,7 +24,7 @@
                         <table>
                             <tr>
                                 <td>Minutes:</td>
-                                <td style="width: 32vw"></td>
+                                <td style="width: 24vw"></td>
                                 <td><output id="resultMinutes"></output></td>
                             </tr>
                             <tr>
@@ -31,7 +34,6 @@
                             </tr>
                             <tr>
                                 <td style="text-align: center;"><input type="checkbox" id= "checkbox"></td>
-                                <td></td>
                                 <td>+ Formationlap and inlap</td>
                             </tr>
                         </table>
@@ -39,20 +41,14 @@
                     <div>
                         <lable class="headInput"><b>Average-Laptimes:</b></lable>
                         <br>
-                        <div class="inputLaptimeDiv">
-                            <div>
-                                <input type="number" id="laptimeMIN" class="inputLaptime" min="0">   
-                                <select class="selectLaptime" >
-                                    <option>Minutes</option>
-                                </select>
-                            </div>
-                            <div>
-                                <input type="number" id="laptimeSEC" class="inputLaptime" min="0">
-                                <select class="selectLaptime">
-                                    <option>Secondes</option>
-                                </select>
-                            </div>
-                        </div>
+                        <input type="number" id="laptimeMIN" class="inputLaptime" min="0">   
+                        <select class="selectLaptime" >
+                            <option>Minutes</option>
+                        </select>
+                        <input type="number" id="laptimeSEC" class="inputLaptime" min="0">
+                        <select class="selectLaptime">
+                            <option>Secondes</option>
+                        </select>
                     </div>
                     <div>
                         <lable class="headInput"><b>Fuel Consumption:</b></lable>
@@ -119,27 +115,31 @@ export default {
 }
 </script>
 <style scoped>
-.all{
-    height: 89vh;
+.content{
+    height: 100vh;
     background-color: rgba(85, 75, 104, 0.26);
     background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
     background-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.all{
+
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .TimeLapsTable{
     border: 1px;
     border-style: solid;
     width: 40%;
-    height: 70%;
+    height: 70vh;
     background-color: rgba(248 ,248 , 248 ,0.4)   
     
 }   
 .TimeLapsTableDiv{
-    height: 70%;
+    height: 70vh;
     margin-left: 14%;
     display: flex;
     flex-flow: column; 
@@ -153,11 +153,6 @@ export default {
 .headInput{
     font-size: 20px;
 }
-.inputLaptimeDiv{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-}
 .inputLaptime{
     width: 6vw;
 }
@@ -168,7 +163,7 @@ export default {
     border: 1px;
     border-style: solid;
     width: 40%;
-    height: 70%;
+    height: 70vh;
     background-color: rgba(248 ,248 , 248 ,0.4);   
     display: flex;
     flex-flow: column;
