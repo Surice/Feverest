@@ -1,10 +1,10 @@
 <template>
-    <div class="content-freeG">
+    <div class="freeGames">
         <navbar></navbar>
         
         <code id="lastScan" class="lastScan">Last Scan: {{ date }}</code>
         <div class="siteContent">
-            <h1 class="head-txt">Free Games</h1>
+            <h1 class="headline">Free Games</h1>
 
             <table class="table-me" id="table-me">
                 <tr class="table-head">
@@ -41,7 +41,6 @@
             axios
                 .get(this.reqUrl)
                 .then(response => {
-                    console.log(response.data);
                     for (var e in response.data){
                         this.date = e;
                         this.contents = response.data[e];
@@ -61,22 +60,15 @@
     }
     .lastScan{
         margin: 5px;
-        margin-top: -2vh;
+        margin-top: 2vh;
         text-decoration: underline;
-    }
-
-    .head-txt{
-        color: rgb(133, 65, 27);
-        text-align: center;
-        font-size: 42px;
-        font-weight: bolder;
-        font-family: Arial, Helvetica, sans-serif;
-        margin-bottom: 5vh;
+        color: rgb(141, 141, 141);
     }
 
     .table-me{
         min-width: 65vw;
         max-width: 80vw;
+        margin-top: 5vh;
         text-align: center;
         color: white;
         background-color: rgba(77, 77, 77, 0.7);

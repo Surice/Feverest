@@ -115,87 +115,87 @@ export default {
 }
 </script>
 <style scoped>
-.content{
-    height: 100vh;
-    background-color: rgba(85, 75, 104, 0.26);
-    background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
-    background-size: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    .content{
+        height: 100vh;
+        background-color: rgba(85, 75, 104, 0.26);
+        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
+        background-size: 100%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-}
-.all{
+    }
+    .all{
 
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.TimeLapsTable{
-    border: 1px;
-    border-style: solid;
-    width: 40%;
-    height: 70vh;
-    background-color: rgba(248 ,248 , 248 ,0.4)   
-    
-}   
-.TimeLapsTableDiv{
-    height: 70vh;
-    margin-left: 14%;
-    display: flex;
-    flex-flow: column; 
-    justify-content: space-evenly;
-}
-.TimeLapsTableHead{
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-.headInput{
-    font-size: 20px;
-}
-.inputLaptime{
-    width: 6vw;
-}
-.selectLaptime{
-    margin-right: 0px;
-}
-.results{
-    border: 1px;
-    border-style: solid;
-    width: 40%;
-    height: 70vh;
-    background-color: rgba(248 ,248 , 248 ,0.4);   
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-    align-items: center;
-} 
-.line{
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-}
-.outputLine{
-    width: 50px;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-.BTNCalculate{
-    background-color: whitesmoke;
-}
-.divBTNCalculate{
-    text-align: center;
-}
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(73, 73, 73, 0.45);
-}
-.vers{
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-}
+        display: flex;
+        flex-flow: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .TimeLapsTable{
+        border: 1px;
+        border-style: solid;
+        width: 40%;
+        height: 70vh;
+        background-color: rgba(248 ,248 , 248 ,0.4)   
+        
+    }   
+    .TimeLapsTableDiv{
+        height: 70vh;
+        margin-left: 14%;
+        display: flex;
+        flex-flow: column; 
+        justify-content: space-evenly;
+    }
+    .TimeLapsTableHead{
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+    }
+    .headInput{
+        font-size: 20px;
+    }
+    .inputLaptime{
+        width: 6vw;
+    }
+    .selectLaptime{
+        margin-right: 0px;
+    }
+    .results{
+        border: 1px;
+        border-style: solid;
+        width: 40%;
+        height: 70vh;
+        background-color: rgba(248 ,248 , 248 ,0.4);   
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    } 
+    .line{
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+    }
+    .outputLine{
+        width: 50px;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+    }
+    .BTNCalculate{
+        background-color: whitesmoke;
+    }
+    .divBTNCalculate{
+        text-align: center;
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(73, 73, 73, 0.45);
+    }
+    .vers{
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-end;
+    }
 </style>

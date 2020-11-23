@@ -8,6 +8,7 @@
   *{
     padding: 0;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   body{
     /* background-color: rgb(245, 245, 245) !important; */
@@ -16,6 +17,6 @@
   .headline{
     text-align: center;
     color: white;
-    text-shadow: 3px 3px 4px rgb(107, 107, 107);
+    text-shadow: 3px 3px 4px rgb(36, 111, 182);
   }
 </style>

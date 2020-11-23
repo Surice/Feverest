@@ -24,7 +24,7 @@ export default {
   name: 'Home',
   data: function(){
     return{
-      texts: [
+      splashes: [
         "Take it, or leave it!",
         "Go, get it!",
         "Go for win",
@@ -41,7 +41,7 @@ export default {
   methods: {
     typedJs: function() {
       const options = {
-        strings: this.texts,
+        strings: this.splashes,
         typeSpeed: 70,
         backSpeed: 30,
         startDelay: 400,
