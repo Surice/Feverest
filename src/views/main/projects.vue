@@ -11,7 +11,7 @@
                     <h4>Free Games</h4>
                     <p>
                     an API who displays all the currently free games
-                    from different games suppliers  
+                    from different games suppliers
                     </p>
                 </router-link>
             </div>
@@ -50,29 +50,32 @@ export default {
 <style scoped>
     .content{
         display: flex;
-        flex-flow: column;
-        justify-content: center;
+        flex-flow: wrap;
+        justify-content: space-evenly;
         align-items: center;
         width: 100vw;
     }
     .small-box{
         background-color: rgb(65, 105, 225);
         width: 16vw;
+        min-width: 140px;
         height: 20vh;
         object-fit: cover;
         border: none;
         border-radius: 3px;
         box-shadow: 1.8px 2px 3px rgb(0, 0, 0);
+        margin: 0.5rem;
     }
     .big-box{
         background-color: rgba(123, 134, 226, 0.6);
-        width: 40vw;
-        height: 20vh;
+        min-width: 40vw;
+        min-height: 20vh;
         border: none;
         border-radius: 4px;
         text-align: start;
         padding: 8px;
         padding-right: 2vh;
+        margin: 0.5rem;
         margin-left: 2vw;
         cursor: pointer;
     }
@@ -81,11 +84,12 @@ export default {
     }
     .project{
         max-width: 60vw;
+        min-width: 360px;
         margin-top: 1vh;
-        padding: 0.5rem;
         display: flex;
-        flex-flow: row;
-        justify-content: space-between;
+        flex-flow: wrap;
+        justify-content: space-evenly;
+        align-items: center;
         background-color: rgb(37, 65, 117);
         border: none;
         border-radius: 4px;

@@ -60,7 +60,7 @@
 
     export default {
         name: 'MC-Crafting-Guide',
-        data: function() {
+        data: () => {
             return {
                 reqUrl: "http://localhost:8085/api/mcCGuide",
                 keys: [],
