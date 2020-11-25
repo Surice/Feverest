@@ -96,7 +96,7 @@ export default {
     color: whitesmoke;
 }
 .navbar-el-div{
-    width: 60%;
+    min-width: 60%;
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
@@ -157,7 +157,6 @@ export default {
 }
 
 .navbar-el-dropdown{
-    display: flex;
     margin-right: 12px;
     justify-content: flex-end;
 }
@@ -167,15 +166,20 @@ export default {
     transform: translateY(6vh);
     flex-flow: column;
     height: auto;
-    width: 40vw;
+    width: auto;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     box-shadow: 2px 2px 3px gray;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 300;
     border: none;
 }
+.dropdown-me-content a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+
+}
+
 .dropdown-me:hover ~ .dropdown-me-content{
     display: flex;
 }

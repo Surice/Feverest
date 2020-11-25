@@ -21,12 +21,13 @@
                         <input id="inp-quan" type="number" value="1">
                     </div>
 
-                    <button onclick="calculate()" class="btn-calc">Calculate</button>
+                    <button v-on:click="calculate" class="btn-calc">Calculate</button>
                 </div>
 
                 <div class="output-unused field">
                     <h3>Unused Resources:</h3>
-                    <ul id="u-res">
+                    <ul class="result">
+                        <li v-for="(item, key) in unusedItems">{{ item }}X {{ key }}</li>
                     </ul>
                 </div>
             
@@ -34,7 +35,8 @@
             <div class="col-me">
                 <div class="output-required field">
                     <h3>Required Resources:</h3>
-                    <ul id="result">
+                    <ul class="result">
+                        <li v-for="(item, key) in requiredItems">{{ item }}X {{ key }}</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +45,9 @@
                 <div class="output-craftingSteps field">
                     <h3>Crafting Steps:</h3>
                     <div id="cra-step" class="cra-step">
-
+                        <ul class="result">
+                            <li v-for="step in craftingSteps">{{ step }}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -58,24 +62,44 @@
         name: 'MC-Crafting-Guide',
         data: function() {
             return {
-                data: {
-                    reqUrl: "http://localhost:8085/api/mcCGuide/getAllItems",
-                    keys: []                
-                }
+                reqUrl: "http://localhost:8085/api/mcCGuide",
+                keys: [],
+                craftingSteps: {},
+                requiredItems: {},
+                unusedItems: {},
             }
         },
         beforeMount() {
-            axios
-                .get(this.reqUrl)
-                .then(response => {
-                    this.keys = response;
-                });
+            this.init();
         },
         components: {
             navbar
         },
-        computed: {
-            
+        methods: {
+            init(){
+                axios
+                    .get(`${this.reqUrl}/getAllItems`)
+                    .then(response => {
+                        this.keys = response.data;
+                    });
+            },
+            async calculate() {
+                const item = document.getElementById('sel-item').value,
+                    quan = document.getElementById('inp-quan').value;
+                
+                let res = await axios({
+                    method: 'post',
+                    url: `${this.reqUrl}/composeRecipe`,
+                    data: {
+                        "itemName": item,
+                        "quan": quan
+                    }
+                });
+                
+                this.craftingSteps = res.data.craftingSteps;
+                this.requiredItems = res.data.requiredItems;
+                this.unusedItems = res.data.unusedItems;
+            }
         }
     }
 </script>
@@ -106,6 +130,10 @@
         border: none;
         border-radius: 4px;
         box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
+    }
+
+    .result{
+        list-style: none;
     }
 
     .input-area{
