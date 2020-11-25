@@ -73,7 +73,7 @@ export default {
     background-color: rgb(230, 230, 230);
     border: none;
     border-radius: 4px;
-    box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
+    box-shadow: 5px 6px 10px rgb(59, 59, 59);
   }
   .container-me h3{
     font-family: cursive;

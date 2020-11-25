@@ -105,7 +105,7 @@ export default {
     text-decoration: none;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(245, 245, 245);
+    color: rgb(245, 245, 245) !important;
     padding: 12px;
 }
 .navbar-el-router{
