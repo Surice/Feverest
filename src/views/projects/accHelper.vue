@@ -79,21 +79,19 @@
                 </div> 
                 <div class="line">  
                     <lable>Driving Laps are:  </lable>
-                    <div id="drivingLaps" class="outputLine"></div>
+                    <div><p id="drivingLaps" class="outputLine">{{ output.laps }}</p></div>
                     <label>Laps</label>
                 </div> 
                 <br>
                 <div class="line">
                     <lable>The Fuel Consumption is: </lable>
-                    <br>
-                    <div><p id= 'ResultFuelCon' class="outputLine"></p></div>
+                    <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
                     <label> Liters</label>
                 </div>
                 <br>
                 <div class="line">
                     <label>Required Boxenstops are: </label>
-                    <br>
-                    <div><p id= 'ResultBoxenstops' class="outputLine"></p></div>     
+                    <div><p id= 'ResultBoxenstops' class="outputLine">{{ output.boxenstops }}</p></div>     
                 </div>  
             </div>
             <div class= "footer">
@@ -109,10 +107,21 @@ import navbar from '@/components/header.vue'
 
 export default {
     name: 'ACC-Helper',
+    data: () => {
+        return {
+            reqUrl: "",
+            output: {
+                laps: 99,
+                fuel: 99,
+                boxenstops: 99
+            },
+        }
+    },
     components: {
         navbar
     }
 }
+
 </script>
 <style scoped>
     .content{
@@ -124,11 +133,11 @@ export default {
 
     }
     .all{
-
         display: flex;
         flex-flow: row;
         justify-content: space-evenly;
         align-items: center;
+        margin: 0;
     }
     .TimeLapsTable{
         border: 1px;
@@ -174,6 +183,9 @@ export default {
         display: flex;
         flex-flow: row;
         align-items: center;
+    }
+    .line label, .line p{
+        margin: 0;
     }
     .outputLine{
         width: 50px;
