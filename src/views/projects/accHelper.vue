@@ -7,14 +7,14 @@
         <div class="all">
             <div class= "TimeLapsTable">
                 <div class="TimeLapsTableDiv">
-                    <div class="TimeLapsTableHead">
+                    <div>
                         <u><h1>Required Information:</h1></u>
                     </div>
-                    <div>
-                        <lable class="headInput"><b>Racedistance:</b></lable>
+                    <div class="inputDistance-div">
+                        <lable class="headline-input"><b>Racedistance:</b></lable>
                         <br>            
-                        <input type="number" id= "inputTime" onchange="detectTime()" min="0">
-                        <select id="time" onchange="detectTime()">
+                        <input type="number" id= "inputTime" onchange="detectTime()" min="0" class="input">
+                        <select id="time" onchange="detectTime()" class="dropdown">
                             <option value="1">Hours</option>
                             <option value="2">Minutes</option>
                             <option value="0">Laps</option>
@@ -39,30 +39,30 @@
                         </table>
                     </div>
                     <div>
-                        <lable class="headInput"><b>Average-Laptimes:</b></lable>
+                        <lable class="headline-input"><b>Average-Laptimes:</b></lable>
                         <br>
-                        <input type="number" id="laptimeMIN" class="inputLaptime" min="0">   
-                        <select class="selectLaptime" >
+                        <input type="number" id="laptimeMIN" class="inputLaptime input" min="0">   
+                        <select class="selectLaptime dropdown" >
                             <option>Minutes</option>
                         </select>
-                        <input type="number" id="laptimeSEC" class="inputLaptime" min="0">
-                        <select class="selectLaptime">
+                        <input type="number" id="laptimeSEC" class="inputLaptime input inputLaptimeSec" min="0">
+                        <select class="selectLaptime dropdown">
                             <option>Secondes</option>
                         </select>
                     </div>
                     <div>
-                        <lable class="headInput"><b>Fuel Consumption:</b></lable>
+                        <lable class="headline-input"><b>Fuel Consumption:</b></lable>
                         <br>
-                        <input type="number" id="FuelConsumption" min="0">
-                        <select>
+                        <input type="number" id="FuelConsumption" class="input" min="0">
+                        <select class="dropdown">
                             <option>Liters</option>
                         </select>
                     </div>
                     <div>
-                        <lable class="headInput"><b>Fueltank:</b></lable>
+                        <lable class="headline-input"><b>Fueltank:</b></lable>
                         <br>
-                        <input type="number" id= "Fueltank" min="0">
-                        <select>
+                        <input type="number" id= "Fueltank" class="input" min="0">
+                        <select class="dropdown">
                             <option>Liters</option>
                         </select>
                     </div>
@@ -70,29 +70,33 @@
             </div>
 
             <div class="divBTNCalculate">
-                <button class="BTNCalculate">Calculate</button>
+                <button class="BTNCalculate dropdown">Calculate</button>
             </div>
 
             <div class="results">
                 <div>
                     <h1><u>Results:</u></h1>
                 </div> 
-                <div class="line">  
-                    <lable>Driving Laps are:  </lable>
-                    <div><p id="drivingLaps" class="outputLine">{{ output.laps }}</p></div>
-                    <label>Laps</label>
-                </div> 
-                <br>
-                <div class="line">
-                    <lable>The Fuel Consumption is: </lable>
-                    <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
-                    <label> Liters</label>
+                <div class="results-div">
+                    <div class="line">  
+                        <lable>Driving Laps are:  </lable>
+                        <div><p id="drivingLaps" class="outputLine">{{ output.laps }}</p></div>
+                        <label>Laps</label>
+                    </div> 
+                    <br>
+                    <div class="line">
+                        <lable>The Fuel Consumption is: </lable>
+                        <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
+                        <label> Liters</label>
+                    </div>
+                    <br>
+                    <div class="line">
+                        <label>Required Boxenstops are: </label>
+                        <div><p id= 'ResultBoxenstops' class="outputLine">{{ output.boxenstops }}</p></div>     
+                    </div>  
+                    <div></div>
+                    <div></div>
                 </div>
-                <br>
-                <div class="line">
-                    <label>Required Boxenstops are: </label>
-                    <div><p id= 'ResultBoxenstops' class="outputLine">{{ output.boxenstops }}</p></div>     
-                </div>  
             </div>
             <div class= "footer">
                 <div class="vers">
@@ -130,7 +134,6 @@ export default {
         background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
         background-size: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-
     }
     .all{
         display: flex;
@@ -139,31 +142,47 @@ export default {
         align-items: center;
         margin: 0;
     }
+    .input{
+        height: 28px;
+        border: groove;
+        border-radius: 8px;
+        -webkit-appearance: none;
+    }
+    .dropdown{
+        height: 28px;
+        padding-right: 0.3vw;
+        align-items: center;
+        border: groove;
+        border-radius: 8px;
+        margin-left: 0.5vw;
+        font-size: 18px;
+    }
     .TimeLapsTable{
         border: 1px;
         border-style: solid;
         width: 40%;
-        height: 70vh;
+        height: 65vh;
         background-color: rgba(248 ,248 , 248 ,0.4)   
-        
     }   
     .TimeLapsTableDiv{
-        height: 70vh;
-        margin-left: 14%;
+        height: 65vh;
+        margin-left: 5vw;
         display: flex;
         flex-flow: column; 
         justify-content: space-evenly;
     }
-    .TimeLapsTableHead{
-        display: flex;
-        flex-flow: row;
-        justify-content: center;
-    }
-    .headInput{
+    .headline-input{
         font-size: 20px;
+        text-decoration: underline;
     }
-    .inputLaptime{
+    .inputDistance-div{
+        font-size: 18px;
+    }
+    .inputLaptime{  
         width: 6vw;
+    }
+    .inputLaptimeSec{
+        margin-left: 1vw;
     }
     .selectLaptime{
         margin-right: 0px;
@@ -171,18 +190,27 @@ export default {
     .results{
         border: 1px;
         border-style: solid;
-        width: 40%;
-        height: 70vh;
+        width: 40vw;
+        height: 65vh;
+        padding-left: 5vw;
         background-color: rgba(248 ,248 , 248 ,0.4);   
         display: flex;
         flex-flow: column;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-start;
     } 
+    .results-div{
+        height: 45vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+    }
     .line{
         display: flex;
         flex-flow: row;
-        align-items: center;
+        align-items: flex-start;
+        font-size: 20px;
+        font-weight: 500;
     }
     .line label, .line p{
         margin: 0;
@@ -192,6 +220,7 @@ export default {
         display: flex;
         flex-flow: row;
         justify-content: center;
+        font-weight: bold;
     }
     .BTNCalculate{
         background-color: whitesmoke;
