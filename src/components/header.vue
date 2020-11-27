@@ -59,14 +59,14 @@ export default {
     }
 }
 @media only screen and (max-width: 820px){
+    .navbar-me{
+        justify-content: space-between;
+    }
     .navbar-el-div{
         display: none;
     }
     .navbar-el-dropdown{
         display: flex;
-    }
-    .navbar-me{
-        justify-content: space-between;
     }
 }
 
@@ -77,6 +77,7 @@ export default {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .navbar-me{
+    width: 100%;
     height: 4.66em;
     display: flex;
     flex-flow: row;
@@ -125,7 +126,7 @@ export default {
     display: flex;
 }
 .dropdown-content{
-    position: fixed;
+    position: absolute;
     display: none;
     flex-flow: column;
     height: auto;
@@ -161,7 +162,7 @@ export default {
     justify-content: flex-end;
 }
 .dropdown-me-content{
-    position: fixed;
+    position: absolute;
     display: none;
     transform: translateY(6vh);
     flex-flow: column;

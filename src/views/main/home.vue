@@ -3,14 +3,18 @@
     <navbar></navbar>
       <img src='../../assets/tastatur.jpg' class="banner-img">
 
-      <div class="banner-welcome">
-        <p>Welcome!</p>
-      </div>
-      <div class="banner-phrases">
-        <p ref="typedText"></p> 
-      </div>
+      <div class="content">
+        <img src='../../assets/computer.jpg' class="main-img">
 
-      <img src='../../assets/computer.jpg' class="main-img">
+        <div class="banner">
+          <div class="banner-welcome">
+            <p>Welcome!</p>
+          </div>
+          <div class="banner-phrases">
+            <p ref="typedText"></p> 
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -58,11 +62,20 @@ export default {
 }
 </script>
 <style scoped>
+@media only screen and (max-width: 820px){
+  .main-img{
+    display: none;
+  }
+}
+
   .home{
-    height: 35vh;
     width: 100vw;
   }
-  
+  .content{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+  }
   .banner-img{
     width: 100vw;
     height: 30vh;
@@ -70,7 +83,6 @@ export default {
     object-position: 20% 50%;
   }  
   .main-img{
-    margin-top: 8vh;
     margin-left: 5vw;
     height: 35vh;
     width: 45vw;
@@ -79,25 +91,23 @@ export default {
   }
 
   .banner-welcome{
-  position: fixed;
-  right: 26vw;
-  top: 50vh;
+    margin-left: 8vw;
   }
   .banner-welcome p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     font-size: 64px;
     color: white;
+    text-shadow: 3px 2px 4px rgb(36, 36, 36);
   }
   .banner-phrases{
-    position: fixed;
-    left: 60vw;
-    top: 60vh;
-    color: white;
+    margin-left: 10vw;
   }
   .banner-phrases p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     font-size: 48px;
+    color: white;
+    text-shadow: 3px 2px 4px rgb(36, 36, 36);
   }
 </style>

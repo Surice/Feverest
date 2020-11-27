@@ -44,6 +44,19 @@ export default {
         align-items: center;
         width: 100vw;
     }
+    .project{
+        max-width: 60vw;
+        min-width: 360px;
+        margin-top: 1vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: rgb(37, 65, 117);
+        border: none;
+        border-radius: 4px;
+        box-shadow: 3px 4px 8px rgb(34, 34, 34);
+    }
     .small-box{
         background-color: rgb(65, 105, 225);
         width: 16vw;
@@ -58,6 +71,7 @@ export default {
     .big-box{
         background-color: rgba(123, 134, 226, 0.6);
         min-width: 40vw;
+        width: 28vw;
         min-height: 20vh;
         border: none;
         border-radius: 4px;
@@ -71,17 +85,7 @@ export default {
     .big-box:hover{
         box-shadow: 1.8px 2px 3px rgb(0, 0, 0);
     }
-    .project{
-        max-width: 60vw;
-        min-width: 360px;
-        margin-top: 1vh;
-        display: flex;
-        flex-flow: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: rgb(37, 65, 117);
-        border: none;
-        border-radius: 4px;
-        box-shadow: 3px 4px 8px rgb(34, 34, 34);
+    .big-box p{
+        word-wrap: break-word;
     }
 </style>

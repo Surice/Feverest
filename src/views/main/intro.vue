@@ -62,7 +62,7 @@ export default {
   }
   .content{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
   }
@@ -74,14 +74,17 @@ export default {
     border: none;
     border-radius: 4px;
     box-shadow: 5px 6px 10px rgb(59, 59, 59);
+    min-width: 250px;
   }
   .container-me h3{
     font-family: cursive;
     font-weight: bold;
+    text-decoration: underline;
   }
   .container-me p{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(12, 12, 12);
     font-size: 1.2rem;
+    word-wrap: break-word;
   }
 </style>
