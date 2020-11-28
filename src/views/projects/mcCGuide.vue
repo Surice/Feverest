@@ -5,51 +5,47 @@
         <h1 class="headline">Minecraft crafting Guide</h1>
         <br>
         <div class="content">
-            <div class="col-me">
-                <div class="input-area field">
-                    <div class="input-part">
-                        <h3>Input</h3>
+            <div class="input-area field">
+                <div class="input-part">
+                    <h3>Input</h3>
 
-                        <label>select the to be crafted item:</label>
-                        <select id="sel-item">
-                            <option>--Item--</option>
-                            <option v-for="key in keys" :key="key">{{ key }}</option>
-                        </select>
-                    </div>
-                    <div class="input-part">
-                        <label>select the quantity:</label>
-                        <input id="inp-quan" type="number" value="1">
-                    </div>
-
-                    <button v-on:click="calculate" class="btn-calc">Calculate</button>
+                    <label>select the to be crafted item:</label>
+                    <select id="sel-item" v-model="itemName">
+                        <option selected>--Item--</option>
+                        <option v-for="key in keys" :key="key">{{ key }}</option>
+                    </select>
+                </div>
+                <div class="input-part">
+                    <label>select the quantity:</label>
+                    <input v-model="quan" id="inp-quan" type="number" value="1">
                 </div>
 
-                <div class="output-unused field">
-                    <h3>Unused Resources:</h3>
-                    <ul class="result">
-                        <li v-for="(item, key) in unusedItems">{{ item }}X {{ key }}</li>
-                    </ul>
-                </div>
+                <button v-on:click="calculate" class="btn-calc">Calculate</button>
+            </div>
             
+            <div class="output-required field">
+                <h3>Required Resources:</h3>
+                <ul class="result">
+                    <li v-for="(item, key) in output.requiredItems" :key="key">{{ item }}X {{ key }}</li>
+                </ul>
             </div>
-            <div class="col-me">
-                <div class="output-required field">
-                    <h3>Required Resources:</h3>
-                    <ul class="result">
-                        <li v-for="(item, key) in requiredItems">{{ item }}X {{ key }}</li>
-                    </ul>
+
+
+            <div class="output-craftingSteps field">
+                <h3>Crafting Steps:</h3>
+                <div id="cra-step" class="cra-step">
+                    <dl class="result" v-for="(step, key) in output.sortedCraftingSteps" :key="key">
+                        <dt>{{ step.quan }} {{ key }}:</dt>
+                        <dd v-for="(quan, name) in step.recipe" :key="name">- {{ quan }}X {{ name }}</dd>
+                    </dl>
                 </div>
             </div>
 
-            <div class="col-me">
-                <div class="output-craftingSteps field">
-                    <h3>Crafting Steps:</h3>
-                    <div id="cra-step" class="cra-step">
-                        <ul class="result">
-                            <li v-for="step in craftingSteps">{{ step }}</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="output-unused field">
+                <h3>Unused Resources:</h3>
+                <ul class="result">
+                    <li v-for="(item, key) in output.unusedItems" :key="key">{{ item }}X {{ key }}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -64,9 +60,13 @@
             return {
                 reqUrl: "http://localhost:8085/api/mcCGuide",
                 keys: [],
-                craftingSteps: {},
-                requiredItems: {},
-                unusedItems: {},
+                output: {
+                    sortedCraftingSteps: {},
+                    requiredItems: {},
+                    unusedItems: {},
+                },
+                itemName: "--Item--",
+                quan: "1"
             }
         },
         beforeMount() {
@@ -84,21 +84,16 @@
                     });
             },
             async calculate() {
-                const item = document.getElementById('sel-item').value,
-                    quan = document.getElementById('inp-quan').value;
-                
-                let res = await axios({
+                await axios({
                     method: 'post',
                     url: `${this.reqUrl}/composeRecipe`,
                     data: {
-                        "itemName": item,
-                        "quan": quan
+                        itemName: this.itemName,
+                        quan: this.quan
                     }
+                }).then(res => {
+                    this.output = res.data;
                 });
-                
-                this.craftingSteps = res.data.craftingSteps;
-                this.requiredItems = res.data.requiredItems;
-                this.unusedItems = res.data.unusedItems;
             }
         }
     }
@@ -110,26 +105,22 @@
 
     .content{
         display: flex;
-        flex-flow: row;
-        justify-content: space-around;
+        flex-flow: row wrap;
         min-height: 100%;
-    }
-
-    .col-me{
-        display: flex;
-        flex-flow: column;
+        min-width: 100%;
         justify-content: flex-start;
-        min-height: 80vh;
-        min-width: 30vw;
     }
 
     .field{
         padding: 1em;
-        margin-bottom: 5vh;
+        margin: 2em;
         background-color: rgb(233, 233, 233);
         border: none;
         border-radius: 4px;
         box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
+        min-width: 25vw;
+        max-width: 80vw;
+        min-height: 100px;
     }
 
     .result{
