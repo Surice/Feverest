@@ -5,31 +5,39 @@
         <h1 class="headline">Minecraft crafting Guide</h1>
         <br>
         <div class="content">
-            <div class="input-area field">
-                <div class="input-part">
-                    <h3>Input</h3>
+            <div class="left_side">
+                <div class="input-area field">
+                    <div class="input-part">
+                        <h3>Input</h3>
 
-                    <label>select the to be crafted item:</label>
-                    <select id="sel-item" v-model="itemName">
-                        <option selected>--Item--</option>
-                        <option v-for="key in keys" :key="key">{{ key }}</option>
-                    </select>
+                        <label>select the to be crafted item:</label>
+                        <select id="sel-item" v-model="itemName">
+                            <option selected>--Item--</option>
+                            <option v-for="key in keys" :key="key">{{ key }}</option>
+                        </select>
+                    </div>
+                    <div class="input-part">
+                        <label>select the quantity:</label>
+                        <input v-model="quan" id="inp-quan" type="number" value="1">
+                    </div>
+
+                    <button v-on:click="calculate" class="btn-calc">Calculate</button>
                 </div>
-                <div class="input-part">
-                    <label>select the quantity:</label>
-                    <input v-model="quan" id="inp-quan" type="number" value="1">
+                
+                <div class="output-required field">
+                    <h3>Required Resources:</h3>
+                    <ul class="result">
+                        <li v-for="(item, key) in output.requiredItems" :key="key">{{ item }}X {{ key }}</li>
+                    </ul>
                 </div>
 
-                <button v-on:click="calculate" class="btn-calc">Calculate</button>
+                <div class="output-unused field">
+                    <h3>Unused Resources:</h3>
+                    <ul class="result">
+                        <li v-for="(item, key) in output.unusedItems" :key="key">{{ item }}X {{ key }}</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="output-required field">
-                <h3>Required Resources:</h3>
-                <ul class="result">
-                    <li v-for="(item, key) in output.requiredItems" :key="key">{{ item }}X {{ key }}</li>
-                </ul>
-            </div>
-
 
             <div class="output-craftingSteps field">
                 <h3>Crafting Steps:</h3>
@@ -39,13 +47,6 @@
                         <dd v-for="(quan, name) in step.recipe" :key="name">- {{ quan }}X {{ name }}</dd>
                     </dl>
                 </div>
-            </div>
-
-            <div class="output-unused field">
-                <h3>Unused Resources:</h3>
-                <ul class="result">
-                    <li v-for="(item, key) in output.unusedItems" :key="key">{{ item }}X {{ key }}</li>
-                </ul>
             </div>
         </div>
     </div>
@@ -58,7 +59,7 @@
         name: 'MC-Crafting-Guide',
         data: () => {
             return {
-                reqUrl: "http://localhost:8085/api/mcCGuide",
+                reqUrl: "http://192.168.178.27:8085/api/mcCGuide",
                 keys: [],
                 output: {
                     sortedCraftingSteps: {},
@@ -99,6 +100,23 @@
     }
 </script>
 <style scoped>
+@media only screen and (min-width: 821px){
+    .left_side{
+        max-width: 60vw;
+    }
+    .content{
+        justify-content: flex-start;
+    }
+}
+@media only screen and (max-width: 820px){
+    .left_side{
+        max-width: 80vw;
+    }
+    .content{
+        justify-content: center;
+    }
+}
+
     .mcCGuide{
         min-height: 100vh;
     }
@@ -108,7 +126,11 @@
         flex-flow: row wrap;
         min-height: 100%;
         min-width: 100%;
-        justify-content: flex-start;
+    }
+    .left_side{
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
     }
 
     .field{
@@ -120,7 +142,7 @@
         box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
         min-width: 25vw;
         max-width: 80vw;
-        min-height: 100px;
+        height: 100%;
     }
 
     .result{
