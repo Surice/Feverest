@@ -12,14 +12,36 @@
                     </div>
                     <div class="inputDistance-div">
                         <lable class="headline-input"><b>Racedistance:</b></lable>
-                        <br>            
-                        <input type="number" id= "inputTime" onchange="detectTime()" min="0" class="input">
-                        <select id="time" onchange="detectTime()" class="dropdown">
-                            <option value="1">Hours</option>
-                            <option value="2">Minutes</option>
-                            <option value="0">Laps</option>
-                        </select>
-                        <br>
+                        <br>         
+                        <div class="distance-line"> 
+                            <div v-if="pre==false">
+                                <input type="number" id= "inputTime" onchange="detectTime()" min="0" class="input inputWidth">
+                                <select id="time" onchange="detectTime()" class="dropdown">
+                                    <option value="1">Hours</option>
+                                    <option value="2">Minutes</option>
+                                    <option value="0">Laps</option>
+                                </select>
+                            </div>
+                            <div v-if="pre==true">
+                                <div>
+                                    <p>20min</p>
+                                </div>
+                                <div>
+                                    <p>30min</p>
+                                </div>
+                                <div>
+                                    <p>60min</p>
+                                </div>
+                            </div>
+                            <div class="distance-change" v-if="pre==true">
+                                <button v-on:click="pre=true" class="aktiv">Pre-Set</button>
+                                <button v-on:click="pre=false">Individual</button>
+                            </div>
+                            <div class="distance-change" v-if="pre==false">
+                                <button v-on:click="pre=true">Pre-Set</button>
+                                <button v-on:click="pre=false" class="aktiv">Individual</button>
+                            </div>
+                        </div>    
                         <br>
                         <table>
                             <tr>
@@ -53,15 +75,15 @@
                     <div>
                         <lable class="headline-input"><b>Fuel Consumption:</b></lable>
                         <br>
-                        <input type="number" id="FuelConsumption" class="input" min="0">
+                        <input type="number" id="FuelConsumption" class="input inputWidth" min="0">
                         <select class="dropdown">
                             <option>Liters</option>
                         </select>
                     </div>
-                    <div>
+                    <div v-if="pre==false">
                         <lable class="headline-input"><b>Fueltank:</b></lable>
                         <br>
-                        <input type="number" id= "Fueltank" class="input" min="0">
+                        <input type="number" id= "Fueltank" class="input inputWidth" min="0">
                         <select class="dropdown">
                             <option>Liters</option>
                         </select>
@@ -119,6 +141,7 @@ export default {
                 fuel: 99,
                 boxenstops: 99
             },
+            pre: true
         }
     },
     components: {
@@ -144,29 +167,33 @@ export default {
     }
     .input{
         height: 28px;
-        border: groove;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        border: none;
         border-radius: 8px;
-        -webkit-appearance: none;
     }
     .dropdown{
         height: 28px;
         padding-right: 0.3vw;
         align-items: center;
-        border: groove;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        border: none;
         border-radius: 8px;
         margin-left: 0.5vw;
         font-size: 18px;
+    }
+    .aktiv{
+        background-color: whitesmoke !important;
     }
     .TimeLapsTable{
         border: 1px;
         border-style: solid;
         width: 40%;
-        height: 65vh;
+        height: 70vh;
         background-color: rgba(248 ,248 , 248 ,0.4)   
     }   
     .TimeLapsTableDiv{
         height: 65vh;
-        margin-left: 5vw;
+        margin-left: 4vw;
         display: flex;
         flex-flow: column; 
         justify-content: space-evenly;
@@ -175,8 +202,36 @@ export default {
         font-size: 20px;
         text-decoration: underline;
     }
+    .distance-line{
+        display: flex;
+        flex-flow: row;
+    }
+    .distance-change{
+        height: 28px;
+        display: flex;
+        flex-flow: row;
+        margin: 0;
+        margin-left: 1vw;
+        border-radius: 8px;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        font-size: 16px;
+        background-color: rgb(110, 110, 110);
+    }
+    .distance-change button{
+        height: 28px;
+        margin: 0;
+        padding: 3px;
+        align-self: center;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        background-color: rgb(110, 110, 110);
+    }
     .inputDistance-div{
         font-size: 18px;
+    }
+    .inputWidth{
+        width: 12vw;
     }
     .inputLaptime{  
         width: 6vw;
@@ -191,7 +246,7 @@ export default {
         border: 1px;
         border-style: solid;
         width: 40vw;
-        height: 65vh;
+        height: 70vh;
         padding-left: 5vw;
         background-color: rgba(248 ,248 , 248 ,0.4);   
         display: flex;
