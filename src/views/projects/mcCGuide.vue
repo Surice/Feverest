@@ -12,7 +12,6 @@
 
                         <label>select the to be crafted item:</label>
                         <select id="sel-item" v-model="itemName">
-                            <option selected>--Item--</option>
                             <option v-for="key in keys" :key="key">{{ key }}</option>
                         </select>
                     </div>

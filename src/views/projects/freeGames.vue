@@ -30,7 +30,7 @@
         data: function() {
             return{
                 date: "--none--",
-                reqUrl: "http://localhost:8085/api/gameStores/getFreeGames",
+                reqUrl: "http://192.168.178.27:8085/api/gameStores/getFreeGames",
                 contents: [],
             }
         },
@@ -41,13 +41,9 @@
             axios
                 .get(this.reqUrl)
                 .then(response => {
-                    for (var e in response.data){
-                        this.date = e;
-                        this.contents = response.data[e];
-                    }
+                    this.date = response.data.state;
+                    this.contents = response.data.data;
                 });
-        },
-        methods: {
         }
     }
 </script>
