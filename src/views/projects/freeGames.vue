@@ -30,7 +30,7 @@
         data: function() {
             return{
                 date: "--none--",
-                reqUrl: "http://192.168.178.27:8085/api/gameStores/getFreeGames",
+                reqUrl: "http://localhost:8085/api/gameStores/getFreeGames",
                 contents: [],
             }
         },

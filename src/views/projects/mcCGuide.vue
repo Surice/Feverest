@@ -58,7 +58,7 @@
         name: 'MC-Crafting-Guide',
         data: () => {
             return {
-                reqUrl: "http://192.168.178.27:8085/api/mcCGuide",
+                reqUrl: "http://localhost:8085/api/mcCGuide",
                 keys: [],
                 output: {
                     sortedCraftingSteps: {},

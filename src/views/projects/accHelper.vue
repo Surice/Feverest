@@ -14,23 +14,19 @@
                         <lable class="headline-input"><b>Racedistance:</b></lable>
                         <br>         
                         <div class="distance-line"> 
-                            <div v-if="pre==false">
-                                <input type="number" id= "inputTime" onchange="detectTime()" min="0" class="input inputWidth">
-                                <select id="time" onchange="detectTime()" class="dropdown">
-                                    <option value="1">Hours</option>
-                                    <option value="2">Minutes</option>
-                                    <option value="0">Laps</option>
-                                </select>
-                            </div>
-                            <div v-if="pre==true">
-                                <div>
-                                    <p>20min</p>
+                            <div class="distance-input-line">
+                                <div class="distance-individual" v-if="pre==false">
+                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance">
+                                    <select id="time" class="dropdown" v-model="input.dropdown">
+                                        <option value="1">Minutes</option>
+                                        <option value="0">Hours</option>
+                                        <option value="2">Laps</option>
+                                    </select>
                                 </div>
-                                <div>
-                                    <p>30min</p>
-                                </div>
-                                <div>
-                                    <p>60min</p>
+                                <div class="distance-pre" v-if="pre==true">
+                                   <button v-on:click="changeVar('20')">20 min</button>
+                                   <button v-on:click="changeVar('30')">30 min</button>
+                                   <button v-on:click="changeVar('60')">60 min</button>
                                 </div>
                             </div>
                             <div class="distance-change" v-if="pre==true">
@@ -60,39 +56,40 @@
                             </tr>
                         </table>
                     </div>
-                    <div>
+                    <div class="div-input">
                         <lable class="headline-input"><b>Average-Laptimes:</b></lable>
                         <br>
-                        <input type="number" id="laptimeMIN" class="inputLaptime input" min="0">   
+                        <input type="number" id="laptimeMIN" class="inputLaptime input" min="0" v-model="input.laptime[0]">   
                         <select class="selectLaptime dropdown" >
                             <option>Minutes</option>
                         </select>
-                        <input type="number" id="laptimeSEC" class="inputLaptime input inputLaptimeSec" min="0">
+                        <input type="number" id="laptimeSEC" class="inputLaptime input inputLaptimeSec" min="0" v-model="input.laptime[1]">
                         <select class="selectLaptime dropdown">
                             <option>Secondes</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="div-input">
                         <lable class="headline-input"><b>Fuel Consumption:</b></lable>
                         <br>
-                        <input type="number" id="FuelConsumption" class="input inputWidth" min="0">
+                        <input type="number" id="FuelConsumption" class="input inputWidth" min="0" v-model="input.fuelcon">
                         <select class="dropdown">
                             <option>Liters</option>
                         </select>
                     </div>
-                    <div v-if="pre==false">
+                    <div v-if="pre==false" class="div-input">
                         <lable class="headline-input"><b>Fueltank:</b></lable>
                         <br>
-                        <input type="number" id= "Fueltank" class="input inputWidth" min="0">
+                        <input type="number" id= "Fueltank" class="input inputWidth" min="0" v-model="input.fueltank">
                         <select class="dropdown">
                             <option>Liters</option>
                         </select>
                     </div>
+                    <div v-if="pre==true" class="div-input"></div>
                 </div>
             </div>
 
             <div class="divBTNCalculate">
-                <button class="BTNCalculate dropdown">Calculate</button>
+                <button class="BTNCalculate dropdown" v-on:click="calculate" >Calculate</button>
             </div>
 
             <div class="results">
@@ -107,7 +104,7 @@
                     </div> 
                     <br>
                     <div class="line">
-                        <lable>The Fuel Consumption is: </lable>
+                        <lable>The Fuel Consumption per Race is: </lable>
                         <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
                         <label> Liters</label>
                     </div>
@@ -129,25 +126,48 @@
     </div>
 </template>
 <script>
-import navbar from '@/components/header.vue'
+    import navbar from '@/components/header.vue'
+    import axios from 'axios';
 
-export default {
-    name: 'ACC-Helper',
-    data: () => {
-        return {
-            reqUrl: "",
-            output: {
-                laps: 99,
-                fuel: 99,
-                boxenstops: 99
+
+    export default {
+        name: 'ACC-Helper',
+        data: () => {
+            return {
+                reqUrl: "http://localhost:8085/api/accAss/calculate",
+                input:  {
+                    distance: 0,
+                    dropdown: 0,
+                    laptime: [],
+                    fuelcon: 0,
+                    fueltank: 0,
+                },
+                output: {
+                    laps: "",
+                    fuel: "",
+                    boxenstops: ""
+                },
+                pre: true
+            }
+        },
+        components: {
+            navbar
+        },
+        methods: {
+            changeVar(value){
+                this.input.distance = value;
             },
-            pre: true
+            calculate(){
+                axios({
+                    url: this.reqUrl, 
+                    method: 'POST',
+                    data: this.input
+                }).then(response => {
+                    this.output = response.data.result;
+                })
+            }
         }
-    },
-    components: {
-        navbar
     }
-}
 
 </script>
 <style scoped>
@@ -164,6 +184,9 @@ export default {
         justify-content: space-evenly;
         align-items: center;
         margin: 0;
+    }
+    .div-input{
+        height: 10vh;
     }
     .input{
         height: 28px;
@@ -206,6 +229,10 @@ export default {
         display: flex;
         flex-flow: row;
     }
+    .distance-input-line{
+        width: 20vw;
+        height: 28px;
+    }
     .distance-change{
         height: 28px;
         display: flex;
@@ -215,7 +242,7 @@ export default {
         border-radius: 8px;
         box-shadow: 4px 5px 3px rgb(73, 73, 73);
         font-size: 16px;
-        background-color: rgb(110, 110, 110);
+        background-color: rgb(160, 160, 160);
     }
     .distance-change button{
         height: 28px;
@@ -225,7 +252,11 @@ export default {
         border: none;
         border-radius: 8px;
         outline: none;
-        background-color: rgb(110, 110, 110);
+        background-color: rgb(160, 160, 160);
+    }
+    .distance-pre{
+        display: flex;
+        flex-flow: row;
     }
     .inputDistance-div{
         font-size: 18px;
