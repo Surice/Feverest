@@ -11,53 +11,56 @@
                         <u><h1>Required Information:</h1></u>
                     </div>
                     <div class="inputDistance-div">
-                        <lable class="headline-input"><b>Racedistance:</b></lable>
+                        <label class="headline-input"><b>Racedistance:</b></label>
                         <br>         
                         <div class="distance-line"> 
                             <div class="distance-input-line">
                                 <div class="distance-individual" v-if="pre==false">
-                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance">
-                                    <select id="time" class="dropdown" v-model="input.dropdown">
-                                        <option value="1">Minutes</option>
-                                        <option value="0">Hours</option>
+                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance" v-on:change="changeVar(input.distance)">
+                                    <select id="time" class="dropdown" v-model="input.dropdown" v-on:change="calcIndivRaceDist()">
+                                        <option value="0">Minutes</option>
+                                        <option value="1">Hours</option>
                                         <option value="2">Laps</option>
                                     </select>
                                 </div>
                                 <div class="distance-pre" v-if="pre==true">
-                                   <button v-on:click="changeVar('20')">20 min</button>
-                                   <button v-on:click="changeVar('30')">30 min</button>
-                                   <button v-on:click="changeVar('60')">60 min</button>
+                                    <div class="distance-preBtnDiv">
+                                        <button v-on:click="changeVar('20')" id="20" class="distance-preBtn aktiv">20 min</button>
+                                        <button v-on:click="changeVar('30')" id="30" class="distance-preBtn">30 min</button>
+                                        <button v-on:click="changeVar('60')" id="60" class="distance-preBtn">60 min</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="distance-change" v-if="pre==true">
-                                <button v-on:click="pre=true" class="aktiv">Pre-Set</button>
+                                <button v-on:click="pre=true" class="aktiv2">Pre-Set</button>
                                 <button v-on:click="pre=false">Individual</button>
                             </div>
                             <div class="distance-change" v-if="pre==false">
                                 <button v-on:click="pre=true">Pre-Set</button>
-                                <button v-on:click="pre=false" class="aktiv">Individual</button>
+                                <button v-on:click="pre=false" class="aktiv2">Individual</button>
                             </div>
                         </div>    
                         <br>
-                        <table>
+                        <table class="outputMinSec">
                             <tr>
                                 <td>Minutes:</td>
-                                <td style="width: 24vw"></td>
-                                <td><output id="resultMinutes"></output></td>
+                                <td style="width: 25px"></td>
+                                <td><output id="preSetMin"></output></td>
                             </tr>
                             <tr>
                                 <td>Secondes:</td>
                                 <td></td>
-                                <td><output id="resultSecondes"></output></td>
+                                <td><output id="preSetSec"></output></td>
                             </tr>
                             <tr>
                                 <td style="text-align: center;"><input type="checkbox" id= "checkbox"></td>
+                                <td></td>
                                 <td>+ Formationlap and inlap</td>
                             </tr>
                         </table>
                     </div>
                     <div class="div-input">
-                        <lable class="headline-input"><b>Average-Laptimes:</b></lable>
+                        <label class="headline-input"><b>Average-Laptimes:</b></label>
                         <br>
                         <input type="number" id="laptimeMIN" class="inputLaptime input" min="0" v-model="input.laptime[0]">   
                         <select class="selectLaptime dropdown" >
@@ -69,7 +72,7 @@
                         </select>
                     </div>
                     <div class="div-input">
-                        <lable class="headline-input"><b>Fuel Consumption:</b></lable>
+                        <label class="headline-input"><b>Fuel Consumption:</b></label>
                         <br>
                         <input type="number" id="FuelConsumption" class="input inputWidth" min="0" v-model="input.fuelcon">
                         <select class="dropdown">
@@ -77,7 +80,7 @@
                         </select>
                     </div>
                     <div v-if="pre==false" class="div-input">
-                        <lable class="headline-input"><b>Fueltank:</b></lable>
+                        <label class="headline-input"><b>Fueltank:</b></label>
                         <br>
                         <input type="number" id= "Fueltank" class="input inputWidth" min="0" v-model="input.fueltank">
                         <select class="dropdown">
@@ -98,13 +101,13 @@
                 </div> 
                 <div class="results-div">
                     <div class="line">  
-                        <lable>Driving Laps are:  </lable>
+                        <label>Driving Laps are:  </label>
                         <div><p id="drivingLaps" class="outputLine">{{ output.laps }}</p></div>
                         <label>Laps</label>
                     </div> 
                     <br>
                     <div class="line">
-                        <lable>The Fuel Consumption per Race is: </lable>
+                        <label>The Fuel Consumption per Race is: </label>
                         <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
                         <label> Liters</label>
                     </div>
@@ -119,7 +122,7 @@
             </div>
             <div class= "footer">
                 <div class="vers">
-                    <p style="margin-right: 10px;">Version 1.0</p>
+                    <p style="margin-right: 10px;">Version 0.0</p>
                 </div>
             </div>
         </div>
@@ -136,13 +139,14 @@
             return {
                 reqUrl: "http://localhost:8085/api/accAss/calculate",
                 input:  {
-                    distance: 0,
+                    distance: 20,
                     dropdown: 0,
                     laptime: [],
                     fuelcon: 0,
                     fueltank: 0,
                 },
                 output: {
+                    raceMin: "",
                     laps: "",
                     fuel: "",
                     boxenstops: ""
@@ -156,6 +160,24 @@
         methods: {
             changeVar(value){
                 this.input.distance = value;
+
+                document.getElementById("preSetMin").innerHTML = this.input.distance;
+                document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100;
+
+                document.getElementsByClassName("aktiv")[0].className = document.getElementsByClassName("aktiv")[0].className.replace(" aktiv","")
+                document.getElementById(value.toString()).className += " aktiv";
+            },
+            calcRaceDist(){
+                document.getElementById("preSetMin").innerHTML = this.input.distance;
+                document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100;
+            },
+            calcIndivRaceDist(){
+                if(document.getElementById("time").value == 1){
+                    console.log(this.input.distance)
+                    let preSetMin = Math.round((this.input.distance*60)*100)/100
+                    console.log(this.input.distance)
+                    console.log(preSetMin)
+                }
             },
             calculate(){
                 axios({
@@ -166,11 +188,17 @@
                     this.output = response.data.result;
                 })
             }
-        }
+        },
+        mounted(){
+            this.calcRaceDist()
+        },
     }
 
 </script>
 <style scoped>
+    *{
+        outline: none !important;
+    }
     .content{
         height: 100vh;
         background-color: rgba(85, 75, 104, 0.26);
@@ -204,7 +232,7 @@
         margin-left: 0.5vw;
         font-size: 18px;
     }
-    .aktiv{
+    .aktiv, .aktiv2{
         background-color: whitesmoke !important;
     }
     .TimeLapsTable{
@@ -255,11 +283,35 @@
         background-color: rgb(160, 160, 160);
     }
     .distance-pre{
+        /* width: 10.5vw; */
+
+
         display: flex;
         flex-flow: row;
+        /* justify-content: space-around; */
+
+    }
+    .distance-preBtnDiv{
+        background-color: rgb(160, 160, 160);        
+        border-radius: 8px;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    }
+    .distance-preBtn{
+        background-color: rgb(160, 160, 160);
+        padding-left: 1px;
+        padding-right: 2.5px;
+        border: none;
+        border-radius: 8px;
     }
     .inputDistance-div{
         font-size: 18px;
+    }
+    .outputMinSec td{
+        margin: 0 !important;
+        padding: 0;
+    }
+    .outputMinSec tr{
+        height: 26px !important;
     }
     .inputWidth{
         width: 12vw;
