@@ -16,10 +16,10 @@
                         <div class="distance-line"> 
                             <div class="distance-input-line">
                                 <div class="distance-individual" v-if="pre==false">
-                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance" v-on:change="changeVar(input.distance)">
-                                    <select id="time" class="dropdown" v-model="input.dropdown" v-on:change="calcIndivRaceDist()">
+                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance" v-on:change="calcRaceDist(input.distance)">
+                                    <select id="time" class="dropdown" v-model="input.dropdown"  v-on:change="calcIndivRaceDist()">
                                         <option value="0">Minutes</option>
-                                        <option value="1">Hours</option>
+                                        <option value="1" v-on:click="calcIndivRaceDist()">Hours</option>
                                         <option value="2">Laps</option>
                                     </select>
                                 </div>
@@ -146,7 +146,6 @@
                     fueltank: 0,
                 },
                 output: {
-                    raceMin: "",
                     laps: "",
                     fuel: "",
                     boxenstops: ""
@@ -169,14 +168,20 @@
             },
             calcRaceDist(){
                 document.getElementById("preSetMin").innerHTML = this.input.distance;
-                document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100;
+                document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100
             },
             calcIndivRaceDist(){
-                if(document.getElementById("time").value == 1){
-                    console.log(this.input.distance)
-                    let preSetMin = Math.round((this.input.distance*60)*100)/100
-                    console.log(this.input.distance)
-                    console.log(preSetMin)
+                if(this.input.dropdown == 0){
+                    document.getElementById("preSetMin").innerHTML = this.input.distance;
+                    document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100
+                }
+                if(this.input.dropdown == 1){
+                    document.getElementById("preSetMin").innerHTML = Math.round((this.input.distance*60)*100)/100;
+                    document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60*60)*100)/100
+                }
+                if(this.input.dropdown == 2){
+                    document.getElementById("preSetMin").innerHTML = "-----";
+                    document.getElementById("preSetSec").innerHTML = "-----"
                 }
             },
             calculate(){
