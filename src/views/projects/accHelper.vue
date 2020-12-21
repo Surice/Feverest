@@ -16,7 +16,7 @@
                         <div class="distance-line"> 
                             <div class="distance-input-line">
                                 <div class="distance-individual" v-if="pre==false">
-                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance" v-on:change="calcRaceDist(input.distance)">
+                                    <input type="number" min="0" class="input inputWidth" v-model="input.distance" v-on:change="calcIndivRaceDist(input.distance)">
                                     <select id="time" class="dropdown" v-model="input.dropdown"  v-on:change="calcIndivRaceDist()">
                                         <option value="0">Minutes</option>
                                         <option value="1" v-on:click="calcIndivRaceDist()">Hours</option>
@@ -36,7 +36,7 @@
                                 <button v-on:click="pre=false">Individual</button>
                             </div>
                             <div class="distance-change" v-if="pre==false">
-                                <button v-on:click="pre=true">Pre-Set</button>
+                                <button v-on:click="pre=true; changeVar('20')">Pre-Set</button>
                                 <button v-on:click="pre=false" class="aktiv2">Individual</button>
                             </div>
                         </div>    
@@ -53,7 +53,7 @@
                                 <td><output id="preSetSec"></output></td>
                             </tr>
                             <tr>
-                                <td style="text-align: center;"><input type="checkbox" id= "checkbox"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="checkbox" id= "checkbox" v-model="input.checkbox"></td>
                                 <td></td>
                                 <td>+ Formationlap and inlap</td>
                             </tr>
@@ -102,19 +102,19 @@
                 <div class="results-div">
                     <div class="line">  
                         <label>Driving Laps are:  </label>
-                        <div><p id="drivingLaps" class="outputLine">{{ output.laps }}</p></div>
+                        <div><p id="drivingLaps" class="outputLine"> {{ output.laps }} </p></div>
                         <label>Laps</label>
                     </div> 
                     <br>
                     <div class="line">
                         <label>The Fuel Consumption per Race is: </label>
-                        <div><p id= 'ResultFuelCon' class="outputLine">{{ output.fuel }}</p></div>
+                        <div><p id= 'ResultFuelCon' class="outputLine"> {{ output.fuel }} </p></div>
                         <label> Liters</label>
                     </div>
                     <br>
                     <div class="line">
                         <label>Required Boxenstops are: </label>
-                        <div><p id= 'ResultBoxenstops' class="outputLine">{{ output.boxenstops }}</p></div>     
+                        <div><p id= 'ResultBoxenstops' class="outputLine"> {{ output.boxenstops }} </p></div>     
                     </div>  
                     <div></div>
                     <div></div>
@@ -141,6 +141,7 @@
                 input:  {
                     distance: 20,
                     dropdown: 0,
+                    checkbox: false,
                     laptime: [],
                     fuelcon: 0,
                     fueltank: 0,
@@ -156,8 +157,17 @@
         components: {
             navbar
         },
+        mounted(){
+            this.calcRaceDist();
+            window.addEventListener("keypress", function(e) {
+                if(e.keyCode == 32 || e.keyCode == 13){
+                    calculate()
+                }
+            });
+        },
         methods: {
             changeVar(value){
+                this.input.dropdown = "0";
                 this.input.distance = value;
 
                 document.getElementById("preSetMin").innerHTML = this.input.distance;
@@ -189,13 +199,11 @@
                     url: this.reqUrl, 
                     method: 'POST',
                     data: this.input
-                }).then(response => {
-                    this.output = response.data.result;
+                }).then(response => { 
+                    console.log(response.data)
+                    this.output = response.data;
                 })
             }
-        },
-        mounted(){
-            this.calcRaceDist()
         },
     }
 
@@ -287,14 +295,12 @@
         outline: none;
         background-color: rgb(160, 160, 160);
     }
+    .distance-change button:hover{
+        background-color: rgba(225, 225, 225, 0.8);
+    }
     .distance-pre{
-        /* width: 10.5vw; */
-
-
-        display: flex;
+         display: flex;
         flex-flow: row;
-        /* justify-content: space-around; */
-
     }
     .distance-preBtnDiv{
         background-color: rgb(160, 160, 160);        
@@ -308,6 +314,9 @@
         border: none;
         border-radius: 8px;
     }
+    .distance-preBtn:hover{
+        background-color: rgba(225, 225, 225, 0.8);
+    }
     .inputDistance-div{
         font-size: 18px;
     }
@@ -318,6 +327,10 @@
     .outputMinSec tr{
         height: 26px !important;
     }
+    .checkbox{
+        height: 16px;
+        width: 16px;
+    }     
     .inputWidth{
         width: 12vw;
     }
@@ -359,7 +372,7 @@
         margin: 0;
     }
     .outputLine{
-        width: 50px;
+        min-width: 50px;
         display: flex;
         flex-flow: row;
         justify-content: center;
@@ -367,6 +380,9 @@
     }
     .BTNCalculate{
         background-color: whitesmoke;
+    }
+    .BTNCalculate:hover{
+        background-color: rgba(205, 205, 205, 1);
     }
     .divBTNCalculate{
         text-align: center;
