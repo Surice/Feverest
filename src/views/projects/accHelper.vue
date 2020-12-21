@@ -157,14 +157,6 @@
         components: {
             navbar
         },
-        mounted(){
-            this.calcRaceDist();
-            window.addEventListener("keypress", function(e) {
-                if(e.keyCode == 32 || e.keyCode == 13){
-                    calculate()
-                }
-            });
-        },
         methods: {
             changeVar(value){
                 this.input.dropdown = "0";
@@ -194,7 +186,9 @@
                     document.getElementById("preSetSec").innerHTML = "-----"
                 }
             },
-            calculate(){
+            calculate(e){
+                if(e.constructor.name == "KeyboardEvent" && e.keyCode != 32 && e.keyCode != 13) return;
+
                 axios({
                     url: this.reqUrl, 
                     method: 'POST',
@@ -202,9 +196,13 @@
                 }).then(response => { 
                     console.log(response.data)
                     this.output = response.data;
-                })
+                });
             }
         },
+        mounted(){
+            this.calcRaceDist();
+            window.addEventListener("keypress", this.calculate)
+        }
     }
 
 </script>

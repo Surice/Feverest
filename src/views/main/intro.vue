@@ -7,10 +7,10 @@
     <div class="content">
       <div class="row-me">
         <div class="container-me">
-          <h3>Was es hier gibt</h3>
+          <h3>Things you can find here</h3>
           <p>
             Auf dieser Seite findest du hauptsächlich Guides, Helper, Assistants, whatever
-            für die unterschiedlichsten Spiele von Rennsimulationen über Open-World bis  zu Shootern.
+            für die unterschiedlichsten Spiele von Rennsimulationen, über Open-World bis zu Shootern.
             Darüber hinaus bieten wir ein System, welches Täglich die besten Angebote an spielen sucht und mit Link zur Verfügung stellt.
             Des weiteren haben wir ein Userprotal welches ein paar Organisationselemente mit sich bringt.
             Du hast die Möglichkeit dort eine Todo-Liste zu führen mit unterschiedlichen Tabellen und Aufgaben. Das ganze ist Accountbasiert was bedeutet,
@@ -20,14 +20,14 @@
       </div>
       <div class="row-me">
         <div class="container-me">
-          <h3>Über Uns</h3>
+          <h3>About us</h3>
           <p>
             Wir sind Timon und Sebastian. Zwei junge Hobbyentwickler aus dem schönen Norden von Deutschland.
             ** hier fehlen mir bissl die Ideen **
           </p>
         </div>
         <div class="container-me">
-          <h3>Unsere Idee</h3>
+          <h3>The idea</h3>
           <p>
             Irgendwie bauen wir doch alle nur sinnlose Skripte die dann mehr oder weniger funktionieren,
             sie dann aber doch niemand braucht, also musste mal was gescheites her.
@@ -70,20 +70,21 @@ export default {
     max-width: 40vw;
     margin: 2.2vw;
     padding: 1em;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(73, 73, 73);
     border: none;
     border-radius: 4px;
-    box-shadow: 5px 6px 10px rgb(59, 59, 59);
+    box-shadow: 3px 4px 10px rgb(24, 24, 24);
     min-width: 250px;
   }
   .container-me h3{
     font-family: cursive;
     font-weight: bold;
     text-decoration: underline;
+    color: rgb(255, 255, 255);
   }
   .container-me p{
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(12, 12, 12);
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     word-wrap: break-word;
   }

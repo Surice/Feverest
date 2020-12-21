@@ -135,10 +135,10 @@
     .field{
         padding: 1em;
         margin: 2em;
-        background-color: rgb(233, 233, 233);
+        background-color: rgb(73, 73, 73);
         border: none;
         border-radius: 4px;
-        box-shadow: 2px 3px rgba(78, 78, 78, 0.4);
+        box-shadow: 4px 3px 8px rgb(24, 24, 24);
         min-width: 25vw;
         max-width: 80vw;
         height: 100%;
@@ -175,6 +175,7 @@
         padding: 3px;
         border: 1px solid black;
         border-radius: .5em;
+        box-shadow: 2px 2px 5px rgb(31, 31, 31);
     }
     #inp-quan{
         background-color: rgb(235, 235, 235);
@@ -185,15 +186,29 @@
         border: 1px solid black;
         border-radius: .5em;
         width: 8em;
+        box-shadow: 2px 2px 5px rgb(31, 31, 31);
     }
     .btn-calc{
         background-color: rgb(235, 235, 235);
         font-size: 17px;
         font-family: 'Segoe UI', Arial;
-        color: rgb(35, 114, 48);
+        font-weight: bolder;
+        color: rgb(41, 175, 64);
         border: 1px solid black;
         border-radius: 5px;
         width: 9em;
         height: 2em;
+        box-shadow: 2px 2px 5px rgb(31, 31, 31);
+        outline: none;
+    }
+    .btn-calc:hover{
+        background-color: rgb(200, 200, 200);
+    }
+    .btn-calc:active{
+        background-color: rgb(180, 180, 180);
+    }
+
+    h3, label, li{
+        color: white;
     }
 </style>
