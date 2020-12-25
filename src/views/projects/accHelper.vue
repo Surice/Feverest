@@ -2,8 +2,15 @@
     <div class="content">
         <navbar></navbar>
         <br>
+        <div class="headline-div">
         <h1 class="headline">ACC Assistant</h1>
+        <button class="btnHelp" v-on:click="help=true">?</button>
+        </div>
         <br>
+        <div class="help" v-if="help==true">
+            <button v-on:click="help=false">X</button>
+            <p>Hier gehts um hilfe wie man die scheiße benutzt</p>
+        </div>
         <div class="all">
             <div class= "TimeLapsTable">
                 <div class="TimeLapsTableDiv">
@@ -151,7 +158,8 @@
                     fuel: "",
                     boxenstops: ""
                 },
-                pre: true
+                pre: true,
+                help: false
             }
         },
         components: {
@@ -223,6 +231,13 @@
         justify-content: space-evenly;
         align-items: center;
         margin: 0;
+        z-index: 0;
+    }
+    .headline{
+
+    }
+    .headline-div{
+        line-height: 32px;
     }
     .div-input{
         height: 10vh;
@@ -395,5 +410,22 @@
         display: flex;
         flex-flow: row;
         justify-content: flex-end;
+    }
+    .btnHelp{
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
+        border: none;
+        border-radius: 8px;
+        box-shadow:  4px 5px 3px rgb(73, 73, 73);
+    }
+    .help{
+        width: 60vw;
+        height: 60vh;
+        top: 20vh;
+        left: 20vw;
+        position: absolute;
+        background-color: red;
+        z-index: 1;
     }
 </style>
