@@ -2,10 +2,8 @@
     <div class="content">
         <navbar></navbar>
         <br>
-        <div class="headline-div">
-            <h1 class="headline">Fuel Calculator</h1>
-            <button class="btnHelp" v-on:click="help=true">?</button>
-        </div>
+        <h1 class="headline">Fuel Calculator</h1>
+        <button class="btnHelp" v-on:click="help=true">?</button>
         <br>
         <div class="help" v-if="help==true">
             <div class="canBtn-div">
@@ -237,18 +235,6 @@
         margin: 0;
         z-index: -1;
     }
-    .headline{
-        width: 50%;
-        left: 25%;
-        position: absolute;
-        margin: 0;
-        text-align: center;
-    }
-    .headline-div{
-        height: 64px;
-        display: flex;
-        align-items: center;
-    }
     .div-input{
         height: 10vh;
     }
@@ -422,16 +408,15 @@
         justify-content: flex-end;
     }
     .btnHelp{
+        float: right;
         width: 32px;
         height: 32px;
-        right: 12px;
-        position: absolute;
-        float: right;
-        margin-right: 12px ;
+        margin-right: 12px;
         font-size: 24px;
         border: none;
         border-radius: 8px;
         box-shadow:  4px 5px 3px rgb(73, 73, 73);
+        transform: translateY(-40px);
     }
     .help{
         width: 60vw;
