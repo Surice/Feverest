@@ -18,7 +18,7 @@
             <div class="project">
                 <img src="./../../assets/acc-assistant-logo.jpg" class="small-box">
                 <router-link to="/acc_helper" class="big-box" tag="button">
-                    <h4>Assetto Corsa Competizione Assistant</h4>
+                    <h4>Fuel Calculator</h4>
                     <p>
                         an assistant to calculate the required Fuel for a Race
                         and the required boxstops

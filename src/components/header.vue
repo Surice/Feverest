@@ -9,7 +9,7 @@
                 <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
                 <div class="dropdown-content">
                     <router-link to="/free_Games">Free Games</router-link>
-                    <router-link to="/acc_helper">ACC Assistant</router-link>
+                    <router-link to="/acc_helper">Fuel Calculator</router-link>
                     <router-link to="/mc_c_guide">MC Crafting Guide</router-link>
                 </div>
             </div>
