@@ -208,7 +208,10 @@
         background-color: rgb(180, 180, 180);
     }
 
-    h3, label, li{
+    h3{
+        text-decoration: underline;
+    }
+    h3, label, li, dd, dt{
         color: white;
     }
 </style>

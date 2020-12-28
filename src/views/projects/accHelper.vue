@@ -3,14 +3,27 @@
         <navbar></navbar>
         <br>
         <h1 class="headline">Fuel Calculator</h1>
-        <button class="btnHelp" v-on:click="help=true">?</button>
+        <div style="widt: 100vw; display: flex; justify-content: flex-end; transform: translateY(-40px);">
+            <button class="btnHelp" v-on:click="help=true">?</button>
+        </div>
         <br>
         <div class="help" v-if="help==true">
             <div class="canBtn-div">
                 <button v-on:click="help=false" class="canBtn">X</button>
             </div>
             <div class="helpText-div">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et <br> dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br> kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br> sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br><br> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt <br> ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br> Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et <br>
+                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br>
+                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br>
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
+                    <br>
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br>
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt <br>
+                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br>
+                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
             </div>
         </div>
         <div class="all">
@@ -408,15 +421,13 @@
         justify-content: flex-end;
     }
     .btnHelp{
-        float: right;
         width: 32px;
         height: 32px;
-        margin-right: 12px;
         font-size: 24px;
         border: none;
         border-radius: 8px;
         box-shadow:  4px 5px 3px rgb(73, 73, 73);
-        transform: translateY(-40px);
+        margin-right: 12px;
     }
     .help{
         width: 60vw;

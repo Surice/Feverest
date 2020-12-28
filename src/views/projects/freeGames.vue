@@ -48,6 +48,10 @@
     }
 </script>
 <style scoped>
+    .freeGames{
+        background-image: url('C:/_Dev_code/feverest-vue/src/assets/cloudly_forrest.jpg');
+        height: 100vh;
+    }
     .siteContent{
         display: flex;
         flex-flow: column;
