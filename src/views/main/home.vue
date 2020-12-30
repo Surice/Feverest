@@ -1,24 +1,50 @@
 <template>
   <div class="home">
     <navbar></navbar>
-      <img src='../../assets/tastatur.jpg' class="banner-img">
 
-      <div class="content">
-        <img src='../../assets/computer.jpg' class="main-img">
+    <img src='../../assets/tastatur.jpg' class="banner-img">
 
-        <div class="banner">
-          <div class="banner-welcome">
-            <p>Welcome!</p>
-          </div>
-          <div class="banner-phrases">
-            <p ref="typedText"></p> 
-          </div>
+    <div class="content">
+      <img src='../../assets/computer.jpg' class="main-img">
+
+      <div class="banner">
+        <div class="banner-welcome">
+          <p>Welcome!</p>
+        </div>
+        <div class="banner-phrases">
+          <p ref="typedText"></p> 
         </div>
       </div>
-
-    <div class="footer">
-
     </div>
+
+    <footer class="footer">
+      <div class="foo-col">
+        <h5>Contact:</h5>
+        <p>
+          Timon Carstens, <br>
+          Sebastian Ulrich <br>
+          Tel: +49 157 80392596 <br>
+          E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a>
+        </p>
+      </div>
+      <div class="vl"></div>
+      <div class="foo-col">
+        <h5>Social Media:</h5>
+        <p>
+
+        </p>
+      </div>
+      <div class="vl"></div>
+      <div class="foo-col">
+        <h5>Feedback / Bug report:</h5>
+        <p>
+          if you find any bugs or have a suggestion<br>
+          for improvements please let us know<br>
+          <br>
+          <b>E-Mail: <a href="mailto:info@feverest.de?subject=Feedback / Bug report">info@feverest.de</a></b>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -66,19 +92,25 @@ export default {
 }
 </script>
 <style scoped>
-@media only screen and (max-width: 820px){
-  .main-img{
+  @media only screen and (max-width: 820px){
+    .main-img{
+      display: none;
+    }
+    .banner-img{
+      height: 20vh;
+    }
+  }
+  @media only screen and (min-width: 821px){
+    .banner-img{
+      height: 30vh;
+    }
+  }
+
+  .vl{
     display: none;
+    height: 100%;
+    border-left: 4px solid black
   }
-  .banner-img{
-    height: 20vh;
-  }
-}
-@media only screen and (min-width: 821px){
-  .banner-img{
-    height: 30vh;
-  }
-}
 
   .home{
     width: 100vw;
@@ -123,5 +155,24 @@ export default {
     font-size: 48px;
     color: white;
     text-shadow: 3px 2px 4px rgb(36, 36, 36);
+  }
+
+  .footer{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.6);
+    color: rgb(135, 135, 135);
+    justify-content: space-evenly;
+  }
+  .footer p{
+    font-size: 0.7rem;
+    margin-left: 8px
+  }
+
+  .foo-col{ 
+    text-align: center;
+    margin: 5px;
   }
 </style>
