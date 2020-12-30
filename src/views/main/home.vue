@@ -1,5 +1,5 @@
 <template>
-  <div class="home" id="home">
+  <div class="home">
     <navbar></navbar>
       <img src='../../assets/tastatur.jpg' class="banner-img">
 
@@ -15,6 +15,10 @@
           </div>
         </div>
       </div>
+
+    <div class="footer">
+
+    </div>
   </div>
 </template>
 
@@ -66,10 +70,19 @@ export default {
   .main-img{
     display: none;
   }
+  .banner-img{
+    height: 20vh;
+  }
+}
+@media only screen and (min-width: 821px){
+  .banner-img{
+    height: 30vh;
+  }
 }
 
   .home{
     width: 100vw;
+    height: 100vh;
   }
   .content{
     height: 50vh;
@@ -78,16 +91,16 @@ export default {
   }
   .banner-img{
     width: 100vw;
-    height: 30vh;
     object-fit: cover;
     object-position: 20% 50%;
-  }  
+  }
   .main-img{
     margin-left: 5vw;
     height: 35vh;
     width: 45vw;
     object-fit: cover;
     border-radius: 5px;
+    box-shadow: 3px 4px 6px 2px rgba(0, 0, 0, 0.6);
   }
 
   .banner-welcome{
@@ -102,6 +115,7 @@ export default {
   }
   .banner-phrases{
     margin-left: 10vw;
+    height: 48px;
   }
   .banner-phrases p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
