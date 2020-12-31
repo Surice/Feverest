@@ -2,10 +2,10 @@
   <div class="home">
     <navbar></navbar>
 
-    <img src='../../assets/tastatur.jpg' class="banner-img">
+    <img src='@/assets/tastatur.jpg' class="banner-img">
 
     <div class="content">
-      <img src='../../assets/computer.jpg' class="main-img">
+      <img src='@/assets/computer.jpg' class="main-img">
 
       <div class="banner">
         <div class="banner-welcome">
@@ -23,16 +23,16 @@
         <p>
           Timon Carstens, <br>
           Sebastian Ulrich <br>
-          Tel: +49 157 80392596 <br>
           E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a>
         </p>
       </div>
       <div class="vl"></div>
       <div class="foo-col">
         <h5>Social Media:</h5>
-        <p>
-
-        </p>
+        <div class="socials">
+          <a href="https://github.com/Surice/Feverest" target="_blank">Github Repository</a>
+          <a href="https://Instagram.com/Feverest" target="_blank">our Instagram</a>
+        </div>
       </div>
       <div class="vl"></div>
       <div class="foo-col">
@@ -173,6 +173,10 @@ export default {
 
   .foo-col{ 
     text-align: center;
-    margin: 5px;
+    margin: 15px;
+  }
+  .socials{
+    display: flex;
+    flex-flow: column;
   }
 </style>

@@ -9,12 +9,9 @@
         <div class="container-me">
           <h3>Things you can find here</h3>
           <p>
-            Auf dieser Seite findest du hauptsächlich Guides, Helper, Assistants, whatever
-            für die unterschiedlichsten Spiele von Rennsimulationen, über Open-World bis zu Shootern.
-            Darüber hinaus bieten wir ein System, welches Täglich die besten Angebote an spielen sucht und mit Link zur Verfügung stellt.
-            Des weiteren haben wir ein Userprotal welches ein paar Organisationselemente mit sich bringt.
-            Du hast die Möglichkeit dort eine Todo-Liste zu führen mit unterschiedlichen Tabellen und Aufgaben. Das ganze ist Accountbasiert was bedeutet,
-            dass du von überall mit einem Internetzugang auf deine Aufgaben, Notizen und auch deinen persönlichen Kalender zugreifen kannst.
+            On this page you will primarily find guides, helpers, assistants, whatever for the various games from racing simulations through open-world to shooters,
+            which will help you to solve time-consuming calculations and make them clearly accessible.
+            In addition, we offer a system that searches for the best offers on games every day and provides them with a link to the specific gamestore.
             </p>
         </div>
       </div>
@@ -22,18 +19,18 @@
         <div class="container-me">
           <h3>About us</h3>
           <p>
-            Wir sind Timon und Sebastian. Zwei junge Hobbyentwickler aus dem schönen Norden von Deutschland.
-            ** hier fehlen mir bissl die Ideen **
+            Our names are Timon and Sebastian. We are two young hobby developers from the beautiful north of Germany.
+            It started for each of us a few years ago with frontend development where we got interested in creating websites using HTML and CSS.
+            After a while we started to learn Python and Javascript to add more logic to the pages.
+            As time passed we improved these skills to be able to write proper programs.
           </p>
         </div>
         <div class="container-me">
           <h3>The idea</h3>
           <p>
-            Irgendwie bauen wir doch alle nur sinnlose Skripte die dann mehr oder weniger funktionieren,
-            sie dann aber doch niemand braucht, also musste mal was gescheites her.
-            In unserer Freizeit zocken wir gerne die Unterschiedlichsten Spiele wo uns hier und da mal so ein Kleines Hilfsprogramm fehlte (nein, keine Hack Clients).
-            Deswegen haben wir uns drangesetzt einfach selbst diese Programme zu schreiben und wollen sie auf dieser Seite als Paket zur Verfügung stellen,
-            dass sie jeder einzelne von euch nutzen kann.
+            Somehow we all just write useless scripts that work more or less, but then nobody needs them.
+            so we had to develop something smart.In our spare time we like to play the most different games where such a small tool was missing (no, no hack clients).
+            That's why we startet to write these utilities ourselves and want to make them available on this page as a package, so everyone can use them.
           </p>
         </div>
       </div>
@@ -55,6 +52,16 @@ export default {
 <style scoped>
   @import url('https://fonts.googleapis.com/css?family=Battambang');
 
+  @media only screen and (max-width: 820px){
+    .container-me{
+      max-width: 80vw;
+    }
+  }
+  @media only screen and (min-width: 821px){
+    .container-me{
+      max-width: 40vw;
+    }
+  }
 
   .intro{
     min-height: 100vh;
@@ -67,7 +74,6 @@ export default {
     align-items: center;
   }
   .container-me{
-    max-width: 40vw;
     margin: 2.2vw;
     padding: 1em;
     background-color: rgb(73, 73, 73);

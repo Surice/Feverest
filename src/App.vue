@@ -12,8 +12,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   body{
-    /* background-color: rgb(245, 245, 245) !important; */
-    background-color: rgb(18, 38, 75) !important;
+    background-color: rgb(50, 50, 50) !important;
+    /* background-color: rgb(18, 38, 75) !important; */
   }
   .headline{
     text-align: center;

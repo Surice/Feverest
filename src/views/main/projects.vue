@@ -30,7 +30,7 @@
                 <router-link to="/mc_c_guide" class="big-box" tag="button">
                     <h4>Mincraft Crafting Assistant</h4>
                     <p>
-                        an Calculator for multiple Craftingrecipes in
+                        a Calculator for multiple Craftingrecipes in
                         Minecraft modpacks and Vanilla
                     </p>
                 </router-link>
