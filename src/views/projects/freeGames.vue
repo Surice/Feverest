@@ -30,7 +30,7 @@
         data: function() {
             return{
                 date: "--none--",
-                reqUrl: `${process.env.DOMAIN}/api/gameStores/getFreeGames`,
+                reqUrl: `/api/gameStores/getFreeGames`,
                 contents: [],
             }
         },

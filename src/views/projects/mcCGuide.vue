@@ -58,7 +58,7 @@
         name: 'MC-Crafting-Guide',
         data: () => {
             return {
-                reqUrl: `${process.env.DOMAIN}/api/mcCGuide`,
+                reqUrl: `/api/mcCGuide`,
                 keys: [],
                 output: {
                     sortedCraftingSteps: {},

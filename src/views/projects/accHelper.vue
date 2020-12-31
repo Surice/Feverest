@@ -159,7 +159,7 @@
         name: 'ACC-Helper',
         data: () => {
             return {
-                reqUrl: `${process.env.DOMAIN}/api/accAss/calculate`,
+                reqUrl: `/api/accAss/calculate`,
                 input:  {
                     distance: 20,
                     dropdown: 0,
