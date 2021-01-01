@@ -3,26 +3,28 @@
         <navbar></navbar>
         <br>
         <h1 class="headline">Fuel Calculator</h1>
-        <div style="widt: 100vw; display: flex; justify-content: flex-end; transform: translateY(-40px);">
+        <div style="width: 100vw; display: flex; justify-content: flex-end; transform: translateY(-40px);">
             <button class="btnHelp" v-on:click="help=true">?</button>
         </div>
         <br>
         <div class="help" v-if="help==true">
+            <div class="helpHeader-div">
+                <p>Help</p>
+            </div>
             <div class="canBtn-div">
                 <button v-on:click="help=false" class="canBtn">X</button>
             </div>
             <div class="helpText-div">
                 <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et <br>
-                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita <br>
-                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br>
-                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
+                    This is the perfect assistant for sim-racing. It helps you to calculate the fuel for your race.<br>
                     <br>
-                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum <br>
-                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt <br>
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. <br>
-                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    Here is some important information you probably need while using it:<br>
+                    <br>
+                    The Preset's are for a faster input. If you are doing sprint Races with a distance of 20/30/60 minutes, you can take these and this isn't calculating the Pit stops you need because of enough fuel in one tank for a sprint race.<br>
+                    An Individual Race distance you can make by click on the "Individual” Button. The Input can switch between minutes, hours or laps.<br>
+                    In the checkbox below you can add 2 more laps, for the Formation-lap and Inlap. You can use this also for a safe fuel-result.<br>
+                    As developer of this assistant, I would give you the tip to add some liters of fuel to your result for a safe result.<br>
+                    Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".
                 </p>
             </div>
         </div>
@@ -77,7 +79,7 @@
                             <tr>
                                 <td style="text-align: center;"><input type="checkbox" class="checkbox" id= "checkbox" v-model="input.checkbox"></td>
                                 <td></td>
-                                <td>+ Formationlap and inlap</td>
+                                <td>+ Formation lap and Inlap</td>
                             </tr>
                         </table>
                     </div>
@@ -123,19 +125,19 @@
                 </div> 
                 <div class="results-div">
                     <div class="line">  
-                        <label>Driving Laps are:  </label>
+                        <label>Driving laps are:  </label>
                         <div><p id="drivingLaps" class="outputLine"> {{ output.laps }} </p></div>
                         <label>Laps</label>
                     </div> 
                     <br>
                     <div class="line">
-                        <label>The Fuel Consumption per Race is: </label>
+                        <label>The Fuel consumption per race is: </label>
                         <div><p id= 'ResultFuelCon' class="outputLine"> {{ output.fuel }} </p></div>
                         <label> Liters</label>
                     </div>
                     <br>
                     <div class="line">
-                        <label>Required Boxenstops are: </label>
+                        <label>Required pit stops are: </label>
                         <div><p id= 'ResultBoxenstops' class="outputLine"> {{ output.boxenstops }} </p></div>     
                     </div>  
                     <div></div>
@@ -144,7 +146,7 @@
             </div>
             <div class= "footer">
                 <div class="vers">
-                    <p style="margin-right: 10px;">Version 0.0</p>
+                    <p style="margin-right: 10px;">Version 1.0</p>
                 </div>
             </div>
         </div>
@@ -321,7 +323,7 @@
         background-color: rgba(225, 225, 225, 0.8);
     }
     .distance-pre{
-         display: flex;
+        display: flex;
         flex-flow: row;
     }
     .distance-preBtnDiv{
@@ -402,6 +404,7 @@
     }
     .BTNCalculate{
         background-color: whitesmoke;
+        padding-left: 4px;
     }
     .BTNCalculate:hover{
         background-color: rgba(205, 205, 205, 1);
@@ -429,35 +432,56 @@
         box-shadow:  4px 5px 3px rgb(73, 73, 73);
         margin-right: 12px;
     }
+    .btnHelp:hover{
+        background-color: rgb(205, 205, 205);
+    }
     .help{
         width: 60vw;
         height: 60vh;
         top: 20vh;
         left: 20vw;
         position: absolute;
+        color: white;
         background-color: rgb(73, 73, 73);
         border-radius: 8px;
         border: solid black;
         box-shadow: 4px 5px 3px rgb(46, 46, 46);
         z-index: 10;
     }
+    .helpHeader-div{
+        display: flex;
+        justify-content: center;
+        font-size: 26px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: underline;
+        text-shadow: 2px 2px 0px rgb(54, 54, 54);
+        margin-top: 5px; 
+    }
     .helpText-div{
         display: flex;
         justify-content: center;
+        transform: translateY(-40px);
         text-align: center;
+        margin-right: 15px;
+        margin-left: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .canBtn-div{
         height: 12%;
         width: 100%;
         display: flex;
         justify-content: flex-end;
+        transform: translateY(-60px);
         align-items: center;
     }
     .canBtn{
         margin-right: 24px;
-        font-size: 200%;
+        font-size: 190%;
         border: none;
-        color: rgb(15, 15, 15);
+        color: white;
         background-color: rgb(73, 73, 73);
+    }
+    .canBtn:hover{
+        color: rgb(255, 79, 79);
     }
 </style>
