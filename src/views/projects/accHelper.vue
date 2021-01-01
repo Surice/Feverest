@@ -9,7 +9,7 @@
         <br>
         <div class="help" v-if="help==true">
             <div class="helpHeader-div">
-                <p>Help</p>
+                <h3>Help</h3>
             </div>
             <div class="canBtn-div">
                 <button v-on:click="help=false" class="canBtn">X</button>
@@ -451,7 +451,6 @@
     .helpHeader-div{
         display: flex;
         justify-content: center;
-        font-size: 26px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-decoration: underline;
         text-shadow: 2px 2px 0px rgb(54, 54, 54);
@@ -479,7 +478,7 @@
         font-size: 190%;
         border: none;
         color: white;
-        background-color: rgb(73, 73, 73);
+        background: none;
     }
     .canBtn:hover{
         color: rgb(255, 79, 79);

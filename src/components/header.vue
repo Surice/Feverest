@@ -128,6 +128,7 @@ export default {
 }
 .dropdown-content{
     position: absolute;
+    z-index: 1;
     display: none;
     flex-flow: column;
     height: auto;

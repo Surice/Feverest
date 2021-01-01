@@ -35,17 +35,21 @@
         </div>
       </div>
     </div>
+
+    <foot></foot>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import navbar from '@/components/header.vue'
+import foot from '../../components/foot.vue'
 
 export default {
   name: 'Intro',
   components: {
-    navbar
+    navbar,
+    foot
   }
 }
 </script>

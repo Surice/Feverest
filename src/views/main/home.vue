@@ -17,40 +17,14 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="foo-col">
-        <h5>Contact:</h5>
-        <p>
-          Timon Carstens, <br>
-          Sebastian Ulrich <br>
-          E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a>
-        </p>
-      </div>
-      <div class="vl"></div>
-      <div class="foo-col">
-        <h5>Social Media:</h5>
-        <div class="socials">
-          <a href="https://github.com/Surice/Feverest" target="_blank">Github Repository</a>
-          <a href="https://Instagram.com/Feverest" target="_blank">our Instagram</a>
-        </div>
-      </div>
-      <div class="vl"></div>
-      <div class="foo-col">
-        <h5>Feedback / Bug report:</h5>
-        <p>
-          if you find any bugs or have a suggestion<br>
-          for improvements please let us know<br>
-          <br>
-          <b>E-Mail: <a href="mailto:info@feverest.de?subject=Feedback / Bug report">info@feverest.de</a></b>
-        </p>
-      </div>
-    </footer>
+    <foot></foot>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import navbar from '@/components/header.vue'
+import navbar from '@/components/header.vue';
+import foot from '@/components/foot.vue';
 
 import Typed from 'typed.js';
 
@@ -70,7 +44,8 @@ export default {
     this.typedJs();
   },
   components: {
-    navbar
+    navbar,
+    foot
   },
   methods: {
     typedJs: function() {
@@ -104,6 +79,9 @@ export default {
     .banner-img{
       height: 30vh;
     }
+    .content{
+      align-items: center;
+    }
   }
 
   .vl{
@@ -119,7 +97,6 @@ export default {
   .content{
     height: 50vh;
     display: flex;
-    align-items: center;
   }
   .banner-img{
     width: 100vw;
@@ -155,28 +132,5 @@ export default {
     font-size: 48px;
     color: white;
     text-shadow: 3px 2px 4px rgb(36, 36, 36);
-  }
-
-  .footer{
-    position: fixed;
-    display: flex;
-    width: 100vw;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.6);
-    color: rgb(135, 135, 135);
-    justify-content: space-evenly;
-  }
-  .footer p{
-    font-size: 0.7rem;
-    margin-left: 8px
-  }
-
-  .foo-col{ 
-    text-align: center;
-    margin: 15px;
-  }
-  .socials{
-    display: flex;
-    flex-flow: column;
   }
 </style>
