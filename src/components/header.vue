@@ -8,16 +8,16 @@
             <div class="dropdown">
                 <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
                 <div class="dropdown-content">
-                    <router-link to="/free_Games">Free Games</router-link>
-                    <router-link to="/acc_helper">Fuel Calculator</router-link>
-                    <router-link to="/mc_c_guide">MC Crafting Guide</router-link>
+                    <router-link to="/project/free_Games">Free Games</router-link>
+                    <router-link to="/project/acc_helper">Fuel Calculator</router-link>
+                    <router-link to="/project/mc_c_guide">MC Crafting Guide</router-link>
                 </div>
             </div>
             <div class="dropdown">
                 <router-link to="/portals" class="navbar-el navbar-el-router">Portals <i class="fas fa-chevron-down"></i></router-link>
                 <div class="dropdown-content">
-                    <router-link to="#">User-Portal</router-link>
-                    <router-link to="#">DEV-Portal</router-link>
+                    <router-link to="/">User-Portal</router-link>
+                    <router-link to="/dev-portal/home">DEV-Portal</router-link>
                 </div>
             </div>    
             <router-link to="/impressum" class="navbar-el">Impressum</router-link>

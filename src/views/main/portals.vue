@@ -16,7 +16,7 @@
             </div>
             <div class="project">
                 <img src="./../../assets/placeholder.jpg" class="small-box">
-                <router-link to="/" class="big-box" tag="button">
+                <router-link to="/dev-portal/home" class="big-box" tag="button">
                     <h4>DEV Portal</h4>
                     <p>
 

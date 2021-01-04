@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import axios from 'axios'
 
 import Home from '@/views/main/home.vue'
 import Intro from '@/views/main/intro.vue'
@@ -10,7 +10,10 @@ import Impressum from '@/views/main/impressum.vue'
 
 import FreeGames from '@/views/projects/freeGames.vue'
 import McCGuide from '@/views/projects/mcCGuide.vue'
-import acchelper from '@/views/projects/accHelper.vue'
+import Acchelper from '@/views/projects/accHelper.vue'
+
+import DevHome from '@/views/dev-portal/home.vue'
+import DevLogin from '@/views/dev-portal/login.vue'
 
 Vue.use(VueRouter)
 
@@ -46,19 +49,42 @@ const routes = [
     component: Impressum
   },
   {
-    path: '/free_Games',
+    path: '/project/free_Games',
     name: 'Free-Games',
     component: FreeGames
   },
   {
-    path: '/mc_c_guide',
+    path: '/project/mc_c_guide',
     name: 'MC-Crafting-Guide',
     component: McCGuide
   },
   {
-    path: '/acc_helper',
+    path: '/project/acc_helper',
     name: 'ACC-Helper',
-    component: acchelper
+    component: Acchelper
+  },
+  {
+    path: '/dev-portal/home',
+    name: 'Dev-Home',
+    component: DevHome,
+    beforeEnter: async (to, from, next) => {
+      try{
+        let check = await axios.get('https://feverest.de/api/user/checkToken');
+  
+        if(check.status != 200){
+          next('/dev-portal/login');
+        }
+
+        next();
+      }catch(err){
+        next('/dev-portal/login');
+      }
+    }
+  },
+  {
+    path: '/dev-portal/login',
+    name: 'Dev-Login',
+    component: DevLogin
   }
 ]
 
