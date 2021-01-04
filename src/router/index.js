@@ -70,7 +70,7 @@ const routes = [
     beforeEnter: async (to, from, next) => {
       try{
         let check = await axios.get('https://feverest.de/api/user/checkToken');
-  
+        console.log(check);
         if(check.status != 200 || check.data.role != "dev"){
           next('/dev-portal/login');
         }
