@@ -11,10 +11,10 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input v-bind="input.email" id="email" type="text" name="email" class="form-control">
+                        <input v-model="input.email" id="email" type="text" name="email" class="form-control">
                         <br>
                         <label for="password">Password</label>
-                        <input v-bind="input.password" id="password" type="password" name="password" class="form-control">
+                        <input v-model="input.password" id="password" type="password" name="password" class="form-control">
                         <br>
                         <button v-on:click="submit" class="btn btn-primary mb-3">Submit!</button>
 
