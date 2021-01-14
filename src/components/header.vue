@@ -3,8 +3,12 @@
         <h2 class="nav-txt">Feverest</h2>
         
         <div class="navbar-el-div">
+            <div>
             <router-link to="/home" class="navbar-el">Home</router-link>
+            </div>
+            <div>
             <router-link to="/intro" class="navbar-el">Introduciton</router-link>
+            </div>
             <div class="dropdown">
                 <router-link to="/projects" class="navbar-el navbar-el-router">Projects <i class="fas fa-chevron-down"></i></router-link>
                 <div class="dropdown-content">
@@ -19,8 +23,10 @@
                     <router-link to="/">User-Portal</router-link>
                     <router-link to="/dev-portal/home">DEV-Portal</router-link>
                 </div>
-            </div>    
+            </div>
+            <div>    
             <router-link to="/impressum" class="navbar-el">Impressum</router-link>
+            </div>
         </div>
 
         <div class="navbar-el-dropdown">
