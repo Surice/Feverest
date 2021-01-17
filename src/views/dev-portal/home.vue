@@ -55,7 +55,7 @@ export default {
     }
   },
   async mounted(){
-    this.visits = (await axios.get(this.reqUrl+ "/getVosots")).data.count;
+    this.visits = (await axios.get(this.reqUrl+ "/getVisits")).data.count;
     this.users = (await axios.get(this.reqUrl+ "/getRegisteredUsers")).data.count;
 
 
