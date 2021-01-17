@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <navbar></navbar>
-
     <img src='@/assets/tastatur.jpg' class="banner-img">
 
     <div class="content">

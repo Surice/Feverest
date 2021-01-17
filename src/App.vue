@@ -1,15 +1,25 @@
 <template>
   <div id="app">
     <router-view/>
+    <cookie-banner/>
   </div>
 </template>
 <script>
-export default {
-  data: function(){
-    return{
-    }
+  import cookieBanner from '@/components/cookieBanner.vue';
+import CookieBanner from './components/cookieBanner.vue';
+
+  export default {
+    data: function(){
+      return{
+      }
+    },
+    components: {
+      cookieBanner
+    },
+    mounted() {
+      console.log("saved Visit!");
+    },
   }
-}
 </script>
 <style>
   @import url("//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons");

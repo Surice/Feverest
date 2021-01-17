@@ -7,8 +7,13 @@
     <br>
 
     <div class="dashboard">
-      <img src="@/assets/logo.png" alt="Logo" class="img">
-
+      <div class="pattern">
+        <img src="@/assets/logo.png" alt="Logo" class="img">
+      </div>
+      <div class="pattern">
+        <h3>Registered Users</h3>
+        <p>Acount Count: {{ accountsCount }}</p>
+      </div>
       <div class="pattern">
         <h3>Visits</h3>
         <p>total Visits: {{ visits }}</p>
@@ -41,6 +46,7 @@ export default {
         username: "--none--"
       },
       visits: 0,
+      accountsCount: 0,
       clock: {
         time: "HH:MM:SS",
         date: "Day DD.MM.YYYY"
@@ -95,7 +101,6 @@ export default {
     justify-content: space-evenly;
   }
   .img{
-    height: 12%;
     width: 8vw;
     border: none;
     border-radius: 3px;

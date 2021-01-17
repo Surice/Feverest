@@ -68,6 +68,9 @@ const routes = [
     name: 'Dev-Home',
     component: DevHome,
     beforeEnter: async (to, from, next) => {
+      next();
+      return
+
       try{
         let check = await axios.get('https://feverest.de/api/user/checkToken');
         console.log(check);
