@@ -42,7 +42,7 @@ export default {
   name: 'Home',
   data: function(){
     return{
-      reqUrl: "/api/analytics/getVisits",
+      reqUrl: "/api/analytics",
       user: {
         username: "--none--"
       },
@@ -55,7 +55,8 @@ export default {
     }
   },
   async mounted(){
-    this.visits = (await axios.get(this.reqUrl)).data.count;
+    this.visits = (await axios.get(this.reqUrl+ "/getVosots")).data.count;
+    this.users = (await axios.get(this.reqUrl+ "/getRegisteredUsers")).data.count;
 
 
     const self = this;
