@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed5d8a052e5b3c2a0be3",
-    "url": "css/app.de5a8f7b.css"
+    "revision": "1fdceb6ac1c08763b24f",
+    "url": "css/app.7505958f.css"
   },
   {
     "revision": "baca971a5c8fbf954324",
@@ -10,10 +10,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0c7b59c38f860e80a511ab298736c1c9",
     "url": "img/acc-assistant-logo.0c7b59c3.jpg"
-  },
-  {
-    "revision": "e39915bcf40a046b382878c720d5acdc",
-    "url": "img/cloudly_forrest.e39915bc.jpg"
   },
   {
     "revision": "cbb4eddb5fd112a59650b3e5fcf6d12f",
@@ -40,12 +36,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/tastatur.25f8eadc.jpg"
   },
   {
-    "revision": "1faed28e24065d1e1645389c0c086090",
+    "revision": "590a4961e843dc4a860eb45e83661bf5",
     "url": "index.html"
   },
   {
-    "revision": "ed5d8a052e5b3c2a0be3",
-    "url": "js/app.e52e69fa.js"
+    "revision": "1fdceb6ac1c08763b24f",
+    "url": "js/app.007a6ec9.js"
   },
   {
     "revision": "baca971a5c8fbf954324",
@@ -60,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "robots.txt"
   }
 ]);

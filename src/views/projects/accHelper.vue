@@ -1,36 +1,37 @@
 <template>
     <div class="content">
-        <navbar></navbar>
-        <br>
-        <h1 class="headline">Fuel Calculator</h1>
-        <div style="width: 100vw; display: flex; justify-content: flex-end; transform: translateY(-40px);">
-            <button class="btnHelp" v-on:click="help=true">?</button>
-        </div>
-        <br>
-        <div class="help" v-if="help==true">
-            <div class="helpHeader-div">
-                <h3>Help</h3>
+        <div class="background-resStyle">
+            <navbar></navbar>
+            <br>
+            <h1 class="headline">Fuel Calculator</h1>
+            <div style="width: 100vw; display: flex; justify-content: flex-end; transform: translateY(-40px);">
+                <button class="btnHelp" v-on:click="help=true">?</button>
             </div>
-            <div class="canBtn-div">
-                <button v-on:click="help=false" class="canBtn">X</button>
-            </div>
-            <div class="helpText-div">
-                <p>
-                    This is the perfect assistant for sim-racing. It helps you to calculate the fuel for your race.<br>
-                    <br>
-                    Here is some important information you probably need while using it:<br>
-                    <br>
-                    The Preset's are for a faster input. If you are doing sprint Races with a distance of 20/30/60 minutes, you can take these and this isn't calculating the Pit stops you need because of enough fuel in one tank for a sprint race.<br>
-                    An Individual Race distance you can make by click on the "Individual” Button. The Input can switch between minutes, hours or laps.<br>
-                    In the checkbox below you can add 2 more laps, for the Formation-lap and Inlap. You can use this also for a safe fuel-result.<br>
-                    As developer of this assistant, I would give you the tip to add some liters of fuel to your result for a safe result.<br>
-                    Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".
-                </p>
+            <br>
+            <div class="help" v-if="help==true">
+                <div class="helpHeader-div">
+                    <h3>Help</h3>
+                </div>
+                <div class="canBtn-div">
+                    <button v-on:click="help=false" class="canBtn">X</button>
+                </div>
+                <div class="helpText-div">
+                    <p>
+                        This is the perfect assistant for sim-racing. It helps you to calculate the fuel for your race.<br>
+                        <br>
+                        Here is some important information you probably need while using it:<br>
+                        <br>
+                        The Preset's are for a faster input. If you are doing sprint Races with a distance of 20/30/60 minutes, you can take these and this isn't calculating the Pit stops you need because of enough fuel in one tank for a sprint race.<br>
+                        An Individual Race distance you can make by click on the "Individual” Button. The Input can switch between minutes, hours or laps.<br>
+                        In the checkbox below you can add 2 more laps, for the Formation-lap and Inlap. You can use this also for a safe fuel-result.<br>
+                        As developer of this assistant, I would give you the tip to add some liters of fuel to your result for a safe result.<br>
+                        Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".
+                    </p>
+                </div>
             </div>
         </div>
         <div class="all">
             <div class= "TimeLapsTable">
-                <div class="TimeLapsTableDiv">
                     <div>
                         <u><h1>Required Information:</h1></u>
                     </div>
@@ -112,7 +113,7 @@
                         </select>
                     </div>
                     <div v-if="pre==true" class="div-input"></div>
-                </div>
+
             </div>
 
             <div class="divBTNCalculate">
@@ -236,9 +237,9 @@
         outline: none !important;
     }
     .content{
-        height: 100vh;
-        background-color: rgba(85, 75, 104, 0.26);
-        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
+        height: 100%;
+        background-color: rgba(97, 91, 109, 0.26);
+        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg) cover no-repeat;
         background-size: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -277,15 +278,9 @@
         border-style: solid;
         width: 40%;
         height: 70vh;
-        background-color: rgba(248 ,248 , 248 ,0.4)   
+        background-color: rgba(248 ,248 , 248 ,0.4);   
+        padding-left: 25px;
     }   
-    .TimeLapsTableDiv{
-        height: 65vh;
-        margin-left: 4vw;
-        display: flex;
-        flex-flow: column; 
-        justify-content: space-evenly;
-    }
     .headline-input{
         font-size: 20px;
         text-decoration: underline;
@@ -482,5 +477,29 @@
     }
     .canBtn:hover{
         color: rgb(255, 79, 79);
+    }
+    
+    @media only screen and (max-width: 800px){
+    .content{
+        background-image: none !important;
+    }
+    .background-resStyle{
+        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
+        background-size: 100%;
+        background-position: center;
+    }
+    .all{
+        margin-top: 15px;
+    }
+    .TimeLapsTable{
+        min-height: 70vh;
+    }
+    .TimeLapsTableDiv{
+        min-height: 65vh;
+    }
+    .div-input{
+        min-height: 10vh;
+    }
+
     }
 </style>

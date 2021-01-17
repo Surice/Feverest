@@ -23,7 +23,7 @@
           if you find any bugs or have a suggestion<br>
           for improvements please let us know<br>
           <br>
-          <b>E-Mail: <a href="mailto:info@feverest.de?subject=Feedback / Bug report">info@feverest.de</a></b>
+          E-Mail: <a href="mailto:info@feverest.de?subject=Feedback / Bug report">info@feverest.de</a>
         </p>
       </div>
     </footer>
