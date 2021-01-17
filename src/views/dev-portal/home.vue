@@ -42,6 +42,7 @@ export default {
   name: 'Home',
   data: function(){
     return{
+      reqUrl: "/api/analytics/getVisits",
       user: {
         username: "--none--"
       },
@@ -53,7 +54,10 @@ export default {
       },
     }
   },
-  mounted(){
+  async mounted(){
+    this.visits = await axios.get(this.reqUrl);
+
+
     const self = this;
     setInterval(() =>{
       const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];

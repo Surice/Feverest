@@ -20,13 +20,7 @@
       cookieBanner
     },
     mounted() {
-      let data = navigator;
-      console.log(data);
-      
-      axios
-        .post(this.reqUrl, {
-          data
-        });
+      axios.get(this.reqUrl);
     },
   }
 </script>
