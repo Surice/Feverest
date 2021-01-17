@@ -6,18 +6,27 @@
 </template>
 <script>
   import cookieBanner from '@/components/cookieBanner.vue';
-import CookieBanner from './components/cookieBanner.vue';
+
+  import axios from 'axios';
 
   export default {
     data: function(){
       return{
+        reqUrl: "/api/analytics/newVisit",
+        userData: navigator
       }
     },
     components: {
       cookieBanner
     },
     mounted() {
-      console.log("saved Visit!");
+      let data = navigator;
+      console.log(data);
+      
+      axios
+        .post(this.reqUrl, {
+          data
+        });
     },
   }
 </script>

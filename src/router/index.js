@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 
+import Test from '@/views/main/test.vue'
+
 import Home from '@/views/main/home.vue'
 import Intro from '@/views/main/intro.vue'
 import Proj from '@/views/main/projects.vue'
@@ -88,6 +90,11 @@ const routes = [
     path: '/dev-portal/login',
     name: 'Dev-Login',
     component: DevLogin
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: Test
   }
 ]
 

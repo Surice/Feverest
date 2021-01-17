@@ -1,7 +1,7 @@
 <template>
     <div class="navbar-me">
         <h2 class="nav-txt">Feverest</h2>
-        
+
         <div class="navbar-el-div">
             <div>
             <router-link to="/home" class="navbar-el">Home</router-link>
