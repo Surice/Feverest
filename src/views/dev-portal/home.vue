@@ -55,7 +55,7 @@ export default {
     }
   },
   async mounted(){
-    this.visits = await axios.get(this.reqUrl);
+    this.visits = (await axios.get(this.reqUrl)).data.count;
 
 
     const self = this;
