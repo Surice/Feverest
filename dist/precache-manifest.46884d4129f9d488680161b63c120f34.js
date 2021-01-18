@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a2b1e0232503bad96f14",
-    "url": "css/app.5fcfcb7d.css"
+    "revision": "82f64860abba57a56e86",
+    "url": "css/app.83fe92f4.css"
   },
   {
     "revision": "baca971a5c8fbf954324",
@@ -36,12 +36,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/tastatur.25f8eadc.jpg"
   },
   {
-    "revision": "b767aef29748eca68db75a595d2550cc",
+    "revision": "a6c30b6e60dd933c5af32f01c258f4fa",
     "url": "index.html"
   },
   {
-    "revision": "a2b1e0232503bad96f14",
-    "url": "js/app.56432617.js"
+    "revision": "82f64860abba57a56e86",
+    "url": "js/app.8a105a20.js"
   },
   {
     "revision": "baca971a5c8fbf954324",
@@ -56,7 +56,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "robots.txt"
   }
 ]);

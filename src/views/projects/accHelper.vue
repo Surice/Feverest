@@ -32,7 +32,7 @@
         </div>
         <div class="all">
             <div class= "TimeLapsTable">
-                    <div>
+                    <div class="TimeLapsTableHead-div">
                         <u><h1>Required Information:</h1></u>
                     </div>
                     <div class="inputDistance-div">
@@ -87,14 +87,20 @@
                     <div class="div-input">
                         <label class="headline-input"><b>Average-Laptimes:</b></label>
                         <br>
-                        <input type="number" id="laptimeMIN" class="inputLaptime input" min="0" v-model="input.laptime[0]">   
-                        <select class="selectLaptime dropdown" >
-                            <option>Minutes</option>
-                        </select>
-                        <input type="number" id="laptimeSEC" class="inputLaptime input inputLaptimeSec" min="0" v-model="input.laptime[1]">
-                        <select class="selectLaptime dropdown">
-                            <option>Secondes</option>
-                        </select>
+                        <div class="inputLaptime-div">
+                            <div class="inputLaptimeMin-div">
+                                <input type="number" id="laptimeMIN" class="input" min="0" v-model="input.laptime[0]">   
+                                <select class="dropdown" >
+                                    <option>Minutes</option>
+                                </select>
+                            </div>
+                            <div class="inputLaptimeSec-div">
+                                <input type="number" id="laptimeSEC" class="input" min="0" v-model="input.laptime[1]">
+                                <select class="dropdown">
+                                    <option>Secondes</option>
+                                </select>
+                            </div>    
+                        </div>    
                     </div>
                     <div class="div-input">
                         <label class="headline-input"><b>Fuel Consumption:</b></label>
@@ -237,9 +243,8 @@
         outline: none !important;
     }
     .content{
-        height: 100%;
-        background-color: rgba(97, 91, 109, 0.26);
-        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg) cover no-repeat;
+        height: 100vh;
+        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg) ;
         background-size: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -333,9 +338,9 @@
         border: none;
         border-radius: 8px;
     }
-    .distance-preBtn:hover{
-        background-color: rgba(225, 225, 225, 0.8);
-    }
+        .distance-preBtn:hover{
+            background-color: rgba(225, 225, 225, 0.8);
+        }
     .inputDistance-div{
         font-size: 18px;
     }
@@ -349,18 +354,19 @@
     .checkbox{
         height: 16px;
         width: 16px;
-    }     
+    }
     .inputWidth{
         width: 12vw;
     }
-    .inputLaptime{  
-        width: 6vw;
+    .inputLaptime-div{
+        display: flex;
+        flex-flow: row;
     }
-    .inputLaptimeSec{
-        margin-left: 1vw;
-    }
-    .selectLaptime{
-        margin-right: 0px;
+        .inputLaptime-div input{
+            width: 6vw;
+        }
+    .inputLaptimeSec-div input{
+        margin-left: 5px;
     }
     .results{
         border: 1px;
@@ -494,12 +500,50 @@
     .TimeLapsTable{
         min-height: 70vh;
     }
+    .TimeLapsTable h1{
+
+    }
+    .TimeLapsTableHead-div{
+        min-height: 12vh;
+        vertical-align: bottom;
+
+    }
     .TimeLapsTableDiv{
         min-height: 65vh;
     }
-    .div-input{
-        min-height: 10vh;
+    .headline-input{
+        margin-top: 15px;
     }
+    .div-input{
+        min-height: 12vh;
+    }
+    .distance-change{
+        flex-flow: column;
+    }
+    .outputMinSec{
+        margin-top: 15px;
+    }
+    .checkbox{
+        height: 28px;
+        width: 28px;
+    }
+    .inputLaptime-div{
+        display: flex;
+        flex-flow: column;
+    }
+    .inputLaptimeMin-div{
+
+    }
+        .inputLaptimeMin-div input{
+            width: 8vw;
+        }
+    .inputLaptimeSec-div{
+        margin-top: 10px;
+    }
+        .inputLaptimeSec-div input{
+            margin: 0;
+            width: 8vw;
+        }
 
     }
 </style>
