@@ -13,7 +13,7 @@
                     <h3>Help</h3>
                 </div>
                 <div class="canBtn-div">
-                    <button v-on:click="help=false" class="canBtn">X</button>
+                    <button v-on:click="help=false" class="canBtn">x</button>
                 </div>
                 <div class="helpText-div">
                     <p>
@@ -123,11 +123,11 @@
             </div>
 
             <div class="divBTNCalculate">
-                <button class="BTNCalculate dropdown" v-on:click="calculate" >Calculate</button>
+                <button class="BTNCalculate" v-on:click="calculate" >Calculate</button>
             </div>
 
             <div class="results">
-                <div>
+                <div class="resultsHead-div">
                     <h1><u>Results:</u></h1>
                 </div> 
                 <div class="results-div">
@@ -284,8 +284,17 @@
         width: 40%;
         height: 70vh;
         background-color: rgba(248 ,248 , 248 ,0.4);   
-        padding-left: 25px;
+        padding-left: 4vw;
     }   
+    .TimeLapsTableHead-div{
+        height: 12vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+    }
+    .TimeLapsTableHead-div h1{
+
+    }
     .headline-input{
         font-size: 20px;
         text-decoration: underline;
@@ -373,13 +382,15 @@
         border-style: solid;
         width: 40vw;
         height: 70vh;
-        padding-left: 5vw;
+        padding-left: 4vw;
         background-color: rgba(248 ,248 , 248 ,0.4);   
+    } 
+    .resultsHead-div{
+        height: 12vh;
         display: flex;
         flex-flow: column;
-        justify-content: space-evenly;
-        align-items: flex-start;
-    } 
+        justify-content: flex-end;
+    }
     .results-div{
         height: 45vh;
         display: flex;
@@ -405,7 +416,13 @@
     }
     .BTNCalculate{
         background-color: whitesmoke;
-        padding-left: 4px;
+        padding: 17px;
+        text-align: center;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        border-radius: 8px;
+        border: none;
+        margin-left: 0.5vw;
+        font-size: 22px;
     }
     .BTNCalculate:hover{
         background-color: rgba(205, 205, 205, 1);
@@ -505,7 +522,8 @@
     }
     .TimeLapsTableHead-div{
         min-height: 12vh;
-        vertical-align: bottom;
+        /* vertical-align: bottom; */
+        padding-bottom: 0;
 
     }
     .TimeLapsTableDiv{
@@ -513,6 +531,9 @@
     }
     .headline-input{
         margin-top: 15px;
+    }
+    .inputWidth{
+        width: 7vw;
     }
     .div-input{
         min-height: 12vh;
@@ -544,6 +565,10 @@
             margin: 0;
             width: 8vw;
         }
+    .BTNCalculate{
+        padding: 3px;
+    }
+
 
     }
 </style>
