@@ -13,7 +13,8 @@
         <h5>Social Media:</h5>
         <div class="socials">
           <a href="https://github.com/Surice/Feverest" target="_blank">Github Repository</a>
-          <a href="https://Instagram.com/Feverest" target="_blank">our Instagram</a>
+          <a href="https://Instagram.com/feverest_official" target="_blank">our Instagram</a>
+          <a href="https://twitter.com/_feverest_" target="_blank">our twitter</a>
         </div>
       </div>
       <div class="vl"></div>
