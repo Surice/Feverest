@@ -1,9 +1,11 @@
 <template>
     <div class="mcCGuide">
         <navbar></navbar>
-        <br>
-        <h1 class="headline">Minecraft crafting Guide</h1>
-        <br>
+        <div class="banner-img">
+            <br>
+            <h1 class="headline">Minecraft crafting Guide</h1>
+            <br>
+        </div>
         <div class="content">
             <div class="left_side">
                 <div class="input-area field">
@@ -115,7 +117,13 @@
         justify-content: center;
     }
 }
-
+    .banner-img{
+        background: url('../../assets/mc_screen_crafting.png');
+        width: 100vw;
+        height: 25vh;
+        background-size: cover;
+        background-position: top;
+    }
     .mcCGuide{
         min-height: 100vh;
     }
