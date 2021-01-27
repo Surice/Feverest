@@ -51,7 +51,7 @@
 </script>
 <style scoped>
     .freeGames{
-        background-image: url('C:/_Dev_code/feverest-vue/src/assets/cloudly_forrest.jpg');
+        background-image: url('../../assets/cloudly_forrest.jpg');
         background-size: cover;
         height: 100vh;
     }

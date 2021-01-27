@@ -110,7 +110,7 @@
                             <option>Liters</option>
                         </select>
                     </div>
-                    <div v-if="pre==false" class="div-input">
+                    <div v-if="pre==false" class="div-input div-input-Fueltank">
                         <label class="headline-input"><b>Fueltank:</b></label>
                         <br>
                         <input type="number" id= "Fueltank" class="input inputWidth" min="0" v-model="input.fueltank">
@@ -124,6 +124,7 @@
 
             <div class="divBTNCalculate">
                 <button class="BTNCalculate" v-on:click="calculate" >Calculate</button>
+                <button class="BTNCalculateMobile" v-on:click="calculate" ><i class="fas fa-calculator fa-lg"></i></button>
             </div>
 
             <div class="results">
@@ -243,7 +244,7 @@
         outline: none !important;
     }
     .content{
-        height: 100vh;
+        min-height: 100vh;
         background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg) ;
         background-size: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -257,7 +258,7 @@
         z-index: -1;
     }
     .div-input{
-        height: 10vh;
+        min-height: 10vh;
     }
     .input{
         height: 28px;
@@ -282,12 +283,12 @@
         border: 1px;
         border-style: solid;
         width: 40%;
-        height: 70vh;
+        min-height: 70vh;
         background-color: rgba(248 ,248 , 248 ,0.4);   
         padding-left: 4vw;
     }   
     .TimeLapsTableHead-div{
-        height: 12vh;
+        min-height: 12vh;
         display: flex;
         flex-flow: column;
         justify-content: flex-end;
@@ -424,9 +425,12 @@
         margin-left: 0.5vw;
         font-size: 22px;
     }
-    .BTNCalculate:hover{
-        background-color: rgba(205, 205, 205, 1);
-    }
+        .BTNCalculate:hover{
+            background-color: rgba(205, 205, 205, 1);
+        }
+    .BTNCalculateMobile{
+        display: none;
+    }    
     .divBTNCalculate{
         text-align: center;
     }
@@ -522,7 +526,6 @@
     }
     .TimeLapsTableHead-div{
         min-height: 12vh;
-        /* vertical-align: bottom; */
         padding-bottom: 0;
 
     }
@@ -552,12 +555,9 @@
         display: flex;
         flex-flow: column;
     }
-    .inputLaptimeMin-div{
-
+    .inputLaptimeMin-div input{
+        width: 8vw;
     }
-        .inputLaptimeMin-div input{
-            width: 8vw;
-        }
     .inputLaptimeSec-div{
         margin-top: 10px;
     }
@@ -566,9 +566,58 @@
             width: 8vw;
         }
     .BTNCalculate{
-        padding: 3px;
+        display: none;
+    }
+    .BTNCalculateMobile{
+        display: block;
+        height: 40px;
+        width: 80px;
+        background-color: whitesmoke;
+        text-align: center;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        border-radius: 8px;
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
+    @media only screen and (max-width: 450px){
+    .all{
+        display: flex;
+        flex-flow: column;
+    }
+    .TimeLapsTable{
+        width: 80vw;
+        min-height: 80vh;
+    }
+    .distance-line{
+        padding-right: 10px;
+    }
+    .distance-input-line{
+        display: flex;
+        flex-flow: row;
+        width: 60vw;
+    }
+    .inputWidth{
+        width: 12vw;
+    }
+    .inputLaptimeMin-div input{
+        width: 12vw;
+    }
+    .inputLaptimeSec-div input{
+        width: 12vw;
+    }
+    .div-input-Fueltank{
+        padding-bottom: 10px;
+    }
+    .results{
+        width: 80vw;
+    }
+    .footer{
+        margin-top: 15px;
+        position: relative;
+    }
+    }
 
     }
 </style>
