@@ -73,6 +73,13 @@ export default {
     .banner-img{
       height: 20vh;
     }
+
+    .banner-welcome p{
+      font-size: 54px;
+    }
+    .banner-phrases p{
+      font-size: 38px;
+    }
   }
   @media only screen and (min-width: 821px){
     .banner-img{
@@ -81,24 +88,24 @@ export default {
     .content{
       align-items: center;
     }
-  }
 
-  .vl{
-    display: none;
-    height: 100%;
-    border-left: 4px solid black
+    .banner-welcome p{
+      font-size: 64px;
+    }
+    .banner-phrases p{
+      font-size: 48px;
+    }
   }
-
   .home{
-    width: 100vw;
-    height: 100vh;
+    min-width: 100%;
   }
   .content{
-    height: 50vh;
+    min-height: 50vh;
+    width: 100%;
     display: flex;
   }
   .banner-img{
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
     object-position: 20% 50%;
   }
@@ -117,9 +124,9 @@ export default {
   .banner-welcome p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
-    font-size: 64px;
     color: white;
     text-shadow: 3px 2px 4px rgb(36, 36, 36);
+    word-break: break-all;
   }
   .banner-phrases{
     margin-left: 10vw;
@@ -128,7 +135,6 @@ export default {
   .banner-phrases p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
-    font-size: 48px;
     color: white;
     text-shadow: 3px 2px 4px rgb(36, 36, 36);
   }

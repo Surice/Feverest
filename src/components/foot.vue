@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer>
       <div class="foo-col">
         <h5>Contact:</h5>
         <p>
@@ -35,16 +35,17 @@ export default {
 }
 </script>
 <style scoped>
-    .footer{
-        position: fixed;
+    footer{
+        position: relative;
+        flex-flow: row wrap;
         bottom: 0;
         display: flex;
         justify-content: space-evenly;
-        width: 100vw;
-        background: rgba(10, 10, 10, 0.6);
+        width: 100%;
+        background: rgba(30, 30, 30, 0.95);
         color: rgb(135, 135, 135);
     }
-    .footer p{
+    footer p{
         font-size: 0.8rem;
         margin-left: 8px
     }
