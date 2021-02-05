@@ -16,7 +16,8 @@
       </div>
       <div class="pattern">
         <h3>Visits</h3>
-        <p>total Visits: {{ visits }}</p>
+        <p>total Visits: {{ visits.total }}</p>
+        <p>last 7 Days: {{ visits.temp }}</p>
       </div>
       <div class="pattern">
         <h3>Time</h3>
@@ -34,7 +35,6 @@
 <script>
 // @ is an alias to /src
 import navbar from '@/components/header.vue';
-import foot from '@/components/foot.vue';
 
 import axios from 'axios';
 
@@ -46,7 +46,10 @@ export default {
       user: {
         username: "--none--"
       },
-      visits: 0,
+      visits: {
+        total: 0,
+        temp: 0
+      },
       accountsCount: 0,
       clock: {
         time: "HH:MM:SS",
@@ -55,8 +58,10 @@ export default {
     }
   },
   async mounted(){
-    this.visits = (await axios.get(this.reqUrl+ "/getVisits")).data.count;
+    this.visits = (await axios.get(this.reqUrl+ "/getVisits")).data;
     this.accountsCount = (await axios.get(this.reqUrl+ "/getRegisteredUsers")).data.count;
+
+    this.user = (await axios.get(this.reqUrl+ "/getUser")).data;
 
 
     const self = this;
