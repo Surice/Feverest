@@ -58,10 +58,10 @@ export default {
     }
   },
   async mounted(){
-    this.visits = (await axios.get(this.reqUrl+ "/analytics/getVisits")).data;
+    this.visits = (await axios.get(this.reqUrl+ "/analytics/getVisits")).data.count;
     this.accountsCount = (await axios.get(this.reqUrl+ "/analytics/getRegisteredUsers")).data.count;
 
-    this.user = (await axios.get(this.reqUrl+ "/user/getUser")).data;
+    this.user = (await axios.get(this.reqUrl+ "/user/getUser")).data.check;
 
 
     const self = this;
