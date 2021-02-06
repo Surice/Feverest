@@ -87,7 +87,7 @@ export default {
     min-width: 250px;
   }
   .container-me h3{
-    font-family: cursive;
+    font-family: 'Arial', cursive;
     font-weight: bold;
     text-decoration: underline;
     color: rgb(255, 255, 255);

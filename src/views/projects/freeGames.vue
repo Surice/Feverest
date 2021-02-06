@@ -3,7 +3,7 @@
         <navbar></navbar>
         
         <code id="lastScan" class="lastScan">Last Scan: {{ date }}</code>
-        <div class="siteContent">
+        <div class="content">
             <h1 class="headline">Free Games</h1>
 
             <table class="table-me" id="table-me">
@@ -12,7 +12,7 @@
                     <th class="tableE"><strong>Plattform</strong></th>
                     <th class="tableE"><strong>Link</strong></th>
                 </tr>
-                <tr class="table-body" v-for="content in contents" :key="content.name">
+                <tr v-for="content in contents" :key="content.name">
                     <th class="tableE">{{ content.name }}</th>
                     <th class="tableE">{{ content.plattform }}</th>
                     <th class="tableE">
@@ -33,7 +33,21 @@
             return{
                 date: "--none--",
                 reqUrl: `/api/gameStores/getFreeGames`,
-                contents: [],
+                contents: [{
+      "name": "World of Warships — Exclusive Starter Pack",
+      "plattform": "steam",
+      "url": "https://store.steampowered.com/app/844890"
+    },
+    {
+      "name": "Metro: Last Light Redux",
+      "plattform": "epic",
+      "url": "https://www.epicgames.com/store/en-US/product/metro-last-light-redux/home"
+    },
+    {
+      "name": "For The King",
+      "plattform": "epic",
+      "url": "https://www.epicgames.com/store/en-US/product/for-the-king/home/home"
+    }],
             }
         },
         components: {
@@ -53,9 +67,9 @@
     .freeGames{
         background-image: url('../../assets/cloudly_forrest.jpg');
         background-size: cover;
-        height: 100vh;
+        min-height: 100vh;
     }
-    .siteContent{
+    .content{
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -74,20 +88,24 @@
         margin-top: 5vh;
         text-align: center;
         color: white;
-        background-color: rgba(77, 77, 77, 0.7);
         border-collapse: collapse;
+        margin-bottom: 20px;
     }
     .tableE{
         padding: 12px;
+        font-weight: normal;
     }
     .table-head{
-        background-color: rgba(36, 36, 36, 0.95);
+        border-bottom: rgb(50,56,62) 6px solid;
     }
-    .table-body{
-        border-top: 6px solid rgba(255, 255, 255, 0.04);
+    tr{
+        border-top: 1.2px solid rgb(50,56,62);
+        background-color: rgba(29, 29, 29, 1);
+    }
+    tr:nth-child(even){
+        background-color: rgba(35, 35, 35, 1);
     }
     .link{
-        color: rgb(44, 44, 44);
         word-break: break-word;
     }
     .link:hover{
