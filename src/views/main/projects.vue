@@ -6,7 +6,7 @@
         <br>
         <div class="content">
             <div class="project">
-                <img src="./../../assets/placeholder.jpg" class="small-box">
+                <img src="./../../assets/free-games_icon.png" class="small-box">
                 <router-link to="/project/free_Games" class="big-box" tag="button">
                     <h4>Free Games</h4>
                     <p>
@@ -54,7 +54,8 @@ export default {
         flex-flow: wrap;
         justify-content: space-evenly;
         align-items: center;
-        width: 100vw;
+        min-width: 100%;
+        margin-bottom: 20px
     }
     .project{
         max-width: 60vw;

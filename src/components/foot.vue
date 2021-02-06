@@ -8,7 +8,6 @@
           E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a>
         </p>
       </div>
-      <div class="vl"></div>
       <div class="foo-col">
         <h5>Social Media:</h5>
         <div class="socials">
@@ -17,13 +16,11 @@
           <a href="https://twitter.com/_feverest_" target="_blank">our twitter</a>
         </div>
       </div>
-      <div class="vl"></div>
       <div class="foo-col">
         <h5>Feedback / Bug report:</h5>
         <p>
           if you find any bugs or have a suggestion<br>
           for improvements please let us know<br>
-          <br>
           E-Mail: <a href="mailto:info@feverest.de?subject=Feedback / Bug report">info@feverest.de</a>
         </p>
       </div>
@@ -41,6 +38,7 @@ export default {
         bottom: 0;
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
         width: 100%;
         background: rgba(30, 30, 30, 0.95);
         color: rgb(135, 135, 135);

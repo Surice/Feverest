@@ -33,21 +33,7 @@
             return{
                 date: "--none--",
                 reqUrl: `/api/gameStores/getFreeGames`,
-                contents: [{
-      "name": "World of Warships — Exclusive Starter Pack",
-      "plattform": "steam",
-      "url": "https://store.steampowered.com/app/844890"
-    },
-    {
-      "name": "Metro: Last Light Redux",
-      "plattform": "epic",
-      "url": "https://www.epicgames.com/store/en-US/product/metro-last-light-redux/home"
-    },
-    {
-      "name": "For The King",
-      "plattform": "epic",
-      "url": "https://www.epicgames.com/store/en-US/product/for-the-king/home/home"
-    }],
+                contents: [],
             }
         },
         components: {

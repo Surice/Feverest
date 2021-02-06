@@ -76,6 +76,8 @@ export default {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    min-height: 70vh;
+    margin-bottom: 20px;
   }
   .container-me{
     margin: 2.2vw;
@@ -87,8 +89,8 @@ export default {
     min-width: 250px;
   }
   .container-me h3{
-    font-family: 'Arial', cursive;
-    font-weight: bold;
+    font-family:  Arial, Helvetica, sans-serif cursive;
+    font-weight: 550;
     text-decoration: underline;
     color: rgb(255, 255, 255);
   }
