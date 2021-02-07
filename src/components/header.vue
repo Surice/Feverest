@@ -30,8 +30,8 @@
         </div>
 
         <div class="navbar-el-dropdown">
-            <p class="navbar-el dropdown-me">Menu <i class="fas fa-chevron-down"></i></p>
-            <div class="dropdown-me-content">
+            <button v-on:click="dropdown" class="navbar-el navbar-menu">Menu <i class="fas fa-chevron-down"></i></button>
+            <div id="dropdown-me-content" class="dropdown-me-content">
                 <router-link to="/home">Home</router-link>
                 <router-link to="/intro">Introduciton</router-link>
                 <router-link to="/projects">Projects</router-link>
@@ -45,10 +45,26 @@
 <script>
 export default {
     name: 'navbar',
+    data: function(){
+        return {
+            toggle: false
+        }
+    },
     mounted() {
         let fontAwesome = document.createElement('script')
         fontAwesome.setAttribute('src', 'https://kit.fontawesome.com/732a3ed8e9.js')
         document.head.appendChild(fontAwesome)
+    },
+    methods: {
+        dropdown() {
+            if(!this.toggle){
+                this.toggle = true;
+                document.getElementById('dropdown-me-content').style.display = "flex";
+            }else{
+                this.toggle = false
+                document.getElementById('dropdown-me-content').style.display = "none";
+            }
+        }
     }
 }
 </script>
@@ -194,5 +210,11 @@ export default {
 }
 .dropdown-me-content:hover{
     display: flex;
+}
+
+.navbar-menu{
+    background: none;
+    border: none;
+    outline: none;
 }
 </style>
