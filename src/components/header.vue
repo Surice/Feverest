@@ -1,6 +1,6 @@
 <template>
     <div class="navbar-me">
-        <h2 class="nav-txt">Feverest</h2>
+        <router-link to="/home" class="nav-logo"><h2 class="nav-txt">Feverest</h2></router-link>
 
         <div class="navbar-el-div">
             <div>
@@ -111,6 +111,9 @@ export default {
     /* background: linear-gradient(rgb(121, 91, 250), rgb(113, 87, 230)); */
     background: linear-gradient(rgb(70, 144, 255), rgb(84, 124, 204));
     border-bottom: 4px solid rgb(32, 86, 173)
+}
+.nav-logo:hover{
+    text-decoration: none;
 }
 .nav-txt{
     margin: 0;

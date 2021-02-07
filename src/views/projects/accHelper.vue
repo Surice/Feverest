@@ -133,23 +133,19 @@
                 </div> 
                 <div class="results-div">
                     <div class="line">  
-                        <label>Driving laps are:  </label>
-                        <div><p id="drivingLaps" class="outputLine"> {{ output.laps }} </p></div>
-                        <label>Laps</label>
+                        <div><label>Driving laps are:</label></div>
+                        <div><p id="drivingLaps" class="outputLine"> <b>{{ output.laps }}</b> Laps</p></div>
                     </div> 
                     <br>
                     <div class="line">
-                        <label>The Fuel consumption per race is: </label>
-                        <div><p id= 'ResultFuelCon' class="outputLine"> {{ output.fuel }} </p></div>
-                        <label> Liters</label>
+                        <div><label>The Fuel consumption per race is:</label></div>
+                        <div><p id= 'ResultFuelCon' class="outputLine"> <b>{{ output.fuel }}</b>Liters</p></div>
                     </div>
                     <br>
                     <div class="line">
-                        <label>Required pit stops are: </label>
-                        <div><p id= 'ResultBoxenstops' class="outputLine"> {{ output.boxenstops }} </p></div>     
+                        <div><label>Required pit stops are: </label></div>
+                        <div><p id= 'ResultBoxenstops' class="outputLine"> <b>{{ output.boxenstops }}</b> </p></div>     
                     </div>  
-                    <div></div>
-                    <div></div>
                 </div>
             </div>
             <div class= "footer">
@@ -283,7 +279,7 @@
         border: 1px;
         border-style: solid;
         width: 40%;
-        min-height: 70vh;
+        min-height: 68vh;
         background-color: rgba(248 ,248 , 248 ,0.4);   
         padding-left: 4vw;
     }   
@@ -292,9 +288,6 @@
         display: flex;
         flex-flow: column;
         justify-content: flex-end;
-    }
-    .TimeLapsTableHead-div h1{
-
     }
     .headline-input{
         font-size: 20px;
@@ -309,9 +302,9 @@
         height: 28px;
     }
     .distance-change{
-        height: 28px;
+        height: 56px;
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         margin: 0;
         margin-left: 1vw;
         border-radius: 8px;
@@ -382,7 +375,7 @@
         border: 1px;
         border-style: solid;
         width: 40vw;
-        height: 70vh;
+        height: 68vh;
         padding-left: 4vw;
         background-color: rgba(248 ,248 , 248 ,0.4);   
     } 
@@ -409,11 +402,14 @@
         margin: 0;
     }
     .outputLine{
-        min-width: 50px;
         display: flex;
         flex-flow: row;
         justify-content: center;
-        font-weight: bold;
+    }
+    .outputLine b{
+        min-width: 40px;
+        margin-right: 5px;
+        margin-left: 5px;
     }
     .BTNCalculate{
         background-color: whitesmoke;
@@ -506,7 +502,7 @@
         color: rgb(255, 79, 79);
     }
     
-    @media only screen and (max-width: 800px){
+    @media only screen and (max-width: 1200px){
     .content{
         background-image: none !important;
     }
@@ -519,10 +515,7 @@
         margin-top: 15px;
     }
     .TimeLapsTable{
-        min-height: 70vh;
-    }
-    .TimeLapsTable h1{
-
+        min-height: 80vh;
     }
     .TimeLapsTableHead-div{
         min-height: 12vh;
@@ -580,8 +573,17 @@
         margin-top: 15px;
         margin-bottom: 15px;
     }
+    .results{
+        height: 80vh;
+    }
+    .line{
+        flex-flow: column;
+    }
+    .outputLine b{
+        margin-left: 0;
+    }
 
-    @media only screen and (max-width: 450px){
+    @media only screen and (max-width: 700px){
     .all{
         display: flex;
         flex-flow: column;
@@ -597,6 +599,9 @@
         display: flex;
         flex-flow: row;
         width: 60vw;
+    }
+    .distance-preBtn{
+        font-size: 16px;
     }
     .inputWidth{
         width: 12vw;
