@@ -30,6 +30,7 @@ export default {
                     this.showDismissibleAlert = "unexpected Error";
                 }
             }else if(cookie.status == 401){
+                console.log("login failed");
                 this.showDismissibleAlert = "incorrect logindata";
             }
         }
