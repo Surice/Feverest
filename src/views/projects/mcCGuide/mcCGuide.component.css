@@ -15,7 +15,7 @@
     }
 }
     .banner-img{
-        background: url('/assets/mc_screen_crafting.png');
+        background: url('../../../assets/mc_screen_crafting.png');
         width: 100vw;
         height: 25vh;
         background-size: cover;

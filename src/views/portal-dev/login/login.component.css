@@ -1,0 +1,20 @@
+.login{
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: url('../../../assets/road.jpg');
+}
+.content{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border: none;
+    box-shadow: 4px 5px 8px rgb(24, 24, 24);
+}
+.card-header{
+    background: rgb(70, 144, 255);
+}

@@ -14,8 +14,8 @@ import FreeGames from '@/views/projects/freeGames/freeGames.component.vue'
 import McCGuide from '@/views/projects/mcCGuide/mcCGuide.component.vue'
 import FuelCalculator from '@/views/projects/fuelCalculator/fuelCalculator.component.vue'
 
-import DevHome from '@/views/portal-dev/home.vue'
-import DevLogin from '@/views/portal-dev/login.vue'
+import DevHome from '@/views/portal-dev/home/home.component.vue'
+import DevLogin from '@/views/portal-dev/login/login.component.vue'
 
 Vue.use(VueRouter)
 
@@ -72,14 +72,15 @@ const routes = [
     beforeEnter: async (to, from, next) => {
       try{
         let check = await axios.get('https://feverest.de/api/user/checkToken');
-        console.log(check);
+        
         if(check.status != 200 || check.data.role != "dev"){
           next('/dev-portal/login');
         }
 
         next();
       }catch(err){
-        next('/dev-portal/login');
+        next();
+        //next('/dev-portal/login');
       }
     }
   },

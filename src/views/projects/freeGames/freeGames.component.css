@@ -1,5 +1,5 @@
 .freeGames{
-    background-image: url('/assets/cloudly_forrest.jpg');
+    background-image: url('../../../assets/cloudly_forrest.jpg');
     background-size: cover;
     min-height: 100vh;
 }
