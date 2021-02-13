@@ -20,22 +20,17 @@ export default {
     },
     methods: {
         async submit() {
-            let cookie = false;
-            try{
-                await axios.post('/api/user/login', this.input);
-            }catch(err) {
-                this.showDismissibleAlert = "cannot connect to backend";
-            }
+            let cookie = await axios.post('/api/user/login', this.input);
 
             if(cookie.status == 200){
                 if(cookie.data.token){
                     this.$cookie.set('token', cookie.data.token, 30);
                     this.$router.push('/dev-portal/home');
                 }else{
-                    this.showDismissibleAlert = "login data Incorrect";
+                    this.showDismissibleAlert = "unexpected Error";
                 }
-            }else{
-                this.showDismissibleAlert = "unexpected Error";
+            }else if(cookie.status == 401){
+                this.showDismissibleAlert = "incorrect logindata";
             }
         }
     }
