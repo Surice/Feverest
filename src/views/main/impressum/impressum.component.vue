@@ -1,8 +1,8 @@
 <template>
-    <div class="content">
+    <div class="impressum">
         <navbar></navbar>
         <br>
-        <div class="impressum">
+        <div class="content">
             <h1>Impressum</h1>
 
             <p>Angaben gemäß § 5 TMG</p>
@@ -150,22 +150,5 @@
         </div>
     </div>
 </template>
-<script>
-import navbar from '@/components/header.vue'
-
-export default {
-    name: 'Projects',
-    components: {
-        navbar
-    }
-}
-</script>
-<style scoped>
-    .content{
-        background: white;
-    }
-    .impressum{
-        margin: 8px;
-        text-align: center;
-    }
-</style>
+<script src="./impressum.component.js"></script>
+<style scoped src="./impressum.component.css"></style>

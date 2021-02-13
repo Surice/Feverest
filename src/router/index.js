@@ -2,20 +2,20 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 
-import Test from '@/views/main/test.vue'
+import Test from '@/views/test/test.component.vue'
 
-import Home from '@/views/main/home.vue'
-import Intro from '@/views/main/intro.vue'
-import Proj from '@/views/main/projects.vue'
-import Portal from '@/views/main/portals.vue'
-import Impressum from '@/views/main/impressum.vue'
+import Home from '@/views/main/home/home.component.vue'
+import Introduction from '@/views/main/introduction/introduction.component.vue'
+import Projects from '@/views/main/projects-hub/projects.component.vue'
+import Portals from '@/views/main/portals-hub/portals.component.vue'
+import Impressum from '@/views/main/impressum/impressum.component.vue'
 
-import FreeGames from '@/views/projects/freeGames.vue'
-import McCGuide from '@/views/projects/mcCGuide.vue'
-import Acchelper from '@/views/projects/accHelper.vue'
+import FreeGames from '@/views/projects/freeGames/freeGames.component.vue'
+import McCGuide from '@/views/projects/mcCGuide/mcCGuide.component.vue'
+import FuelCalculator from '@/views/projects/fuelCalculator/fuelCalculator.component.vue'
 
-import DevHome from '@/views/dev-portal/home.vue'
-import DevLogin from '@/views/dev-portal/login.vue'
+import DevHome from '@/views/portal-dev/home.vue'
+import DevLogin from '@/views/portal-dev/login.vue'
 
 Vue.use(VueRouter)
 
@@ -33,17 +33,17 @@ const routes = [
   {
     path: '/intro',
     name: 'Introduction',
-    component: Intro
+    component: Introduction
   },
   {
     path: '/projects',
     name: 'Projects',
-    component: Proj
+    component: Projects
   },
   {
     path: '/portals',
     name: 'Portals',
-    component: Portal
+    component: Portals
   },
   {
     path: '/impressum',
@@ -63,7 +63,7 @@ const routes = [
   {
     path: '/project/acc_helper',
     name: 'ACC-Helper',
-    component: Acchelper
+    component: FuelCalculator
   },
   {
     path: '/dev-portal/home',

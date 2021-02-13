@@ -1,0 +1,433 @@
+* {
+    outline: none !important;
+}
+
+.content {
+    min-height: 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
+    background-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.all {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    z-index: -1;
+}
+
+.div-input {
+    min-height: 10vh;
+}
+
+.input {
+    height: 28px;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown {
+    height: 28px;
+    padding-right: 0.3vw;
+    align-items: center;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    border: none;
+    border-radius: 8px;
+    margin-left: 0.5vw;
+    font-size: 18px;
+}
+
+.aktiv, .aktiv2 {
+    background-color: whitesmoke !important;
+}
+
+.TimeLapsTable {
+    border: 1px;
+    border-style: solid;
+    width: 40%;
+    min-height: 68vh;
+    background-color: rgba(248, 248, 248, 0.4);
+    padding-left: 4vw;
+}
+
+.TimeLapsTableHead-div {
+    min-height: 12vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.headline-input {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.distance-line {
+    display: flex;
+    flex-flow: row;
+}
+
+.distance-input-line {
+    width: 20vw;
+    height: 28px;
+}
+
+.distance-change {
+    height: 56px;
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    margin-left: 1vw;
+    border-radius: 8px;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    font-size: 16px;
+    background-color: rgb(160, 160, 160);
+}
+
+.distance-change button {
+    height: 28px;
+    margin: 0;
+    padding: 3px;
+    align-self: center;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgb(160, 160, 160);
+}
+
+.distance-change button:hover {
+    background-color: rgba(225, 225, 225, 0.8);
+}
+
+.distance-pre {
+    display: flex;
+    flex-flow: row;
+}
+
+.distance-preBtnDiv {
+    background-color: rgb(160, 160, 160);
+    border-radius: 8px;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+}
+
+.distance-preBtn {
+    background-color: rgb(160, 160, 160);
+    padding-left: 1px;
+    padding-right: 2.5px;
+    border: none;
+    border-radius: 8px;
+}
+
+.distance-preBtn:hover {
+    background-color: rgba(225, 225, 225, 0.8);
+}
+
+.inputDistance-div {
+    font-size: 18px;
+}
+
+.outputMinSec td {
+    margin: 0 !important;
+    padding: 0;
+}
+
+.outputMinSec tr {
+    height: 26px !important;
+}
+
+.checkbox {
+    height: 16px;
+    width: 16px;
+}
+
+.inputWidth {
+    width: 12vw;
+}
+
+.inputLaptime-div {
+    display: flex;
+    flex-flow: row;
+}
+
+.inputLaptime-div input {
+    width: 6vw;
+}
+
+.inputLaptimeSec-div input {
+    margin-left: 5px;
+}
+
+.results {
+    border: 1px;
+    border-style: solid;
+    width: 40vw;
+    height: 68vh;
+    padding-left: 4vw;
+    background-color: rgba(248, 248, 248, 0.4);
+}
+
+.resultsHead-div {
+    height: 12vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.results-div {
+    height: 45vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.line {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.line label, .line p {
+    margin: 0;
+}
+
+.outputLine {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.outputLine b {
+    min-width: 40px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.BTNCalculate {
+    background-color: whitesmoke;
+    padding: 17px;
+    text-align: center;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    border-radius: 8px;
+    border: none;
+    margin-left: 0.5vw;
+    font-size: 22px;
+}
+
+.BTNCalculate:hover {
+    background-color: rgba(205, 205, 205, 1);
+}
+
+.BTNCalculateMobile {
+    display: none;
+}
+
+.divBTNCalculate {
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(73, 73, 73, 0.45);
+}
+
+.vers {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
+.btnHelp {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 4px 5px 3px rgb(73, 73, 73);
+    margin-right: 12px;
+}
+
+.btnHelp:hover {
+    background-color: rgb(205, 205, 205);
+}
+
+.help {
+    width: 60vw;
+    height: 60vh;
+    top: 20vh;
+    left: 20vw;
+    position: absolute;
+    color: white;
+    background-color: rgb(73, 73, 73);
+    border-radius: 8px;
+    border: solid black;
+    box-shadow: 4px 5px 3px rgb(46, 46, 46);
+    z-index: 10;
+}
+
+.helpHeader-div {
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+    text-shadow: 2px 2px 0px rgb(54, 54, 54);
+    margin-top: 5px;
+}
+
+.helpText-div {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-40px);
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.canBtn-div {
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-60px);
+    align-items: center;
+}
+
+.canBtn {
+    margin-right: 24px;
+    font-size: 190%;
+    border: none;
+    color: white;
+    background: none;
+}
+
+.canBtn:hover {
+    color: rgb(255, 79, 79);
+}
+
+@media only screen and (max-width: 1200px) {
+    .content {
+        background-image: none !important;
+    }
+    .background-resStyle {
+        background-image: url(https://cdn.pixabay.com/photo/2019/08/09/06/16/car-racing-4394462_1280.jpg);
+        background-size: 100%;
+        background-position: center;
+    }
+    .all {
+        margin-top: 15px;
+    }
+    .TimeLapsTable {
+        min-height: 80vh;
+    }
+    .TimeLapsTableHead-div {
+        min-height: 12vh;
+        padding-bottom: 0;
+    }
+    .TimeLapsTableDiv {
+        min-height: 65vh;
+    }
+    .headline-input {
+        margin-top: 15px;
+    }
+    .inputWidth {
+        width: 7vw;
+    }
+    .div-input {
+        min-height: 12vh;
+    }
+    .distance-change {
+        flex-flow: column;
+    }
+    .outputMinSec {
+        margin-top: 15px;
+    }
+    .checkbox {
+        height: 28px;
+        width: 28px;
+    }
+    .inputLaptime-div {
+        display: flex;
+        flex-flow: column;
+    }
+    .inputLaptimeMin-div input {
+        width: 8vw;
+    }
+    .inputLaptimeSec-div {
+        margin-top: 10px;
+    }
+    .inputLaptimeSec-div input {
+        margin: 0;
+        width: 8vw;
+    }
+    .BTNCalculate {
+        display: none;
+    }
+    .BTNCalculateMobile {
+        display: block;
+        height: 40px;
+        width: 80px;
+        background-color: whitesmoke;
+        text-align: center;
+        box-shadow: 4px 5px 3px rgb(73, 73, 73);
+        border-radius: 8px;
+        border: none;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .results {
+        height: 80vh;
+    }
+    .line {
+        flex-flow: column;
+    }
+    .outputLine b {
+        margin-left: 0;
+    }
+    @media only screen and (max-width: 700px) {
+        .all {
+            display: flex;
+            flex-flow: column;
+        }
+        .TimeLapsTable {
+            width: 80vw;
+            min-height: 80vh;
+        }
+        .distance-line {
+            padding-right: 10px;
+        }
+        .distance-input-line {
+            display: flex;
+            flex-flow: row;
+            width: 60vw;
+        }
+        .distance-preBtn {
+            font-size: 16px;
+        }
+        .inputWidth {
+            width: 12vw;
+        }
+        .inputLaptimeMin-div input {
+            width: 12vw;
+        }
+        .inputLaptimeSec-div input {
+            width: 12vw;
+        }
+        .div-input-Fueltank {
+            padding-bottom: 10px;
+        }
+        .results {
+            width: 80vw;
+        }
+        .footer {
+            margin-top: 15px;
+            position: relative;
+        }
+    }
+}

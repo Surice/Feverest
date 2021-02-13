@@ -1,0 +1,47 @@
+.freeGames{
+    background-image: url('/assets/cloudly_forrest.jpg');
+    background-size: cover;
+    min-height: 100vh;
+}
+.content{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.lastScan{
+    margin: 5px;
+    margin-top: 2vh;
+    text-decoration: underline;
+    color: rgb(141, 141, 141);
+}
+
+.table-me{
+    min-width: 65vw;
+    max-width: 80vw;
+    margin-top: 5vh;
+    text-align: center;
+    color: white;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.tableE{
+    padding: 12px;
+    font-weight: normal;
+}
+.table-head{
+    border-bottom: rgb(50,56,62) 6px solid;
+}
+tr{
+    border-top: 1.2px solid rgb(50,56,62);
+    background-color: rgba(29, 29, 29, 1);
+}
+tr:nth-child(even){
+    background-color: rgba(35, 35, 35, 1);
+}
+.link{
+    word-break: break-word;
+}
+.link:hover{
+    color: rgb(44,44,44);
+}
