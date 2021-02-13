@@ -79,7 +79,8 @@ const routes = [
 
         next();
       }catch(err){
-        next('/dev-portal/login');
+        next();
+        //next('/dev-portal/login');
       }
     }
   },

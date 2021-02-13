@@ -7,27 +7,30 @@
     <br>
 
     <div class="dashboard">
-      <div class="pattern">
+      <b-card header="Logo" bg-variant="light" class="pattern">  
         <img src="@/assets/logo.png" alt="Logo" class="img">
-      </div>
-      <div class="pattern">
-        <h3>Registered Users</h3>
-        <p>Acount Count: {{ accountsCount }}</p>
-      </div>
-      <div class="pattern">
-        <h3>Visits</h3>
-        <p>total Visits: {{ visits.total }}</p>
-        <p>last 7 Days: {{ visits.temp }}</p>
-      </div>
-      <div class="pattern">
-        <h3>Time</h3>
-        <p class="clock">
-            {{ clock.time }}
-        </p>
-        <p class="date">
-            {{ clock.date }}
-        </p>
-      </div>
+      </b-card>
+      <b-card header="Registered Users" bg-variant="light" class="pattern">
+        <b-card-body>Total Acounts: {{ accountsCount }}</b-card-body>
+      </b-card>
+      <b-card header="Visits" bg-variant="light" class="pattern">
+        <b-card-body>
+          total Visits: {{ visits.total }} <br>
+          last 7 Days: {{ visits.temp }}
+        </b-card-body>
+      </b-card>
+      <b-card header="Time" bg-variant="light" class="pattern">
+        <b-card-body class="clock">
+            <p class="time">{{ clock.time }}</p>
+            <p class="date">{{ clock.date }}</p>
+        </b-card-body>
+      </b-card>
+      <b-card header="Load Git Content" bg-variant="light" class="pattern">
+        <b-card-body>
+          <p>(comming soon)</p>
+          <b-button v-on:click="pullGit" variant="outline-success" size="lg">Pull request</b-button>
+        </b-card-body>
+      </b-card>
     </div>
   </div>
 </template>
