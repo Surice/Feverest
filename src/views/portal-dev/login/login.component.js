@@ -24,7 +24,7 @@ export default {
     methods: {
         async submit() {
             let self = this;
-            await axios.post('/api/user/login', this.input).then(coookie => {
+            await axios.post('/api/user/login', this.input).then(cookie => {
                 if(cookie.data.token){
                     this.$cookie.set('token', cookie.data.token, 30);
                     this.$router.push('/dev-portal/home');
