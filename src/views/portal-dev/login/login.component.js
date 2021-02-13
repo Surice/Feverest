@@ -7,7 +7,10 @@ export default {
     name: 'Login',
     data: function(){
         return{
-            showDismissibleAlert: false,
+            showDismissibleAlert: {
+                trigger: false,
+                content: ""
+            },
             input: {
                 email: "",
                 password: ""
@@ -20,19 +23,16 @@ export default {
     },
     methods: {
         async submit() {
-            let cookie = await axios.post('/api/user/login', this.input);
-
-            if(cookie.status == 200){
+            let self = this;
+            await axios.post('/api/user/login', this.input).then(coookie => {
                 if(cookie.data.token){
                     this.$cookie.set('token', cookie.data.token, 30);
                     this.$router.push('/dev-portal/home');
-                }else{
-                    this.showDismissibleAlert = "unexpected Error";
                 }
-            }else if(cookie.status == 401){
-                console.log("login failed");
-                this.showDismissibleAlert = "incorrect logindata";
-            }
+            }).catch(err=> {
+                self.showDismissibleAlert.trigger = true;
+                self.showDismissibleAlert.content = "incorrect logindata";
+            });
         }
     }
 }

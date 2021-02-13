@@ -19,8 +19,8 @@
                         <br>
                         <button v-on:click="submit" type="submit" class="btn btn-primary mb-3">Submit!</button>
 
-                        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-                            {{ showDismissibleAlert }}
+                        <b-alert v-model="showDismissibleAlert.trigger" variant="danger" dismissible>
+                            {{ showDismissibleAlert.content }}
                         </b-alert>
                     </div>
                 </div>
