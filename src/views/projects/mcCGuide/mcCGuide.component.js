@@ -1,4 +1,4 @@
-import navbar from '@/components/header.vue';
+import navbar from '@/components/header/header.component.vue';
 import axios from 'axios';
 
 export default {

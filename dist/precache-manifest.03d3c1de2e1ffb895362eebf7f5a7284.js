@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "009ee0775e03e53eb0aa",
-    "url": "css/app.aa9cb296.css"
+    "revision": "39d7bcc8e884e30b82a5",
+    "url": "css/app.fab180e2.css"
   },
   {
     "revision": "9072ed27016a494e1cc4",
@@ -10,6 +10,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0c7b59c38f860e80a511ab298736c1c9",
     "url": "img/acc-assistant-logo.0c7b59c3.jpg"
+  },
+  {
+    "revision": "8b481f562f27d495ae7089d21583a5f3",
+    "url": "img/car-racing.8b481f56.jpg"
   },
   {
     "revision": "e39915bcf40a046b382878c720d5acdc",
@@ -48,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/user.f0c20934.png"
   },
   {
-    "revision": "502fcef45a5abbafff952cdcfcf1a423",
+    "revision": "bcdf338c161e1fedc7dd5d82f6148110",
     "url": "index.html"
   },
   {
-    "revision": "009ee0775e03e53eb0aa",
-    "url": "js/app.8381b6a9.js"
+    "revision": "39d7bcc8e884e30b82a5",
+    "url": "js/app.dc89526d.js"
   },
   {
     "revision": "9072ed27016a494e1cc4",

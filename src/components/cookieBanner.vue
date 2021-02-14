@@ -22,9 +22,10 @@
         components: {
             CookieLaw
         },
+        mounted(){
+        },
         methods: {
             accepted(){
-                console.log("accepted");
             }
         }
     }
@@ -34,9 +35,6 @@
         display: flex;
         justify-content: space-between;
         width: 100vw;
-    }
-    .banner p{
-        
     }
     .Cookie__button{
         margin-right: 15px;

@@ -1,4 +1,4 @@
-import navbar from '@/components/header.vue';
+import navbar from '@/components/header/header.component.vue';
 import foot from '@/components/foot.vue';
 
 import axios from 'axios';
@@ -23,7 +23,19 @@ export default {
     },
     methods: {
         async submit() {
-            let self = this;
+            let self = this,
+                cookieBanner = localStorage.getItem('cookie:accepted');
+
+            if(cookieBanner != "true"){
+                this.showDismissibleAlert.trigger = true;
+                this.showDismissibleAlert.content = "please accept Cookies";
+
+                localStorage.removeItem('cookie:accepted');
+
+                return
+            }
+
+
             await axios.post('/api/user/login', this.input).then(cookie => {
                 if(cookie.data.token){
                     this.$cookie.set('token', cookie.data.token, 30);

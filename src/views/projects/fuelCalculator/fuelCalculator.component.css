@@ -4,7 +4,7 @@
 
 .content {
     min-height: 100vh;
-    /* background-image: url("../../../assets/car-racing.jpg"); */
+    background-image: url("../../../assets/car-racing.jpg");
     background-size: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -315,7 +315,7 @@
         background-image: none !important;
     }
     .background-resStyle {
-        /* background-image: url("../../../assets/car-racing.jpg"); */
+        background-image: url("../../../assets/car-racing.jpg");
         background-size: 100%;
         background-position: center;
     }
