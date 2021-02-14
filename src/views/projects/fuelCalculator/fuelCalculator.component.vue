@@ -45,7 +45,7 @@
                                     <select id="time" class="dropdown" v-model="input.dropdown"  v-on:change="calcIndivRaceDist()">
                                         <option value="0">Minutes</option>
                                         <option value="1" v-on:click="calcIndivRaceDist()">Hours</option>
-                                        <option value="2">Laps</option>
+                                        <option value="2" v-on:click="calcIndivRaceDist()">Laps</option>
                                     </select>
                                 </div>
                                 <div class="distance-pre" v-if="pre==true">
@@ -84,7 +84,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="div-input">
+                    <div class="div-input" v-if="dropLaps == false">
                         <label class="headline-input"><b>Average-Laptimes:</b></label>
                         <br>
                         <div class="inputLaptime-div">
@@ -150,7 +150,7 @@
             </div>
             <div class= "footer">
                 <div class="vers">
-                    <p style="margin-right: 10px;">Version 1.0</p>
+                    <p style="margin-right: 10px;">Version 1.2</p>
                 </div>
             </div>
         </div>

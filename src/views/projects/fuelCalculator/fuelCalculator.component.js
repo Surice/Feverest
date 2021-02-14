@@ -21,7 +21,8 @@ export default {
                 boxenstops: ""
             },
             pre: true,
-            help: false
+            help: false,
+            dropLaps: false
         }
     },
     components: {
@@ -43,6 +44,8 @@ export default {
             document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100
         },
         calcIndivRaceDist(){
+            this.dropLaps = false;
+
             if(this.input.dropdown == 0){
                 document.getElementById("preSetMin").innerHTML = this.input.distance;
                 document.getElementById("preSetSec").innerHTML = Math.round((this.input.distance*60)*100)/100
@@ -53,7 +56,8 @@ export default {
             }
             if(this.input.dropdown == 2){
                 document.getElementById("preSetMin").innerHTML = "-----";
-                document.getElementById("preSetSec").innerHTML = "-----"
+                document.getElementById("preSetSec").innerHTML = "-----";
+                this.dropLaps = true;
             }
         },
         calculate(e){
