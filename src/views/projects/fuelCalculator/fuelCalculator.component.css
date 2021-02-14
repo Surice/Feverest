@@ -75,10 +75,10 @@
     height: 28px;
 }
 
-.distance-change {
-    height: 56px;
+
+.distance-change{
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     margin: 0;
     margin-left: 1vw;
     border-radius: 8px;
@@ -86,7 +86,6 @@
     font-size: 16px;
     background-color: rgb(160, 160, 160);
 }
-
 .distance-change button {
     height: 28px;
     margin: 0;
