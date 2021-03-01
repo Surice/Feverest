@@ -26,6 +26,8 @@
                         In the checkbox below you can add 2 more laps, for the Formation-lap and Inlap. You can use this also for a safe fuel-result.<br>
                         As developer of this assistant, I would give you the tip to add some liters of fuel to your result for a safe result.<br>
                         Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".
+
+                        *The Save Fuel Checkbox add 1,8 laps. That preset is for always get the checkered Flag. It is still under development.
                     </p>
                 </div>
             </div>
@@ -78,9 +80,14 @@
                                 <td><output id="preSetSec"></output></td>
                             </tr>
                             <tr>
-                                <td style="text-align: center;"><input type="checkbox" class="checkbox" id= "checkbox" v-model="input.checkbox"></td>
+                                <td style="text-align: center;"><input type="checkbox" class="checkbox" id= "checkbox" v-model="input.checkbox2laps"></td>
                                 <td></td>
                                 <td>+ Formation lap and Inlap</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;"><input type="checkbox" class="checkbox" v-model="input.checkboxSaveFuel"></td>
+                                <td></td>
+                                <td>Save Fuel Preset*</td>
                             </tr>
                         </table>
                     </div>
@@ -150,7 +157,7 @@
             </div>
             <div class= "footer">
                 <div class="vers">
-                    <p style="margin-right: 10px;">Version 1.2</p>
+                    <p style="margin-right: 10px;">Version 1.3</p>
                 </div>
             </div>
         </div>

@@ -10,7 +10,8 @@ export default {
             input:  {
                 distance: 20,
                 dropdown: 0,
-                checkbox: false,
+                checkbox2laps: false,
+                checkboxSaveFuel: false,
                 laptime: [],
                 fuelcon: 0,
                 fueltank: 0,
