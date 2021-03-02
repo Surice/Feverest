@@ -25,8 +25,8 @@
                         An Individual Race distance you can make by click on the "Individual” Button. The Input can switch between minutes, hours or laps.<br>
                         In the checkbox below you can add 2 more laps, for the Formation-lap and Inlap. You can use this also for a safe fuel-result.<br>
                         As developer of this assistant, I would give you the tip to add some liters of fuel to your result for a safe result.<br>
-                        Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".
-
+                        Your Result you can calculate with the Button in the middle or the Key-input of "space" or "enter".<br>
+                        <br>
                         *The Save Fuel Checkbox add 1,8 laps. That preset is for always get the checkered Flag. It is still under development.
                     </p>
                 </div>
