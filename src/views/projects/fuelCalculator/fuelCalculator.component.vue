@@ -157,7 +157,7 @@
             </div>
             <div class= "footer">
                 <div class="vers">
-                    <p style="margin-right: 10px;">Version 1.3</p>
+                    <p style="margin-right: 10px;">Version 1.3.1</p>
                 </div>
             </div>
         </div>
