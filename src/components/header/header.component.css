@@ -54,7 +54,7 @@
     color: rgb(245, 245, 245);
     padding: 12px;
     border-top: solid transparent;
-    transition: border-top 0.2s;
+    transition: border-top .2s;
     
 
 	-webkit-transition: all .25s ease;
@@ -112,7 +112,6 @@
 
 
 /* Clearfix */
-/*
 .navbar-me:after, .navbar-me:before {
 	content: "";
 	display: table;
@@ -120,7 +119,6 @@
 .navbar-me:after {
 	clear: both;
 }
-*/
 
 .mobile-navbar {
     display: none;
