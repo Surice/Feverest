@@ -5,6 +5,7 @@
       <div>
         <img src="@/assets/tastatur.jpg" class="banner-img" />
       </div>
+      
       <div class="content-home">
         <img src="@/assets/coding.jpg" class="main-img">
 
