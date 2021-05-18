@@ -5,9 +5,6 @@ import axios from 'axios'
 import Test from '@/views/test/test.component.vue'
 
 import Home from '@/views/main/home/home.component.vue'
-import Introduction from '@/views/main/introduction/introduction.component.vue'
-import Projects from '@/views/main/projects-hub/projects.component.vue'
-import Portals from '@/views/main/portals-hub/portals.component.vue'
 import Impressum from '@/views/main/impressum/impressum.component.vue'
 
 import FreeGames from '@/views/projects/freeGames/freeGames.component.vue'
@@ -31,21 +28,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/intro',
-    name: 'Introduction',
-    component: Introduction
-  },
-  {
-    path: '/projects',
-    name: 'Projects',
-    component: Projects
-  },
-  {
-    path: '/portals',
-    name: 'Portals',
-    component: Portals
-  },
-  {
     path: '/impressum',
     name: 'Impressum',
     component: Impressum
@@ -61,8 +43,8 @@ const routes = [
     component: McCGuide
   },
   {
-    path: '/project/acc_helper',
-    name: 'ACC-Helper',
+    path: '/project/fuel_calculator',
+    name: 'fuel_calculator',
     component: FuelCalculator
   },
   {
