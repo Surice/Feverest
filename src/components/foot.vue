@@ -5,7 +5,8 @@
         <p>
           Timon Carstens, <br>
           Sebastian Ulrich <br>
-          E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a>
+          E-Mail: <a href="mailto:info@feverest.de">info@feverest.de</a><br>
+          <router-link to="/impressum">Impressum</router-link>
         </p>
       </div>
       <div class="foo-col">
