@@ -8,7 +8,6 @@
       
       <div class="content-home">
         <img src="@/assets/coding.jpg" class="main-img">
-
         <div class="banner">
           <div class="banner-welcome">
             <p>Welcome!</p>
