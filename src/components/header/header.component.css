@@ -70,7 +70,7 @@
     transition: border-top 0.2s;
 }
 .navbar-link:hover{
-    color: rgb(136, 203, 219);
+    color: rgb(136, 203, 219) !important;
     text-decoration: none;  
     border-color: rgb(136, 203, 219);
 }
@@ -113,7 +113,7 @@
     opacity: 1;
 }
 .router-link-active:not(:hover){
-    color: rgb(50, 211, 163);
+    color: rgb(50, 211, 163) !important;
 }
 
 .navbar-dropdown{

@@ -32,7 +32,7 @@
         </div>
         <div class="project">
           <img src="@/assets/acc-assistant-logo.jpg" class="small-box" />
-          <router-link to="/project/acc_helper" class="big-box" tag="button">
+          <router-link to="/project/fuel_calculator" class="big-box" tag="button">
             <h4>Fuel Calculator</h4>
             <p>
               an assistant to calculate the required Fuel for a Race and the
