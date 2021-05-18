@@ -37,6 +37,9 @@
     border-bottom: 4px solid rgb(32, 86, 173);
     padding-right: 15px;
 }
+.nav-logo{
+    width: 20%;
+}
 .nav-logo:hover{
     text-decoration: none;
 }
@@ -48,6 +51,9 @@
     font-weight: 800;
     color: whitesmoke;
 }
+    .nav-txt:hover{
+        font-size: 35px;
+    }
 .navbar-div{
     min-width: 60%;
     max-width: 70%;
