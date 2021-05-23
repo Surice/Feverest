@@ -45,6 +45,7 @@
     width: 100%;
     object-fit: cover;
     object-position: 20% 50%;
+    border-bottom: 2px solid black;
   }
   .main-img{
     margin-left: 5vw;
