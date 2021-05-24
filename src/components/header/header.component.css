@@ -67,7 +67,7 @@
     color: rgb(245, 245, 245) !important;
     padding: 12px;
     border-top: solid transparent;
-    transition: border-top 0.2s;
+    transition: all 0.4s;
 }
 .navbar-link:hover{
     color: rgb(136, 203, 219) !important;
