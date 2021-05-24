@@ -14,6 +14,9 @@ import FuelCalculator from '@/views/projects/fuelCalculator/fuelCalculator.compo
 import DevHome from '@/views/portal-dev/home/home.component.vue'
 import DevLogin from '@/views/portal-dev/login/login.component.vue'
 
+import Subscribe from '@/views/newsletter/subscribe/subscribe.component.vue'
+import Unsubscribe from '@/views/newsletter/unsubscribe/unsubscribe.component.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -47,6 +50,7 @@ const routes = [
     name: 'fuel_calculator',
     component: FuelCalculator
   },
+
   {
     path: '/dev-portal/home',
     name: 'Dev-Home',
@@ -71,6 +75,20 @@ const routes = [
     name: 'Dev-Login',
     component: DevLogin
   },
+
+
+  {
+    path: '/newsletter/subscribe',
+    name: 'Newsletter-subscribe',
+    component: Subscribe
+  },
+  {
+    path: '/newsletter/unsubscribe',
+    name: 'Newsletter-unsubscribe',
+    component: Unsubscribe
+  },
+
+
   {
     path: '/test',
     name: 'Test',
