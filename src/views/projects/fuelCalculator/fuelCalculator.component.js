@@ -21,8 +21,7 @@ export default {
                 fuel: "",
                 boxenstops: ""
             },
-            pre: true,
-            help: false,
+            endurance: false,
             dropLaps: false
         }
     },
@@ -31,6 +30,7 @@ export default {
     },
     methods: {
         changeVar(value){
+
             this.input.dropdown = "0";
             this.input.distance = value;
 
