@@ -27,7 +27,7 @@
                                     </div>
                                     <div v-if="endurance==true" class="endurance-div">
                                         <input type="number" min="0" v-model="input.distance" v-on:change="calcIndivRaceDist(input.distance)">
-                                        <select id="time" class="dropdown" v-model="input.dropdown"  v-on:change="calcIndivRaceDist()">
+                                        <select id="time" class="dropdown" v-model="input.dropdown"  v-on:change="calcIndivRaceDist(), calculateFuel()">
                                             <option value="0">Minutes</option>
                                             <option value="1" v-on:click="calcIndivRaceDist()">Hours</option>
                                             <option value="2" v-on:click="calcIndivRaceDist()">Laps</option>
@@ -111,7 +111,7 @@
                 </div>   
                 <div class= "footer">
                     <div class="footer-content">
-                        <p style="margin-right: 10px;">Version 1.4.0</p>
+                        <p style="margin-left: 15px;">Version 1.4.0</p>
                     </div>
                 </div> 
             </div>

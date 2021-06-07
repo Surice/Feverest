@@ -20,7 +20,8 @@ export default {
                 boxenstops: ""
             },
             endurance: false,
-            dropLaps: false
+            dropLaps: false,
+            laps: 0,
         }
     },
     components: {
@@ -77,16 +78,22 @@ export default {
                 laptimeSEC = document.getElementById('laptimeSEC').value, 
                 fuelCon = document.getElementById('fuelCon').value;
                 // fuelTank = document.getElementById('fuelTank').value;
-
-                
             
-            let lapTime = lapTimeMIN*60+laptimeSEC*1,
-                laps = distanceSEC/lapTime,
-                fuel = Math.round(((laps*fuelCon)*100)/100),
-                saveFuel = Math.round(laps*fuelCon+fuelCon*1.8);
+            let lapTime = lapTimeMIN*60+laptimeSEC*1;
+
+            if (this.input.dropdown == 2) {
+                this.laps = this.input.distance;        
+            } else {
+                this.laps = distanceSEC/lapTime;    
+            }
+
+            console.log(this.input.distance)
+
+            let fuel = Math.round(((this.laps*fuelCon)*100)/100),
+                saveFuel = Math.round(this.laps*fuelCon+fuelCon*1.8);
                 // boxenstops = (fuel/fuelTank).toFixed(0);
 
-            if(fuel == 0 || fuel == Infinity || fuel == NaN) {
+            if(fuel == 0 || fuel == Infinity || fuel == NaN || lapTime == 0 && this.input.dropdown != 2) {
                 document.getElementById('fuelOutput').innerHTML = `<b>-</b>`;
                 document.getElementById('saveFuelOutput').innerHTML = `<b>-</b>`;
             } else {
@@ -97,7 +104,7 @@ export default {
         }
     },
     mounted(){
-        this.calcRaceDist();
-        window.addEventListener("keypress", this.calculate)
+        // this.calcRaceDist();
+        // window.addEventListener("keypress", this.calculate)
     }
 }
