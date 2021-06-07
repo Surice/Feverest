@@ -12,36 +12,17 @@
     display: flex;
     height: 100vh;
 }
-.aktiv{
-    background-color: rgba(70, 144, 255, 0.8) !important;
-}
-.aktivBTN{
-    background-color: rgba(70, 144, 255, 0.8) !important;   
-}
-button:hover{
-    background-color: rgba(194, 218, 255, 0.8) !important;   
-}
-input{
-    height: 35px;
-    border-radius: 3px;
-    border: 1px solid black;
-    outline: none;
-    background-color: gray;
-}
-    input:hover{
-        cursor: pointer;
-    }
-.input-content-div{
+.background-img{
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
+    background-image: url(../../../assets/bsp_Racing/20210602145316_1.jpg);
+    background-size: cover;
 }
 .content{
-    flex: 1 1 auto;
+    height: 100vh;    
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    background-image: url(../../../assets/bsp_Racing/20210602145316_1.jpg);
-    background-size: cover;
 }
     .input{
         width: 40vw;
@@ -104,6 +85,20 @@ input{
                 font-size: 28px;
                 font-weight: bold;
                 margin-bottom: 13px;
+            }
+            input{
+                height: 35px;
+                border-radius: 3px;
+                border: 1px solid black;
+                outline: none;
+                background-color: gray;
+            }
+                input:hover{
+                    cursor: pointer;
+                }
+            .input-content-div{
+                display: flex;
+                flex-flow: row;
             }
             .raceDistance{
                 height: 22vh;
@@ -264,12 +259,26 @@ input{
                     font-size: 80px;
                 }
 .footer {
+    height: 45px;
     margin-top: 15px;
     position: relative;
     background-color: rgba(50, 50, 50, 0.5);
 }
+    .footer-content{
+        flex: 1 1 auto;
+        align-items: flex-end;
+        justify-content: center;
+    }
 
-
+.aktiv{
+    background-color: rgba(70, 144, 255, 0.8) !important;
+}
+.aktivBTN{
+    background-color: rgba(70, 144, 255, 0.8) !important;   
+}
+button:hover{
+    background-color: rgba(194, 218, 255, 0.8) !important;   
+}
 
 
 

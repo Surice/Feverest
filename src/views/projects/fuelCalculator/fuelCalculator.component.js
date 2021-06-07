@@ -10,8 +10,6 @@ export default {
             input:  {
                 distance: 20,
                 dropdown: 0,
-                checkbox2laps: false,
-                checkboxSaveFuel: false,
                 laptime: [],
                 fuelcon: 0,
                 fueltank: 0,
@@ -72,6 +70,30 @@ export default {
                 console.log(response.data)
                 this.output = response.data;
             });
+        },
+        calculateFuel() {
+            let distanceSEC = document.getElementById('preSetSec').value,
+                lapTimeMIN = document.getElementById('laptimeMIN').value,
+                laptimeSEC = document.getElementById('laptimeSEC').value, 
+                fuelCon = document.getElementById('fuelCon').value;
+                // fuelTank = document.getElementById('fuelTank').value;
+
+                
+            
+            let lapTime = lapTimeMIN*60+laptimeSEC*1,
+                laps = distanceSEC/lapTime,
+                fuel = Math.round(((laps*fuelCon)*100)/100),
+                saveFuel = Math.round(laps*fuelCon+fuelCon*1.8);
+                // boxenstops = (fuel/fuelTank).toFixed(0);
+
+            if(fuel == 0 || fuel == Infinity || fuel == NaN) {
+                document.getElementById('fuelOutput').innerHTML = `<b>-</b>`;
+                document.getElementById('saveFuelOutput').innerHTML = `<b>-</b>`;
+            } else {
+                document.getElementById('fuelOutput').innerHTML = `<b>${fuel}</b>`;
+                document.getElementById('saveFuelOutput').innerHTML = `<b>${saveFuel}</b>`;
+                // document.getElementById('boxenstopsOutput').innerHTML = `<b>${boxenstops}</b>`;
+            }
         }
     },
     mounted(){
