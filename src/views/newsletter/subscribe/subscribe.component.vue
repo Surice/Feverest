@@ -1,7 +1,7 @@
 <template>
     <div class="subscribe">
         <navbar></navbar>
-        <div class="banner-img">
+        <div class="">
             <br>
             <h1 class="headline">Subscribe to the newsletter</h1>
             <br>

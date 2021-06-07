@@ -2,6 +2,10 @@
     height: 100vh;
     display: flex;
     flex-flow: column;
+    background-image: url('../../../assets/cloudly_forrest.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
 }
 
 .banner-img{
