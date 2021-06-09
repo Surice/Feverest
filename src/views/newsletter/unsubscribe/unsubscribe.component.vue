@@ -1,7 +1,7 @@
 <template>
     <div class="unsubscribe">
         <navbar></navbar>
-        <div class="banner-img">
+        <div class="">
             <br>
             <h1 class="headline">Unsubscribe to the newsletter</h1>
             <br>

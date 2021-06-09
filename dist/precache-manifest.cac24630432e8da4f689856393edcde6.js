@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8a8c54039be68f6a1e5",
-    "url": "css/app.efe59b99.css"
+    "revision": "7f2b1a7d8346118bb8cd",
+    "url": "css/app.e60051a3.css"
   },
   {
     "revision": "9072ed27016a494e1cc4",
     "url": "css/chunk-vendors.a2cadc9e.css"
   },
   {
-    "revision": "0c7b59c38f860e80a511ab298736c1c9",
-    "url": "img/acc-assistant-logo.0c7b59c3.jpg"
+    "revision": "a45b72955ca1d179fdd4e405881588a5",
+    "url": "img/20210602145316_1.a45b7295.jpg"
   },
   {
-    "revision": "8b481f562f27d495ae7089d21583a5f3",
-    "url": "img/car-racing.8b481f56.jpg"
+    "revision": "0c7b59c38f860e80a511ab298736c1c9",
+    "url": "img/acc-assistant-logo.0c7b59c3.jpg"
   },
   {
     "revision": "e39915bcf40a046b382878c720d5acdc",
     "url": "img/cloudly_forrest.e39915bc.jpg"
   },
   {
-    "revision": "5989451b329c9d654444ff2d625e570b",
-    "url": "img/code.5989451b.jpg"
-  },
-  {
-    "revision": "cbb4eddb5fd112a59650b3e5fcf6d12f",
-    "url": "img/computer.cbb4eddb.jpg"
+    "revision": "c222e8ebef8d6703295f4f2fbb01ee12",
+    "url": "img/coding.c222e8eb.jpg"
   },
   {
     "revision": "57687e2dc3eec94df05997150b316a8d",
@@ -48,16 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/tastatur.25f8eadc.jpg"
   },
   {
-    "revision": "f0c20934616c56602057a8a9a5f08fbb",
-    "url": "img/user.f0c20934.png"
-  },
-  {
-    "revision": "9d88b8426cd97fa04c7e4c9c5ae0aa0c",
+    "revision": "3d716cbe35a893b37c9da7827d380a4c",
     "url": "index.html"
   },
   {
-    "revision": "c8a8c54039be68f6a1e5",
-    "url": "js/app.a59583c8.js"
+    "revision": "7f2b1a7d8346118bb8cd",
+    "url": "js/app.d41dfabb.js"
   },
   {
     "revision": "9072ed27016a494e1cc4",
@@ -72,7 +64,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "735ab4f94fbcd57074377afca324c813",
+    "revision": "0b5c2c7db35004d3138a3a04fdf4e689",
+    "url": "newIcon.ico"
+  },
+  {
+    "revision": "f67415e2d40ed3c1a7ca0273f0c9b06a",
+    "url": "new_logo.ico"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "robots.txt"
   }
 ]);
