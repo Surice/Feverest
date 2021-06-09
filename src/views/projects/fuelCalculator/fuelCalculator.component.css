@@ -71,7 +71,7 @@
             justify-content: space-evenly;
         }
         .input-div{
-            height: 13vh;
+            height: 15vh;
             margin-left: 30px;
             margin-right: 65px;
             padding-top: 2vh;
@@ -101,7 +101,7 @@
                 flex-flow: row;
             }
             .raceDistance{
-                height: 22vh;
+                height: 26vh;
             }
                 .sprint-BTN-div{
                     max-width: 350px;
