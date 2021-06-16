@@ -25,7 +25,7 @@ export default {
         async submit() {
             const self = this;
 
-            await axios.post('/api/newsletter/removeCustomer', this.input).then(() => {
+            await axios.post(`/api/newsletter/removeCustomer?mail=${this.input.mail}`).then(() => {
                 self.showSuccess = true;
             }).catch(err=> {
                 self.showDismissibleAlert.trigger = true;
