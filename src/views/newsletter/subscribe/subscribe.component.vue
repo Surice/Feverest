@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input v-model="input.email" id="email" type="text" name="email" class="form-control">
+                        <input v-model="input.mail" id="email" type="text" name="email" class="form-control">
                         <br>
                         <button v-on:click="submit" type="submit" class="btn btn-primary mb-3">Submit!</button>
                         <b-alert v-model="showSuccess" variant="success" dismissabel>
